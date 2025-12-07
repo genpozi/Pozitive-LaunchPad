@@ -48,11 +48,21 @@ export type IconMap = {
   [key: string]: React.ElementType;
 };
 
-export type Page = 'GOOGLE_NEXUS' | 'DESIGN_SYSTEMS' | 'BUILD_SYSTEMS' | 'LEARN_APP';
+export type Page = 'GOOGLE_SYSTEMS' | 'DESIGN_SYSTEMS' | 'BUILD_SYSTEMS' | 'LEARN_APP';
+
+export type ResearchStrategyType = 'ONESHOT' | 'BESPOKE' | 'FULLSTACK';
+
+export interface ResearchOption {
+  type: ResearchStrategyType;
+  title: string;
+  description: string;
+  toolIds: string[];
+}
 
 export interface ResearchResult {
   advice: string;
-  toolIds: string[];
+  toolIds: string[]; // Legacy support for simple search
+  options?: ResearchOption[]; // New 3-tier support
 }
 
 // --- Learning Hub Interfaces ---

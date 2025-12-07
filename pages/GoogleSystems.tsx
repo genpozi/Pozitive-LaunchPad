@@ -1,22 +1,30 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { toolsData } from '../data/tools';
-import { ToolCategory, ResearchResult } from '../types';
+import { ToolCategory, ResearchResult, ResearchStrategyType } from '../types';
 import { ToolCard } from '../components/ToolCard';
 import { DockItem } from '../components/DockItem';
 import { DynamicIcon } from '../components/Icons';
-import { Search, Sparkles, Zap, Brain, Briefcase, Code2 } from 'lucide-react';
+import { Search, Sparkles, Zap, Brain, Briefcase, Code2, Layers, Rocket, CheckCircle } from 'lucide-react';
 import { SmartSearch } from '../components/SmartSearch';
 
-interface GoogleNexusProps {
+interface GoogleSystemsProps {
   onNavigate: (page: any) => void;
   onLearn?: (id: string) => void;
 }
 
-export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn }) => {
+export const GoogleSystems: React.FC<GoogleSystemsProps> = ({ onNavigate, onLearn }) => {
   const [activeCategory, setActiveCategory] = useState<ToolCategory>(ToolCategory.ALL);
   const [activeDockTab, setActiveDockTab] = useState('DREAM');
   const [searchQuery, setSearchQuery] = useState('');
   const [researchResult, setResearchResult] = useState<ResearchResult | null>(null);
+  const [activeStrategy, setActiveStrategy] = useState<ResearchStrategyType | null>(null);
+
+  // When new research comes in, auto-select BESPOKE if available, else null
+  useEffect(() => {
+    if (researchResult?.options) {
+        setActiveStrategy('BESPOKE');
+    }
+  }, [researchResult]);
 
   // Define Groups for Quick Launch Tabs
   const dockTabs = [
@@ -65,6 +73,10 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
     
     // AI Research Override
     if (researchResult) {
+        if (researchResult.options && activeStrategy) {
+            const strategy = researchResult.options.find(o => o.type === activeStrategy);
+            return discoveryTools.filter(t => strategy?.toolIds.includes(t.id));
+        }
         return discoveryTools.filter(t => researchResult.toolIds.includes(t.id));
     }
 
@@ -89,7 +101,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
     } else {
         return discoveryTools.filter(t => t.category === activeCategory);
     }
-  }, [activeCategory, searchQuery, discoveryTools, researchResult]);
+  }, [activeCategory, searchQuery, discoveryTools, researchResult, activeStrategy]);
 
   const categories = Object.values(ToolCategory).filter(
     c => c !== ToolCategory.ALL && 
@@ -102,7 +114,6 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
 
   // Featured Tools Logic (Only show when showing ALL and no search)
   const featuredTools = useMemo(() => {
-    // Show featured tools regardless of category (allows Workspace tools like Keep/Vids to appear)
     return discoveryTools.filter(t => t.featured);
   }, [discoveryTools]);
 
@@ -110,10 +121,40 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
 
   const handleResearch = (result: ResearchResult | null) => {
     setResearchResult(result);
-    // If research is active, clear category to All to ensure we scan everything
     if (result) {
         setActiveCategory(ToolCategory.ALL);
     }
+  };
+
+  const StrategyCard = ({ type, icon: Icon, colorClass, borderClass, bgClass }: any) => {
+    const option = researchResult?.options?.find(o => o.type === type);
+    const isActive = activeStrategy === type;
+
+    if (!option) return null;
+
+    return (
+        <button 
+            onClick={() => setActiveStrategy(type)}
+            className={`flex-1 text-left p-5 rounded-2xl border transition-all duration-300 relative overflow-hidden group ${
+                isActive 
+                ? `${bgClass} ${borderClass} shadow-xl scale-[1.02]` 
+                : 'bg-white/5 border-white/10 hover:bg-white/10 opacity-70 hover:opacity-100'
+            }`}
+        >
+            <div className="flex justify-between items-start mb-3">
+                <div className={`p-2 rounded-lg ${isActive ? 'bg-black/20 text-white' : 'bg-white/10 text-gray-400'}`}>
+                    <Icon size={20} />
+                </div>
+                {isActive && <CheckCircle className="text-white" size={20} />}
+            </div>
+            <h4 className={`text-sm font-bold uppercase tracking-wider mb-2 ${isActive ? 'text-white' : 'text-gray-300'}`}>
+                {option.title}
+            </h4>
+            <p className={`text-xs leading-relaxed ${isActive ? 'text-gray-100' : 'text-gray-500'}`}>
+                {option.description}
+            </p>
+        </button>
+    );
   };
 
   return (
@@ -137,9 +178,36 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
             />
         </div>
 
-        {/* AI Advisor Message */}
-        {researchResult && (
+        {/* AI Advisor - Strategic Plan Grid */}
+        {researchResult && researchResult.options && (
             <div className="mb-12 animate-fade-in">
+                <h3 className="text-center text-gray-400 text-sm font-bold uppercase tracking-widest mb-6">Select Your Strategy</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <StrategyCard 
+                        type="ONESHOT" 
+                        icon={Zap} 
+                        bgClass="bg-gradient-to-br from-purple-600 to-indigo-600"
+                        borderClass="border-purple-400"
+                    />
+                    <StrategyCard 
+                        type="BESPOKE" 
+                        icon={Layers} 
+                        bgClass="bg-gradient-to-br from-blue-600 to-cyan-600"
+                        borderClass="border-blue-400"
+                    />
+                    <StrategyCard 
+                        type="FULLSTACK" 
+                        icon={Rocket} 
+                        bgClass="bg-gradient-to-br from-emerald-600 to-teal-600"
+                        borderClass="border-emerald-400"
+                    />
+                </div>
+            </div>
+        )}
+
+        {/* Fallback Advisor Message (If no options) */}
+        {researchResult && !researchResult.options && (
+             <div className="mb-12 animate-fade-in">
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/40 to-blue-900/40 border border-purple-500/30 flex gap-4 items-start shadow-xl">
                     <div className="p-3 bg-purple-500/20 rounded-full shrink-0">
                         <Brain className="text-purple-300" size={24} />
@@ -240,7 +308,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
               </div>
               <h3 className="text-xl text-gray-300 font-medium">No tools found</h3>
               <p className="text-gray-500">
-                {researchResult ? "The advisor couldn't find exact matches." : "Try adjusting your search query."}
+                {researchResult ? "Select a strategy above to view recommended tools." : "Try adjusting your search query."}
               </p>
             </div>
           ) : (
@@ -251,7 +319,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn })
                 <div className="flex items-center gap-2 mb-6 text-gray-300">
                     {researchResult ? <Brain className="text-purple-400" size={20} /> : <DynamicIcon name="LayoutGrid" size={20} />}
                     <h3 className="text-lg font-bold tracking-wider uppercase">
-                        {researchResult ? 'Recommended For You' : (activeCategory === ToolCategory.ALL ? 'All Resources' : activeCategory)}
+                        {researchResult ? (activeStrategy ? `${activeStrategy} Stack` : 'Recommended Tools') : (activeCategory === ToolCategory.ALL ? 'All Resources' : activeCategory)}
                     </h3>
                     <span className="ml-auto text-sm text-gray-500 bg-white/5 px-2 py-1 rounded">
                     {filteredTools.length}

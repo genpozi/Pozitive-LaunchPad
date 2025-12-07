@@ -1,6 +1,335 @@
 import { LearningHubData } from '../types';
 
 export const learningResourcesData: Record<string, LearningHubData> = {
+  // --- ANTIGRAVITY ---
+  'antigravity': {
+    toolId: 'antigravity',
+    tagline: 'The Agent-First Development Platform',
+    overview: 'Google Antigravity is an experimental, agent-first development platform where you define the goal, and AI agents autonomously plan, execute, and verify the work. It moves beyond chat to execution, handling complex multi-step workflows with built-in reasoning loops.',
+    useCases: [
+      'Building autonomous research & data agents',
+      'Automating complex, multi-step business logic',
+      'Visual agent orchestration without code',
+      'Self-verifying code generation & execution'
+    ],
+    creators: [
+      {
+        name: 'Romin Irani',
+        focus: 'Quickstarts',
+        description: 'Detailed guides on the Agent-First Interface and verification loops.',
+        platform: 'Medium',
+        url: 'https://medium.com/'
+      },
+      {
+        name: 'Thomas Chong',
+        focus: 'Visual Builder',
+        description: 'Tutorials on designing complex flows with the Visual Agent Builder.',
+        platform: 'Medium',
+        url: '#'
+      },
+      {
+        name: 'Execute Automation',
+        focus: 'Business Logic',
+        description: 'Real-world examples of automating support tickets and scheduling.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/'
+      },
+      {
+        name: 'Google Developers',
+        focus: 'Official',
+        description: 'Core concepts: Planning, Execution, Verification.',
+        platform: 'Blog',
+        url: 'https://developers.googleblog.com/'
+      },
+      {
+        name: 'The AI Strategist',
+        focus: 'Debugging',
+        description: 'Advanced strategies for ensuring agent reliability.',
+        platform: 'Blog',
+        url: '#'
+      }
+    ],
+    videos: [
+      {
+        title: 'Tutorial: Getting Started with Antigravity',
+        channel: 'Romin Irani',
+        description: 'Step-by-step: Creating your first agent and defining goals.',
+        duration: '12:15'
+      },
+      {
+        title: 'The AI Platform That Codes Itself',
+        channel: 'Automation Tech',
+        description: 'Building an autonomous social media research agent.',
+        duration: '14:40'
+      },
+      {
+        title: 'Antigravity vs. Project Astra',
+        channel: 'Deep Dive',
+        description: 'When to use the Dev Platform vs. the Assistant.',
+        duration: '09:30'
+      },
+      {
+        title: 'Antigravity and Gemini: Autonomous Workflows',
+        channel: 'Google Developers',
+        description: 'Technical deep dive into the reasoning engine.',
+        duration: '22:10'
+      },
+      {
+        title: 'Visual Agent Builder Walkthrough',
+        channel: 'Thomas Chong',
+        description: 'Designing non-linear flows visually.',
+        duration: '11:05'
+      }
+    ],
+    articles: [
+      {
+        title: 'Antigravity Landing Page',
+        source: 'Official',
+        description: 'Access the preview environment and core docs.',
+        url: 'https://antigravity.google/'
+      },
+      {
+        title: 'New Agent-First Interface',
+        source: 'Google Blog',
+        description: 'Understanding the shift from prompt-based to goal-based AI.',
+        url: '#'
+      },
+      {
+        title: 'Debugging Failed Agent Runs',
+        source: 'Dev Forum',
+        description: 'How to analyze verification logs for robust agents.',
+        url: '#'
+      },
+      {
+        title: 'Gemini API Agentic Sections',
+        source: 'Docs',
+        description: 'Underlying framework for tools and function calling.',
+        url: 'https://ai.google.dev/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Google Cloud Community',
+        source: 'Official Forum',
+        description: 'Active discussions on Antigravity and Vertex AI Agents.',
+        url: 'https://www.googlecloudcommunity.com/'
+      }
+    ]
+  },
+
+  // --- GOOGLE VIDS ---
+  'google-vids': {
+    toolId: 'google-vids',
+    tagline: 'AI-Powered Video Creation for Work',
+    overview: 'Google Vids is an AI-powered video creation app for work. It sits alongside Docs, Sheets, and Slides, allowing you to generate professional video drafts—scripts, voiceovers, and stock media—from simple prompts or existing Drive documents.',
+    useCases: [
+      'Turning meeting notes into executive video recaps',
+      'Creating scalable employee training & onboarding',
+      'Generating sales pitches from product briefs',
+      'Rapid internal communication updates'
+    ],
+    creators: [
+      {
+        name: 'TeacherCast',
+        focus: 'Education',
+        description: 'Creating PD content and welcome messages for schools.',
+        platform: 'YouTube',
+        url: 'https://www.teachercast.net/'
+      },
+      {
+        name: 'Workspace Learning',
+        focus: 'Official',
+        description: 'Step-by-step guides on templates and script editing.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/'
+      },
+      {
+        name: 'Horst Web Design',
+        focus: 'Editing',
+        description: 'Detailed tutorials on the timeline and object animation.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/'
+      },
+      {
+        name: 'New Creator Economy',
+        focus: 'Business',
+        description: 'Repurposing Docs and Slides into dynamic video assets.',
+        platform: 'Blog',
+        url: '#'
+      }
+    ],
+    videos: [
+      {
+        title: 'How to Use Google Vids: Step-by-Step',
+        channel: 'Horst Web Design',
+        description: 'From script generation to exporting MP4s with Veo 3.',
+        duration: '15:20'
+      },
+      {
+        title: 'Google Vids for Teachers',
+        channel: 'TeacherCast',
+        description: 'Scaling instructional coaching with AI video.',
+        duration: '12:45'
+      },
+      {
+        title: 'Create your first video in Google Vids',
+        channel: 'Workspace Learning',
+        description: 'Official guide on "Help me create" and media replacement.',
+        duration: '08:30'
+      },
+      {
+        title: 'Executive Recap: Notes to Video in 5 Min',
+        channel: 'Workflow Demo',
+        description: 'Real-time demo of converting a Doc to a video summary.',
+        duration: '05:55'
+      },
+      {
+        title: 'Generating Clips with Veo inside Vids',
+        channel: 'Official Demo',
+        description: 'Using the generative video features within the timeline.',
+        duration: '04:20'
+      }
+    ],
+    articles: [
+      {
+        title: 'Google Vids Help Center',
+        source: 'Google Workspace',
+        description: 'The central hub for features and troubleshooting.',
+        url: 'https://support.google.com/'
+      },
+      {
+        title: 'Using Templates for Brand Consistency',
+        source: 'Tutorial',
+        description: 'Applying corporate themes and colors automatically.',
+        url: '#'
+      },
+      {
+        title: 'Collaboration in Vids',
+        source: 'Guide',
+        description: 'How to comment, share, and edit together in real-time.',
+        url: '#'
+      }
+    ],
+    communities: [
+      {
+        title: 'Google Workspace Community',
+        source: 'Forum',
+        description: 'Discussions on enterprise adoption and custom templates.',
+        url: 'https://www.googlecloudcommunity.com/'
+      }
+    ]
+  },
+
+  // --- PROJECT ASTRA ---
+  'project-astra': {
+    toolId: 'project-astra',
+    tagline: 'The Future of Universal Assistants',
+    overview: 'Project Astra is Google DeepMind\'s vision for a universal AI agent. It processes multimodal inputs (video, audio, text) in real-time with ultra-low latency, capable of "seeing" your world, remembering context, and taking proactive action.',
+    useCases: [
+      'Real-time visual assistance (identifying objects)',
+      'Context-aware memory (finding misplaced items)',
+      'Hands-free complex task guidance (coding, repair)',
+      'Accessibility aid for blind/low-vision users'
+    ],
+    creators: [
+      {
+        name: 'Logan Kilpatrick',
+        focus: 'Hands-On Demos',
+        description: 'Real-world tests like brewing espresso or identifying parts.',
+        platform: 'Social',
+        url: 'https://twitter.com/'
+      },
+      {
+        name: 'Google DeepMind',
+        focus: 'Research',
+        description: 'The science behind multimodal memory and latency.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@GoogleDeepMind'
+      },
+      {
+        name: 'Kanerika',
+        focus: 'Business Apps',
+        description: 'Breakdowns of Action Intelligence in healthcare and enterprise.',
+        platform: 'Blog',
+        url: '#'
+      },
+      {
+        name: 'Android Police',
+        focus: 'Tech Analysis',
+        description: 'Deep dives into how the memory encoding works.',
+        platform: 'Blog',
+        url: 'https://www.androidpolice.com/'
+      },
+      {
+        name: 'Conor Grennan',
+        focus: 'Impressions',
+        description: 'First-hand accounts of the fluidity and speed.',
+        platform: 'Social',
+        url: 'https://www.linkedin.com/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Astra: Real-Time Visual Assistance Demo',
+        channel: 'Google I/O',
+        description: 'The famous demo: drawing code, finding glasses, identifying speakers.',
+        duration: '03:45'
+      },
+      {
+        title: 'Project Astra: Exploring a Universal Assistant',
+        channel: 'DeepMind',
+        description: 'Discussion on memory, latency, and future vision.',
+        duration: '18:20'
+      },
+      {
+        title: 'Using Astra to Brew Espresso',
+        channel: 'Logan Kilpatrick',
+        description: 'Step-by-step visual guidance and error correction.',
+        duration: '02:15'
+      },
+      {
+        title: '8 Exciting Abilities of Project Astra',
+        channel: 'FavTutor',
+        description: 'List of high-value use cases like first aid and coding help.',
+        duration: '10:00'
+      },
+      {
+        title: 'Taking Astra for a Spin',
+        channel: 'Dave Demo',
+        description: 'Continuous conversation about physics and environment.',
+        duration: '05:30'
+      }
+    ],
+    articles: [
+      {
+        title: 'Project Astra Official Page',
+        source: 'DeepMind',
+        description: 'The primary source for the vision and waitlist.',
+        url: 'https://deepmind.google/technologies/project-astra/'
+      },
+      {
+        title: 'The AI Assistant Revolution',
+        source: 'Impetus',
+        description: 'Analysis of visual guidance and multi-method interaction.',
+        url: '#'
+      },
+      {
+        title: 'Google AI Updates',
+        source: 'Blog',
+        description: 'News on Astra features coming to Gemini Live.',
+        url: 'https://blog.google/technology/ai/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/GoogleGemini',
+        source: 'Reddit',
+        description: 'Speculation and discussion on Astra\'s public release.',
+        url: 'https://www.reddit.com/r/GoogleGemini/'
+      }
+    ]
+  },
+
   'notebooklm': {
     toolId: 'notebooklm',
     tagline: 'Your Personalized AI Research Assistant',

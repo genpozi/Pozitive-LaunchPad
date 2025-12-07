@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, X, ArrowRight, Loader, Brain, Globe, Terminal, ExternalLink } from 'lucide-react';
+import { Search, Sparkles, X, ArrowRight, Loader, Brain, Terminal, ExternalLink, Zap, Layers, Rocket } from 'lucide-react';
 import { GoogleGenAI, Type, SchemaParams } from "@google/genai";
 import { Tool, ResearchResult } from '../types';
 
@@ -60,21 +60,25 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
 
     // Fallback logic for missing API key or errors
     const launchExternalGemini = () => {
-        // Best effort to copy prompt to clipboard
+        // 1. Open the window immediately to avoid popup blockers
+        const win = window.open('https://gemini.google.com/app', '_blank');
+        
+        // 2. Attempt to copy to clipboard
         navigator.clipboard.writeText(query).then(() => {
             setFeedbackMsg({ text: "Query copied! Opening Gemini...", type: 'info' });
         }).catch(() => {
             setFeedbackMsg({ text: "Opening Gemini...", type: 'info' });
         });
+
+        setIsLoading(false);
         
-        // Open external site
-        setTimeout(() => {
-             window.open('https://gemini.google.com/app', '_blank');
-             setIsLoading(false);
-        }, 800);
+        if (!win) {
+             setFeedbackMsg({ text: "Popup blocked. Please allow popups.", type: 'error' });
+        }
     };
 
     try {
+      // Use process.env.API_KEY directly as per instructions
       const apiKey = process.env.API_KEY;
       
       // 1. Check if API Key exists
@@ -90,69 +94,66 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
       const toolsContext = tools.map(t => `- ${t.name} (ID: ${t.id}): ${t.description} [Category: ${t.category}, Tags: ${t.tags.join(', ')}]`).join('\n');
 
       let systemInstruction = "";
-      
+      let schema: SchemaParams;
+
       if (context === 'GOOGLE') {
-        systemInstruction = `You are a Google Developer Expert and Senior Cloud Architect. 
-        The user wants to build something or solve a problem using the Google ecosystem. 
-        Your goal is to recommend the specific tools from the provided list that are best suited for their needs.
+        systemInstruction = `You are a Google Ecosystem Architect. 
+        The user wants to build something using Google tools. 
+        Your goal is to provide a comprehensive strategy broken down into three specific tiers:
         
+        1. ONESHOT: The single best tool for a quick, all-in-one solution.
+        2. BESPOKE: A 2-3 step workflow combining tools for a custom fit.
+        3. FULLSTACK: A professional, scalable architecture using dev/infra tools.
+
         Analyze the user's request: "${query}"
         
-        Available Tools Library:
+        Available Tools:
         ${toolsContext}
         
         Rules:
-        1. Only recommend tools present in the library.
-        2. Provide a concise, encouraging piece of advice (max 2 sentences) explaining how these tools connect to solve the user's problem.
-        3. Return the exact IDs of the recommended tools.
+        - Only use tools from the provided library.
+        - For 'ONESHOT', highlight tools like Opal, Stitch, or Gemini.
+        - For 'FULLSTACK', consider Antigravity, Firebase, Project IDX.
         `;
-      } else if (context === 'DESIGN') {
-        systemInstruction = `You are a Creative Technologist and AI Design Systems Expert.
-        The user is a designer or creator looking to generate assets, build UI, or create art.
-        Your goal is to recommend the best AI-enabled design tools from the provided list for their specific workflow.
 
-        Analyze the user's request: "${query}"
+        schema = {
+            type: Type.OBJECT,
+            properties: {
+              advice: { type: Type.STRING, description: "General summary of the recommendation." },
+              options: {
+                type: Type.ARRAY,
+                items: {
+                    type: Type.OBJECT,
+                    properties: {
+                        type: { type: Type.STRING, enum: ['ONESHOT', 'BESPOKE', 'FULLSTACK'] },
+                        title: { type: Type.STRING, description: "Short catchy title for this plan" },
+                        description: { type: Type.STRING, description: "1 sentence explanation of why this works" },
+                        toolIds: { type: Type.ARRAY, items: { type: Type.STRING } }
+                    },
+                    required: ['type', 'title', 'description', 'toolIds']
+                }
+              },
+              toolIds: { type: Type.ARRAY, items: { type: Type.STRING }, description: "Fallback list of all tools" }
+            },
+            required: ["advice", "options", "toolIds"]
+        };
 
-        Available Design Tools Library:
-        ${toolsContext}
-
-        Rules:
-        1. Only recommend tools present in the library.
-        2. Provide a professional, insight-driven piece of advice (max 2 sentences) on why these specific tools fit their creative goal.
-        3. Return the exact IDs of the recommended tools.
-        `;
       } else {
-        systemInstruction = `You are a Senior DevOps Engineer and AI Architect.
-        The user is a developer looking to build, deploy, or optimize AI-driven applications.
-        Your goal is to recommend the best engineering tools, IDEs, and infrastructure from the provided list.
+        // Standard Advisors for Design / Build
+        const role = context === 'DESIGN' ? "Creative Technologist" : "Senior DevOps Engineer";
+        systemInstruction = `You are a ${role}. Recommend the best tools from the list for: "${query}".
+        Available Tools: ${toolsContext}.
+        Return a helpful piece of advice and the list of tool IDs.`;
 
-        Analyze the user's request: "${query}"
-
-        Available Build Tools Library:
-        ${toolsContext}
-
-        Rules:
-        1. Only recommend tools present in the library.
-        2. Provide a technical, architectural piece of advice (max 2 sentences) on how these tools fit into a modern AI stack.
-        3. Return the exact IDs of the recommended tools.
-        `;
+        schema = {
+            type: Type.OBJECT,
+            properties: {
+              advice: { type: Type.STRING, description: "A helpful, professional paragraph explaining the solution." },
+              toolIds: { type: Type.ARRAY, items: { type: Type.STRING } }
+            },
+            required: ["advice", "toolIds"]
+        };
       }
-
-      const schema: SchemaParams = {
-        type: Type.OBJECT,
-        properties: {
-          advice: { 
-            type: Type.STRING, 
-            description: "A helpful, professional paragraph explaining the solution architecture or creative workflow." 
-          },
-          toolIds: { 
-            type: Type.ARRAY, 
-            items: { type: Type.STRING }, 
-            description: "Array of exact tool IDs that match the recommendation." 
-          }
-        },
-        required: ["advice", "toolIds"]
-      };
 
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
@@ -177,7 +178,6 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
 
     } catch (err) {
       console.error("Research failed:", err);
-      // On any error (network, quota, auth), fallback gracefully
       launchExternalGemini();
     }
   };
@@ -185,9 +185,9 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
   const getPlaceholder = () => {
     if (mode === 'SEARCH') return "Search ecosystem...";
     switch (context) {
-        case 'GOOGLE': return "Describe what you want to build...";
+        case 'GOOGLE': return "What do you want to build?";
         case 'DESIGN': return "Describe your creative goal...";
-        case 'BUILD': return "Describe your stack or technical needs...";
+        case 'BUILD': return "Describe your stack...";
         default: return "Ask the AI Advisor...";
     }
   };

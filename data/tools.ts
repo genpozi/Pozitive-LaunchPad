@@ -86,6 +86,20 @@ export const toolsData: Tool[] = [
     color: '#4285F4'
   },
   {
+    id: 'antigravity',
+    name: 'Antigravity',
+    description: 'Agent-first development platform. Autonomous agents that plan, execute, and verify tasks.',
+    url: 'https://antigravity.google/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Agents', 'Autonomous', 'Labs'],
+    icon: 'Bot',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    learnAppId: 'antigravity',
+    color: '#8AB4F8'
+  },
+  {
     id: 'stitch',
     name: 'Stitch',
     description: 'AI-powered UI designer. Convert sketches to code, export to Figma, and prototype apps rapidly.',
@@ -256,6 +270,20 @@ export const toolsData: Tool[] = [
 
   // --- MODELS & FRAMEWORKS ---
   {
+    id: 'project-astra',
+    name: 'Project Astra',
+    description: 'Google\'s universal AI assistant prototype. Multimodal, real-time, and context-aware.',
+    url: 'https://deepmind.google/technologies/project-astra/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Multimodal', 'Realtime', 'Prototype'],
+    icon: 'Sparkles',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    learnAppId: 'project-astra',
+    color: '#4285F4'
+  },
+  {
     id: 'gemma',
     name: 'Gemma',
     description: 'A family of lightweight, state-of-the-art open models built from the same research as Gemini.',
@@ -322,6 +350,33 @@ export const toolsData: Tool[] = [
     color: '#4285F4'
   },
   {
+    id: 'google-vids',
+    name: 'Google Vids',
+    description: 'AI-powered video creation for work. Generate video drafts from prompts and docs.',
+    url: 'https://workspace.google.com/business/products/vids/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Video', 'GenAI', 'Work'],
+    icon: 'VideoIcon',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    learnAppId: 'google-vids',
+    color: '#9334E6'
+  },
+  {
+    id: 'keep',
+    name: 'Keep',
+    description: 'Notes & Lists. Now with "Help me create" generative AI features.',
+    url: 'https://keep.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Notes', 'GenAI'],
+    icon: 'Lightbulb',
+    featured: true,
+    toolbar: true,
+    learnAppId: 'keep',
+    color: '#F4B400'
+  },
+  {
     id: 'drive',
     name: 'Drive',
     description: 'Cloud storage.',
@@ -353,18 +408,6 @@ export const toolsData: Tool[] = [
     icon: 'GoogleSheets',
     toolbar: true,
     color: '#0F9D58'
-  },
-  {
-    id: 'keep',
-    name: 'Keep',
-    description: 'Notes & Lists.',
-    url: 'https://keep.google.com/',
-    category: ToolCategory.WORKSPACE,
-    tags: ['Notes'],
-    icon: 'Lightbulb',
-    toolbar: true,
-    learnAppId: 'keep',
-    color: '#F4B400'
   },
   {
     id: 'calendar',

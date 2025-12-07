@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleNexus } from './pages/GoogleNexus';
+import { GoogleSystems } from './pages/GoogleSystems';
 import { DesignSystems } from './pages/DesignSystems';
 import { BuildSystems } from './pages/BuildSystems';
 import { LearnApp } from './pages/LearnApp';
@@ -7,7 +7,7 @@ import { Page } from './types';
 import { Sparkles, Palette, Code2 } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('GOOGLE_NEXUS');
+  const [currentPage, setCurrentPage] = useState<Page>('GOOGLE_SYSTEMS');
   const [learnToolId, setLearnToolId] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,14 +27,14 @@ const App: React.FC = () => {
   };
 
   const navItems = [
-    { id: 'GOOGLE_NEXUS' as Page, label: 'Nexus', icon: Sparkles },
+    { id: 'GOOGLE_SYSTEMS' as Page, label: 'Google Systems', icon: Sparkles },
     { id: 'DESIGN_SYSTEMS' as Page, label: 'Design', icon: Palette },
     { id: 'BUILD_SYSTEMS' as Page, label: 'Build', icon: Code2 },
   ];
 
   // If showing Learn App, render full screen page without standard nav
   if (currentPage === 'LEARN_APP') {
-      return <LearnApp toolId={learnToolId} onBack={() => setCurrentPage('GOOGLE_NEXUS')} />;
+      return <LearnApp toolId={learnToolId} onBack={() => setCurrentPage('GOOGLE_SYSTEMS')} />;
   }
 
   return (
@@ -47,7 +47,7 @@ const App: React.FC = () => {
           {/* Logo */}
           <div 
             className="flex items-center gap-3 cursor-pointer group" 
-            onClick={() => setCurrentPage('GOOGLE_NEXUS')}
+            onClick={() => setCurrentPage('GOOGLE_SYSTEMS')}
           >
              <div className="p-2 bg-gradient-to-br from-google-blue to-purple-600 rounded-lg shadow-lg shadow-google-blue/20 group-hover:rotate-12 transition-transform duration-300">
                 <Sparkles className="text-white" size={20} />
@@ -77,7 +77,7 @@ const App: React.FC = () => {
 
       {/* Main Page Content - Added padding bottom for mobile nav */}
       <main className="pt-24 pb-24 md:pb-0 min-h-screen">
-         {currentPage === 'GOOGLE_NEXUS' && <GoogleNexus onNavigate={setCurrentPage} onLearn={handleLearn} />}
+         {currentPage === 'GOOGLE_SYSTEMS' && <GoogleSystems onNavigate={setCurrentPage} onLearn={handleLearn} />}
          {currentPage === 'DESIGN_SYSTEMS' && <DesignSystems onLearn={handleLearn} />}
          {currentPage === 'BUILD_SYSTEMS' && <BuildSystems onLearn={handleLearn} />}
       </main>
@@ -109,7 +109,7 @@ const App: React.FC = () => {
             Interactive Resource Directory. Not affiliated with Google.
           </p>
           <div className="flex gap-6">
-            <span className="text-gray-600 text-sm">v3.0.0</span>
+            <span className="text-gray-600 text-sm">v3.1.0</span>
           </div>
         </div>
       </footer>
