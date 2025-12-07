@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, X, ArrowRight, Loader, Brain, Globe, Terminal } from 'lucide-react';
+import { Search, Sparkles, X, ArrowRight, Loader, Brain, Globe, Terminal, ExternalLink } from 'lucide-react';
 import { GoogleGenAI, Type, SchemaParams } from "@google/genai";
 import { Tool, ResearchResult } from '../types';
 
@@ -21,7 +21,7 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
   const [mode, setMode] = useState<'SEARCH' | 'RESEARCH'>('SEARCH');
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [feedbackMsg, setFeedbackMsg] = useState<{ text: string, type: 'error' | 'info' } | null>(null);
 
   // Clear query and results when switching modes
   const toggleMode = (newMode: 'SEARCH' | 'RESEARCH') => {
@@ -30,13 +30,13 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
     setQuery('');
     onSearch('');
     onResearchResults(null);
-    setError(null);
+    setFeedbackMsg(null);
   };
 
   const handleKeyDown = async (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       if (mode === 'SEARCH') {
-        // Standard Search
+        // Standard Search handled by onChange mostly, but ensures focus
       } else {
         // AI Research
         await performResearch();
@@ -55,13 +55,33 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
     if (!query.trim()) return;
     
     setIsLoading(true);
-    setError(null);
+    setFeedbackMsg(null);
     onResearchResults(null);
+
+    // Fallback logic for missing API key or errors
+    const launchExternalGemini = () => {
+        // Best effort to copy prompt to clipboard
+        navigator.clipboard.writeText(query).then(() => {
+            setFeedbackMsg({ text: "Query copied! Opening Gemini...", type: 'info' });
+        }).catch(() => {
+            setFeedbackMsg({ text: "Opening Gemini...", type: 'info' });
+        });
+        
+        // Open external site
+        setTimeout(() => {
+             window.open('https://gemini.google.com/app', '_blank');
+             setIsLoading(false);
+        }, 800);
+    };
 
     try {
       const apiKey = process.env.API_KEY;
-      if (!apiKey) {
-        throw new Error("API Key not found");
+      
+      // 1. Check if API Key exists
+      if (!apiKey || apiKey.trim() === '') {
+         console.warn("API Key missing. Fallback to external.");
+         launchExternalGemini();
+         return;
       }
 
       const ai = new GoogleGenAI({ apiKey });
@@ -150,15 +170,15 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
       if (jsonText) {
         const result = JSON.parse(jsonText) as ResearchResult;
         onResearchResults(result);
+        setIsLoading(false);
       } else {
         throw new Error("No response from AI");
       }
 
     } catch (err) {
-      console.error(err);
-      setError("AI Service unavailable. Try standard search.");
-    } finally {
-      setIsLoading(false);
+      console.error("Research failed:", err);
+      // On any error (network, quota, auth), fallback gracefully
+      launchExternalGemini();
     }
   };
 
@@ -272,10 +292,15 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
             </div>
         </div>
 
-        {/* Error Message */}
-        {error && (
-            <div className="absolute top-full mt-3 w-full text-center text-red-400 text-sm font-medium animate-fade-in bg-red-900/20 py-2 rounded-lg border border-red-500/20">
-                {error}
+        {/* Feedback / Error Message */}
+        {feedbackMsg && (
+            <div className={`absolute top-full mt-3 w-full text-center text-sm font-medium animate-fade-in py-2 rounded-lg border flex items-center justify-center gap-2 ${
+                feedbackMsg.type === 'error' 
+                ? 'text-red-400 bg-red-900/20 border-red-500/20' 
+                : 'text-blue-300 bg-blue-900/30 border-blue-500/30'
+            }`}>
+                {feedbackMsg.type === 'info' && <ExternalLink size={14} />}
+                {feedbackMsg.text}
             </div>
         )}
 

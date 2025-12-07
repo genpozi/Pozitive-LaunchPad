@@ -128,7 +128,7 @@ export const toolsData: Tool[] = [
     url: 'https://google.github.io/mesop/',
     category: ToolCategory.DEV_LAB,
     tags: ['Python', 'UI', 'Framework'],
-    icon: 'Layers',
+    icon: 'PythonLogo',
     featured: true,
     isNew: true,
     toolbar: true,
@@ -335,7 +335,7 @@ export const toolsData: Tool[] = [
     url: 'https://docs.google.com/create',
     category: ToolCategory.WORKSPACE,
     tags: ['Writing'],
-    icon: 'FileText',
+    icon: 'GoogleDocs',
     toolbar: true,
     color: '#4285F4'
   },
@@ -346,7 +346,7 @@ export const toolsData: Tool[] = [
     url: 'https://sheets.google.com/create',
     category: ToolCategory.WORKSPACE,
     tags: ['Data'],
-    icon: 'LayoutGrid',
+    icon: 'GoogleSheets',
     toolbar: true,
     color: '#0F9D58'
   },
@@ -357,7 +357,7 @@ export const toolsData: Tool[] = [
     url: 'https://keep.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Notes'],
-    icon: 'FileText',
+    icon: 'Lightbulb',
     toolbar: true,
     color: '#F4B400'
   },
@@ -379,7 +379,7 @@ export const toolsData: Tool[] = [
     url: 'https://meet.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Calls'],
-    icon: 'Video',
+    icon: 'GoogleMeet',
     toolbar: true,
     color: '#00AC47'
   },

@@ -116,7 +116,7 @@ export const buildToolsData: Tool[] = [
     url: 'https://groq.com/',
     category: ToolCategory.LLM_OPS,
     tags: ['Inference', 'Hardware', 'Speed'],
-    icon: 'Cpu',
+    icon: 'GroqLogo',
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
@@ -129,7 +129,7 @@ export const buildToolsData: Tool[] = [
     url: 'https://ollama.com/',
     category: ToolCategory.LLM_OPS,
     tags: ['Local', 'Privacy', 'Offline'],
-    icon: 'Terminal',
+    icon: 'OllamaLogo',
     featured: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
@@ -196,5 +196,17 @@ export const buildToolsData: Tool[] = [
     isNew: true,
     pricing: PricingModel.FREEMIUM,
     color: '#00E599'
+  },
+  {
+    id: 'docker',
+    name: 'Docker',
+    description: 'Securely build, share and run any application, anywhere.',
+    url: 'https://www.docker.com/',
+    category: ToolCategory.BACKEND_INFRA,
+    tags: ['Container', 'DevOps'],
+    icon: 'DockerLogo',
+    toolbar: true,
+    pricing: PricingModel.OPEN_SOURCE,
+    color: '#2496ED'
   }
 ];

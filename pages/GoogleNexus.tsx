@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { toolsData } from '../data/tools';
 import { ToolCategory, ResearchResult } from '../types';
 import { ToolCard } from '../components/ToolCard';
+import { DockItem } from '../components/DockItem';
 import { DynamicIcon } from '../components/Icons';
 import { Search, Sparkles, Zap, Brain, Briefcase, Code2 } from 'lucide-react';
 import { SmartSearch } from '../components/SmartSearch';
@@ -171,21 +172,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = () => {
                 <div className="w-full px-4 pb-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                         {activeDockTools.map(tool => (
-                             <a 
-                                key={tool.id}
-                                href={tool.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 h-full"
-                             >
-                                <div 
-                                    className="p-3 rounded-full bg-black/40 text-gray-400 group-hover:text-white group-hover:bg-black/60 transition-colors mb-3 shadow-lg"
-                                    style={{ color: tool.color }}
-                                >
-                                    <DynamicIcon name={tool.icon} size={24} />
-                                </div>
-                                <span className="text-xs font-medium text-gray-400 group-hover:text-white text-center line-clamp-1">{tool.name}</span>
-                             </a>
+                             <DockItem key={tool.id} tool={tool} />
                         ))}
                     </div>
                 </div>
