@@ -1,0 +1,417 @@
+import { Tool, ToolCategory } from '../types';
+
+export const toolsData: Tool[] = [
+  // --- CREATIVE STUDIO (BLEEDING EDGE) ---
+  {
+    id: 'imagefx',
+    name: 'ImageFX',
+    description: 'Generate photorealistic images using Imagen 3. Google\'s latest image generation model.',
+    url: 'https://aitestkitchen.withgoogle.com/tools/image-fx',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Generative', 'Images', 'Labs'],
+    icon: 'ImageIcon',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    color: '#FFD700'
+  },
+  {
+    id: 'textfx',
+    name: 'TextFX',
+    description: 'AI-powered tools for rappers, writers, and wordsmiths. Created with Lupe Fiasco.',
+    url: 'https://textfx.withgoogle.com/',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Writing', 'Creative', 'Language'],
+    icon: 'Palette',
+    featured: true,
+    toolbar: true,
+    color: '#F25C05'
+  },
+  {
+    id: 'musicfx',
+    name: 'MusicFX',
+    description: 'Create original music loops and tracks with the MusicLM model.',
+    url: 'https://aitestkitchen.withgoogle.com/tools/music-fx',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Audio', 'Music', 'Labs'],
+    icon: 'Music',
+    toolbar: true,
+    color: '#FF6B6B'
+  },
+  {
+    id: 'videofx',
+    name: 'VideoFX',
+    description: 'Generate 1080p video clips from text prompts using the Veo model.',
+    url: 'https://aitestkitchen.withgoogle.com/tools/video-fx',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Video', 'Veo', 'Labs'],
+    icon: 'Video',
+    isNew: true,
+    toolbar: true,
+    color: '#4ECDC4'
+  },
+  {
+    id: 'earth-studio',
+    name: 'Earth Studio',
+    description: 'Animation tool for Google Earth’s satellite and 3D imagery.',
+    url: 'https://www.google.com/earth/studio/',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['3D', 'Animation', 'Geo'],
+    icon: 'Globe',
+    color: '#4285F4'
+  },
+  {
+    id: 'arts-culture-experiments',
+    name: 'Arts & Culture',
+    description: 'Playful experiments at the intersection of AI and human creativity.',
+    url: 'https://artsandculture.google.com/experiments',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Fun', 'Experimental'],
+    icon: 'FlaskConical',
+    color: '#FBBC04'
+  },
+
+  // --- DEV & BUILD (THE BUILDER'S TOOLKIT) ---
+  {
+    id: 'aistudio',
+    name: 'AI Studio',
+    description: 'The fastest way to prompt, test, and tune Gemini models. Get API keys here.',
+    url: 'https://aistudio.google.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Gemini', 'API', 'Prototyping'],
+    icon: 'GoogleGemini',
+    featured: true,
+    toolbar: true,
+    color: '#4285F4'
+  },
+  {
+    id: 'stitch',
+    name: 'Stitch',
+    description: 'Rapid prototyping environment for sewing together AI models and services.',
+    url: 'https://stitch.withgoogle.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Prototyping', 'No-Code', 'Experimental'],
+    icon: 'Workflow',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    color: '#FF6F00'
+  },
+  {
+    id: 'idx',
+    name: 'Project IDX',
+    description: 'Next-gen browser-based IDE with built-in AI assistance and full-stack previews.',
+    url: 'https://idx.google.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['IDE', 'Cloud', 'Fullstack'],
+    icon: 'GoogleG',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    color: '#8AB4F8'
+  },
+  {
+    id: 'firebase',
+    name: 'Firebase',
+    description: 'App development platform: Auth, Firestore, Analytics, and GenAI extensions.',
+    url: 'https://console.firebase.google.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Backend', 'Serverless'],
+    icon: 'FirebaseLogo',
+    toolbar: true,
+    color: '#FFCA28'
+  },
+  {
+    id: 'mesop',
+    name: 'Mesop',
+    description: 'Build beautiful, responsive web UIs in pure Python. Rapidly prototype internal AI tools.',
+    url: 'https://google.github.io/mesop/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Python', 'UI', 'Framework'],
+    icon: 'Layers',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    color: '#F4B400'
+  },
+  {
+    id: 'codewiki',
+    name: 'Code Wiki',
+    description: 'The definitive knowledge base for engineering patterns and AI coding standards.',
+    url: 'https://codewiki.google/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Docs', 'Reference', 'Internal'],
+    icon: 'BookOpen',
+    toolbar: true,
+    isNew: true,
+    color: '#34A853'
+  },
+  {
+    id: 'opal',
+    name: 'Opal',
+    description: 'Next-generation access and resource management for high-performance AI infrastructure.',
+    url: 'https://opal.google/landing/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Infra', 'Tools', 'New'],
+    icon: 'Gem',
+    toolbar: true,
+    isNew: true,
+    color: '#9C27B0'
+  },
+  {
+    id: 'visual-blocks',
+    name: 'Visual Blocks',
+    description: 'No-code, node-based editor for rapid ML prototyping and chaining.',
+    url: 'https://visualblocks.withgoogle.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['No-Code', 'ML', 'Nodes'],
+    icon: 'Workflow',
+    color: '#E37400'
+  },
+  {
+    id: 'colab',
+    name: 'Colab',
+    description: 'Interactive Python notebooks with free GPU/TPU access.',
+    url: 'https://colab.research.google.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Python', 'Data Science'],
+    icon: 'PythonLogo',
+    toolbar: true,
+    color: '#F4900C'
+  },
+  {
+    id: 'checks',
+    name: 'Checks',
+    description: 'AI-powered compliance platform to simplify privacy for app developers.',
+    url: 'https://checks.google.com/',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Security', 'Compliance', 'AI'],
+    icon: 'Shield',
+    isNew: true,
+    toolbar: true,
+    color: '#34A853'
+  },
+
+  // --- RESEARCH & ANALYSIS (POWER TOOLS) ---
+  {
+    id: 'notebooklm',
+    name: 'NotebookLM',
+    description: 'Personal AI research assistant. Upload PDFs/Docs and "chat" with your sources.',
+    url: 'https://notebooklm.google.com/',
+    category: ToolCategory.RESEARCH,
+    tags: ['RAG', 'Research', 'Audio'],
+    icon: 'BookOpen',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    color: '#34A853'
+  },
+  {
+    id: 'illuminate',
+    name: 'Illuminate',
+    description: 'Transform dense academic papers into engaging audio conversations using AI.',
+    url: 'https://illuminate.google.com/',
+    category: ToolCategory.RESEARCH,
+    tags: ['Audio', 'Papers', 'Learning'],
+    icon: 'Brain',
+    isNew: true,
+    color: '#A142F4'
+  },
+  {
+    id: 'google-scholar',
+    name: 'Scholar',
+    description: 'The standard for searching scholarly literature.',
+    url: 'https://scholar.google.com/',
+    category: ToolCategory.RESEARCH,
+    tags: ['Academic', 'Search'],
+    icon: 'GraduationCap',
+    toolbar: true,
+    color: '#EA4335'
+  },
+  {
+    id: 'dataset-search',
+    name: 'Data Search',
+    description: 'Find datasets stored across thousands of repositories on the Web.',
+    url: 'https://datasetsearch.research.google.com/',
+    category: ToolCategory.RESEARCH,
+    tags: ['Data', 'Search'],
+    icon: 'Search',
+    color: '#4285F4'
+  },
+  {
+    id: 'trends',
+    name: 'Trends',
+    description: 'Analyze real-time search data and cultural trends.',
+    url: 'https://trends.google.com/',
+    category: ToolCategory.RESEARCH,
+    tags: ['Analytics', 'Data'],
+    icon: 'Globe',
+    toolbar: true,
+    color: '#4285F4'
+  },
+
+  // --- MODELS & FRAMEWORKS ---
+  {
+    id: 'gemma',
+    name: 'Gemma',
+    description: 'A family of lightweight, state-of-the-art open models built from the same research as Gemini.',
+    url: 'https://ai.google.dev/gemma',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Open Source', 'LLM', 'Weights'],
+    icon: 'Box',
+    featured: true,
+    color: '#4285F4'
+  },
+  {
+    id: 'jax',
+    name: 'JAX',
+    description: 'High-performance numerical computing. The backbone of modern Google AI research.',
+    url: 'https://jax.readthedocs.io/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Python', 'Research', 'HPC'],
+    icon: 'Zap',
+    color: '#7620ff'
+  },
+  {
+    id: 'mediapipe',
+    name: 'MediaPipe',
+    description: 'On-device ML solutions for computer vision, gesture recognition, and more.',
+    url: 'https://developers.google.com/mediapipe',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Edge', 'Vision', 'Mobile'],
+    icon: 'Cpu',
+    color: '#00BFA5'
+  },
+  {
+    id: 'kaggle',
+    name: 'Kaggle',
+    description: 'The world\'s largest data science community with free datasets and notebooks.',
+    url: 'https://www.kaggle.com/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Community', 'Data', 'Competitions'],
+    icon: 'Database',
+    toolbar: true,
+    color: '#20BEFF'
+  },
+  {
+    id: 'synthid',
+    name: 'SynthID',
+    description: 'Robust watermarking and identification for AI-generated content.',
+    url: 'https://deepmind.google/technologies/synthid/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Safety', 'Watermark'],
+    icon: 'Shield',
+    color: '#EA4335'
+  },
+
+  // --- WORKSPACE (DAILY DRIVERS) ---
+  {
+    id: 'gemini-advanced',
+    name: 'Gemini',
+    description: 'Direct access to Google\'s most capable chat models.',
+    url: 'https://gemini.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Chat', 'Assistant'],
+    icon: 'GoogleGemini',
+    featured: true,
+    toolbar: true,
+    color: '#4285F4'
+  },
+  {
+    id: 'drive',
+    name: 'Drive',
+    description: 'Cloud storage.',
+    url: 'https://drive.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Storage'],
+    icon: 'GoogleDrive',
+    toolbar: true,
+    color: '#1FA463'
+  },
+  {
+    id: 'docs',
+    name: 'Docs',
+    description: 'Documents.',
+    url: 'https://docs.google.com/create',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Writing'],
+    icon: 'FileText',
+    toolbar: true,
+    color: '#4285F4'
+  },
+  {
+    id: 'sheets',
+    name: 'Sheets',
+    description: 'Spreadsheets.',
+    url: 'https://sheets.google.com/create',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Data'],
+    icon: 'LayoutGrid',
+    toolbar: true,
+    color: '#0F9D58'
+  },
+  {
+    id: 'keep',
+    name: 'Keep',
+    description: 'Notes & Lists.',
+    url: 'https://keep.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Notes'],
+    icon: 'FileText',
+    toolbar: true,
+    color: '#F4B400'
+  },
+  {
+    id: 'calendar',
+    name: 'Calendar',
+    description: 'Schedule.',
+    url: 'https://calendar.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Time'],
+    icon: 'Calendar',
+    toolbar: true,
+    color: '#4285F4'
+  },
+  {
+    id: 'meet',
+    name: 'Meet',
+    description: 'Video calls.',
+    url: 'https://meet.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Calls'],
+    icon: 'Video',
+    toolbar: true,
+    color: '#00AC47'
+  },
+  {
+    id: 'mail',
+    name: 'Gmail',
+    description: 'Email.',
+    url: 'https://mail.google.com/',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Comm'],
+    icon: 'Mail',
+    toolbar: true,
+    color: '#EA4335'
+  },
+  {
+    id: 'fonts',
+    name: 'Fonts',
+    description: 'Typography.',
+    url: 'https://fonts.google.com/',
+    category: ToolCategory.PLATFORM,
+    tags: ['Design'],
+    icon: 'Type',
+    color: '#EA4335'
+  },
+  {
+    id: 'domains',
+    name: 'Domains',
+    description: 'DNS Management.',
+    url: 'https://domains.google/',
+    category: ToolCategory.PLATFORM,
+    tags: ['Web'],
+    icon: 'Globe',
+    color: '#666'
+  }
+];
