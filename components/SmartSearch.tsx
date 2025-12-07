@@ -78,8 +78,11 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
     };
 
     try {
-      // Use process.env.API_KEY directly as per instructions
-      const apiKey = process.env.API_KEY;
+      // Safely access API key, fallback if process is undefined
+      let apiKey = "";
+      if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+        apiKey = process.env.API_KEY;
+      }
       
       // 1. Check if API Key exists
       if (!apiKey || apiKey.trim() === '') {
