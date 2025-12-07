@@ -7,7 +7,11 @@ import { DynamicIcon } from '../components/Icons';
 import { Github, Code2, Server, Terminal, Search, Network, Rocket, Bot } from 'lucide-react';
 import { SmartSearch } from '../components/SmartSearch';
 
-export const BuildSystems: React.FC = () => {
+interface BuildSystemsProps {
+    onLearn?: (id: string) => void;
+}
+
+export const BuildSystems: React.FC<BuildSystemsProps> = ({ onLearn }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [researchResult, setResearchResult] = useState<ResearchResult | null>(null);
   const [activeDockTab, setActiveDockTab] = useState('CODE');
@@ -185,7 +189,7 @@ export const BuildSystems: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {openSourceTools.map(tool => (
-                                <ToolCard key={tool.id} tool={tool} />
+                                <ToolCard key={tool.id} tool={tool} onLearn={onLearn} />
                             ))}
                         </div>
                     </div>
@@ -205,7 +209,7 @@ export const BuildSystems: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {freemiumTools.map(tool => (
-                                <ToolCard key={tool.id} tool={tool} />
+                                <ToolCard key={tool.id} tool={tool} onLearn={onLearn} />
                             ))}
                         </div>
                     </div>
@@ -225,7 +229,7 @@ export const BuildSystems: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {paidTools.map(tool => (
-                                <ToolCard key={tool.id} tool={tool} />
+                                <ToolCard key={tool.id} tool={tool} onLearn={onLearn} />
                             ))}
                         </div>
                     </div>

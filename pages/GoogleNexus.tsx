@@ -9,9 +9,10 @@ import { SmartSearch } from '../components/SmartSearch';
 
 interface GoogleNexusProps {
   onNavigate: (page: any) => void;
+  onLearn?: (id: string) => void;
 }
 
-export const GoogleNexus: React.FC<GoogleNexusProps> = () => {
+export const GoogleNexus: React.FC<GoogleNexusProps> = ({ onNavigate, onLearn }) => {
   const [activeCategory, setActiveCategory] = useState<ToolCategory>(ToolCategory.ALL);
   const [activeDockTab, setActiveDockTab] = useState('DREAM');
   const [searchQuery, setSearchQuery] = useState('');
@@ -221,7 +222,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {featuredTools.map((tool) => (
                 <div key={`featured-${tool.id}`} className="md:col-span-1">
-                  <ToolCard tool={tool} />
+                  <ToolCard tool={tool} onLearn={onLearn} />
                 </div>
               ))}
             </div>
@@ -260,7 +261,7 @@ export const GoogleNexus: React.FC<GoogleNexusProps> = () => {
                 {filteredTools
                     .filter(t => searchQuery || researchResult ? true : (!showFeaturedSection || !t.featured))
                     .map((tool) => (
-                    <ToolCard key={tool.id} tool={tool} />
+                    <ToolCard key={tool.id} tool={tool} onLearn={onLearn} />
                 ))}
               </div>
             </>

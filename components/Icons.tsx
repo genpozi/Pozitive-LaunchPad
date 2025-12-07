@@ -56,7 +56,10 @@ import {
   ArrowUpRight,
   Lightbulb,
   Video as VideoIcon,
-  Mic
+  Mic,
+  Twitter,
+  Linkedin,
+  PlayCircle
 } from 'lucide-react';
 import { IconMap } from '../types';
 
@@ -291,6 +294,9 @@ export const Icons: IconMap = {
   Lightbulb,
   VideoIcon,
   Mic,
+  Twitter,
+  Linkedin,
+  PlayCircle,
   // Brand Icons Mapped
   GoogleG,
   GoogleGemini,

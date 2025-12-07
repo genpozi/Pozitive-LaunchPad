@@ -41,15 +41,52 @@ export interface Tool {
   color?: string; // Hex color for accent
   pricing?: PricingModel;
   toolbar?: boolean; // If true, appears in the Quick Access Dock
+  learnAppId?: string; // If present, enables the Learn/Launch split button
 }
 
 export type IconMap = {
   [key: string]: React.ElementType;
 };
 
-export type Page = 'GOOGLE_NEXUS' | 'DESIGN_SYSTEMS' | 'BUILD_SYSTEMS';
+export type Page = 'GOOGLE_NEXUS' | 'DESIGN_SYSTEMS' | 'BUILD_SYSTEMS' | 'LEARN_APP';
 
 export interface ResearchResult {
   advice: string;
   toolIds: string[];
+}
+
+// --- Learning Hub Interfaces ---
+
+export interface Creator {
+  name: string;
+  focus: string;
+  description: string;
+  platform: 'YouTube' | 'Medium' | 'Blog' | 'Social';
+  url?: string;
+}
+
+export interface VideoResource {
+  title: string;
+  channel: string;
+  description: string;
+  url?: string;
+  duration?: string;
+}
+
+export interface ArticleResource {
+  title: string;
+  source: string;
+  description: string;
+  url: string;
+}
+
+export interface LearningHubData {
+  toolId: string;
+  tagline: string;
+  overview: string;
+  useCases: string[];
+  creators: Creator[];
+  videos: VideoResource[];
+  articles: ArticleResource[];
+  communities: ArticleResource[];
 }

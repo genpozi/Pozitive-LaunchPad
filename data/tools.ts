@@ -82,19 +82,21 @@ export const toolsData: Tool[] = [
     icon: 'GoogleGemini',
     featured: true,
     toolbar: true,
+    learnAppId: 'aistudio',
     color: '#4285F4'
   },
   {
     id: 'stitch',
     name: 'Stitch',
-    description: 'Rapid prototyping environment for sewing together AI models and services.',
+    description: 'AI-powered UI designer. Convert sketches to code, export to Figma, and prototype apps rapidly.',
     url: 'https://stitch.withgoogle.com/',
     category: ToolCategory.DEV_LAB,
-    tags: ['Prototyping', 'No-Code', 'Experimental'],
+    tags: ['UI/UX', 'Figma', 'Code Gen'],
     icon: 'Workflow',
     featured: true,
     isNew: true,
     toolbar: true,
+    learnAppId: 'stitch',
     color: '#FF6F00'
   },
   {
@@ -149,13 +151,14 @@ export const toolsData: Tool[] = [
   {
     id: 'opal',
     name: 'Opal',
-    description: 'Next-generation access and resource management for high-performance AI infrastructure.',
+    description: 'No-code AI app builder. Chain prompts, models, and tools into powerful workflows.',
     url: 'https://opal.google/landing/',
     category: ToolCategory.DEV_LAB,
-    tags: ['Infra', 'Tools', 'New'],
+    tags: ['No-Code', 'Builder', 'Workflow'],
     icon: 'Gem',
     toolbar: true,
     isNew: true,
+    learnAppId: 'opal',
     color: '#9C27B0'
   },
   {
@@ -204,6 +207,7 @@ export const toolsData: Tool[] = [
     featured: true,
     isNew: true,
     toolbar: true,
+    learnAppId: 'notebooklm',
     color: '#34A853'
   },
   {
@@ -359,6 +363,7 @@ export const toolsData: Tool[] = [
     tags: ['Notes'],
     icon: 'Lightbulb',
     toolbar: true,
+    learnAppId: 'keep',
     color: '#F4B400'
   },
   {
