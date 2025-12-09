@@ -1,6 +1,256 @@
 import { LearningHubData } from '../types';
 
 export const learningResourcesData: Record<string, LearningHubData> = {
+  // --- IMAGEFX ---
+  'imagefx': {
+    toolId: 'imagefx',
+    tagline: 'Photorealistic Creation with Imagen 3',
+    overview: 'ImageFX allows you to generate high-quality images with simple text prompts. Powered by Imagen 3, it introduces "expressive chips" that let you quickly iterate on creative ideas by swapping out keywords without rewriting the whole prompt.',
+    useCases: [
+      'Rapid concept art generation',
+      'Creating photorealistic marketing assets',
+      'Exploring visual styles with expressive chips',
+      'High-fidelity texture generation for 3D'
+    ],
+    creators: [
+      {
+        name: 'Google Design',
+        focus: 'Tips',
+        description: 'Official tips on using expressive chips effectively.',
+        platform: 'Social',
+        url: 'https://twitter.com/GoogleDesign'
+      },
+      {
+        name: 'AI Art Community',
+        focus: 'Prompting',
+        description: 'Deep dives into the specific keywords Imagen 3 responds to.',
+        platform: 'Social',
+        url: '#'
+      }
+    ],
+    videos: [
+      {
+        title: 'ImageFX: A new way to create images',
+        channel: 'Google',
+        description: 'Official introduction to the interface and capabilities.',
+        duration: '01:45'
+      }
+    ],
+    articles: [
+      {
+        title: 'Imagen 3 Research Paper',
+        source: 'Google DeepMind',
+        description: 'Understanding the diffusion model behind the tool.',
+        url: 'https://deepmind.google/technologies/imagen-3/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/GoogleAI',
+        source: 'Reddit',
+        description: 'Sharing creations and prompts.',
+        url: 'https://www.reddit.com/r/GoogleAI/'
+      }
+    ]
+  },
+
+  // --- TEXTFX ---
+  'textfx': {
+    toolId: 'textfx',
+    tagline: 'AI Tools for Rappers & Writers',
+    overview: 'TextFX is an AI experiment designed with Lupe Fiasco. It uses large language models to help writers explore creative possibilities with tools like Simile, Explode, Unexpect, and Chain, breaking through writer\'s block.',
+    useCases: [
+      'Generating complex rhyme schemes',
+      'Breaking down words into phonetic components',
+      'Creating unexpected metaphors and similes',
+      'Brainstorming conceptual associations'
+    ],
+    creators: [
+      {
+        name: 'Lupe Fiasco',
+        focus: 'Creative Process',
+        description: 'Demonstrating how he uses the tool for lyricism.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/watch?v=EqLdZtF1A34'
+      }
+    ],
+    videos: [
+      {
+        title: 'Lupe Fiasco & Google: TextFX',
+        channel: 'Google',
+        description: 'The philosophy behind AI as a tool for rap.',
+        duration: '04:20'
+      }
+    ],
+    articles: [
+      {
+        title: 'TextFX: AI for Wordplay',
+        source: 'Google Blog',
+        description: 'How the 10 tools were designed for lyricists.',
+        url: 'https://blog.google/technology/ai/textfx-lupe-fiasco-google-lab-sessions/'
+      }
+    ],
+    communities: [
+      {
+        title: 'HipHopHeads',
+        source: 'Reddit',
+        description: 'Discussions on AI\'s role in lyric writing.',
+        url: 'https://www.reddit.com/r/hiphopheads/'
+      }
+    ]
+  },
+
+  // --- MUSICFX ---
+  'musicfx': {
+    toolId: 'musicfx',
+    tagline: 'Turn Text into Music',
+    overview: 'MusicFX allows you to generate original musical loops and tracks using the MusicLM model. It\'s designed for creators who want to experiment with sound, generate backing tracks, or explore new genres by combining disparate descriptions.',
+    useCases: [
+      'Generating royalty-free backing tracks',
+      'Brainstorming melodies from abstract emotions',
+      'Creating seamless loops for video content',
+      'Exploring genre fusion (e.g., "Jazz-Trap")'
+    ],
+    creators: [
+      {
+        name: 'Google Arts & Culture',
+        focus: 'Experiments',
+        description: 'Artists pushing the boundaries of AI music.',
+        platform: 'YouTube',
+        url: 'https://artsandculture.google.com/'
+      }
+    ],
+    videos: [
+      {
+        title: 'MusicFX: Create music with AI',
+        channel: 'Google',
+        description: 'Overview of the DJ mode and text-to-music features.',
+        duration: '01:30'
+      }
+    ],
+    articles: [
+      {
+        title: 'MusicLM: Generating Music From Text',
+        source: 'Google Research',
+        description: 'The research behind high-fidelity music generation.',
+        url: 'https://google-research.github.io/seanet/musiclm/examples/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/MusicProduction',
+        source: 'Reddit',
+        description: 'Debating the use of AI tools in production workflows.',
+        url: 'https://www.reddit.com/r/musicproduction/'
+      }
+    ]
+  },
+
+  // --- VIDEOFX ---
+  'videofx': {
+    toolId: 'videofx',
+    tagline: 'Dream it. Stream it.',
+    overview: 'VideoFX is the playground for Google\'s Veo model. It allows users to generate 1080p video clips from text prompts, offering a glimpse into the future of generative filmmaking with controls for cinematic style and camera movement.',
+    useCases: [
+      'Storyboarding complex scenes rapidly',
+      'Generating abstract motion graphics',
+      'Testing cinematic lighting setups',
+      'Creating social media video assets'
+    ],
+    creators: [
+      {
+        name: 'CuriousRefuge',
+        focus: 'AI Filmmaking',
+        description: 'Tutorials on using generative video for storytelling.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@CuriousRefuge'
+      }
+    ],
+    videos: [
+      {
+        title: 'VideoFX powered by Veo',
+        channel: 'Google Labs',
+        description: 'Demo of the interface and prompt adherence.',
+        duration: '02:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Veo: Generative Video Model',
+        source: 'DeepMind',
+        description: 'Technical details on the model powering VideoFX.',
+        url: 'https://deepmind.google/technologies/veo/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/aivideo',
+        source: 'Reddit',
+        description: 'Sharing generations and prompting tips.',
+        url: 'https://www.reddit.com/r/aivideo/'
+      }
+    ]
+  },
+
+  // --- GENIE ---
+  'genie': {
+    toolId: 'genie',
+    tagline: 'Generative Interactive Environments',
+    overview: 'Genie is a foundation model from Google DeepMind that can generate an endless variety of playable (action-controllable) worlds from image prompts or even sketches. It learns to control characters without any labels, effectively dreaming up games.',
+    useCases: [
+      'Prototyping 2D platformer levels instantly',
+      'Training generalist AI agents in diverse worlds',
+      'Converting sketches into playable interactive demos',
+      'Research into unsupervised learning of dynamics'
+    ],
+    creators: [
+      {
+        name: 'Tim Rocktäschel',
+        focus: 'Research Lead',
+        description: 'Explaining the path from video to playable world.',
+        platform: 'Social',
+        url: 'https://twitter.com/_rockt'
+      },
+      {
+        name: 'Two Minute Papers',
+        focus: 'Analysis',
+        description: 'Breaking down the "Genie" paper for the public.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@TwoMinutePapers'
+      }
+    ],
+    videos: [
+      {
+        title: 'Genie: Generative Interactive Environments',
+        channel: 'Google DeepMind',
+        description: 'The official research reveal video.',
+        duration: '02:50'
+      },
+      {
+        title: 'Google\'s Genie AI Explained',
+        channel: 'AI Explained',
+        description: 'Deep dive into the implications for game dev.',
+        duration: '12:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'Genie Research Blog',
+        source: 'Google DeepMind',
+        description: 'Full technical breakdown of the 11B parameter model.',
+        url: 'https://deepmind.google/discover/blog/genie-generative-interactive-environments/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/MachineLearning',
+        source: 'Reddit',
+        description: 'Technical discussion on the ST-Transformer architecture.',
+        url: 'https://www.reddit.com/r/MachineLearning/'
+      }
+    ]
+  },
+
   // --- ANTIGRAVITY ---
   'antigravity': {
     toolId: 'antigravity',
@@ -326,6 +576,440 @@ export const learningResourcesData: Record<string, LearningHubData> = {
         source: 'Reddit',
         description: 'Speculation and discussion on Astra\'s public release.',
         url: 'https://www.reddit.com/r/GoogleGemini/'
+      }
+    ]
+  },
+
+  // --- VEO ---
+  'veo': {
+    toolId: 'veo',
+    tagline: 'Generative Video for the Future of Cinema',
+    overview: 'Veo is Google\'s most capable generative video model, designed to capture the nuance of cinematic language. It generates high-quality, 1080p+ video with consistent physics, understanding commands like "timelapse" or "aerial shot".',
+    useCases: [
+      'High-fidelity storyboard visualization',
+      'Generating stock footage replacements',
+      'Creative filmmaking & music video production',
+      'Consistent character animation experimentation'
+    ],
+    creators: [
+      {
+        name: 'Runway/Pika Experts',
+        focus: 'Comparison',
+        description: 'Creators comparing Veo against SOTA models like Gen-3 Alpha.',
+        platform: 'YouTube',
+        url: '#'
+      },
+      {
+        name: 'DeepMind Researchers',
+        focus: 'Technical',
+        description: 'The team behind the latent diffusion architecture.',
+        platform: 'Blog',
+        url: 'https://deepmind.google/technologies/veo/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Introducing Veo',
+        channel: 'Google DeepMind',
+        description: 'Official launch video showcasing cinematic capabilities.',
+        duration: '02:30'
+      },
+      {
+        title: 'Veo vs. Sora: The Battle for AI Video',
+        channel: 'AI Explained',
+        description: 'Deep dive comparison of physics and prompt adherence.',
+        duration: '15:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Veo Research Paper',
+        source: 'DeepMind',
+        description: 'Technical details on the generative video architecture.',
+        url: 'https://deepmind.google/technologies/veo/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/StableDiffusion',
+        source: 'Reddit',
+        description: 'Discussions on generative video tech and open alternatives.',
+        url: 'https://www.reddit.com/r/StableDiffusion/'
+      }
+    ]
+  },
+
+  // --- PROJECT JULES ---
+  'project-jules': {
+    toolId: 'project-jules',
+    tagline: 'Your AI Coding Companion',
+    overview: 'Project Jules is an experimental AI code agent designed to collaborate with you on complex software projects. It integrates deeply with your repository to understand context, suggest refactors, and even write PR descriptions.',
+    useCases: [
+      'Automated code reviews & refactoring',
+      'Understanding legacy codebases instantly',
+      'Generating unit tests based on implementation',
+      'Context-aware pair programming'
+    ],
+    creators: [
+      {
+        name: 'Google Labs',
+        focus: 'Official Demos',
+        description: 'Showcases of Jules operating within VS Code and GitHub.',
+        platform: 'YouTube',
+        url: 'https://labs.google/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Project Jules: The Future of Coding',
+        channel: 'Google Labs',
+        description: 'Demo of the agent handling a multi-file refactor.',
+        duration: '04:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'Join the Jules Waitlist',
+        source: 'Google Labs',
+        description: 'Sign up for early access to the experimental agent.',
+        url: 'https://labs.google/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Google Developers',
+        source: 'Discord',
+        description: 'Channels dedicated to experimental AI coding tools.',
+        url: '#'
+      }
+    ]
+  },
+
+  // --- MIXBOARD ---
+  'mixboard': {
+    toolId: 'mixboard',
+    tagline: 'The AI Music Whiteboard',
+    overview: 'Mixboard is a research prototype that reimagines the music mixing interface. It allows you to drag, drop, and "mash up" tracks on a 2D canvas, with AI handling the beat-matching, key shifting, and seamless transitions.',
+    useCases: [
+      'Rapid prototyping of DJ sets',
+      'Creative mashups of disparate genres',
+      'Visualizing music structure and arrangement',
+      'Educational tool for understanding mixing'
+    ],
+    creators: [
+      {
+        name: 'Google Research',
+        focus: 'Innovation',
+        description: 'The researchers bridging HCI and Music Information Retrieval.',
+        platform: 'Blog',
+        url: 'https://research.google/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Mixboard: Helping Robots and Humans Mix Music',
+        channel: 'Google Research',
+        description: 'Demonstration of the infinite canvas interface.',
+        duration: '03:50'
+      }
+    ],
+    articles: [
+      {
+        title: 'Mixboard Blog Post',
+        source: 'Google Research',
+        description: 'Deep dive into the underlying tempo-matching algorithms.',
+        url: 'https://research.google/blog/mixboard-helping-robots-and-humans-mix-music/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/DJs',
+        source: 'Reddit',
+        description: 'Discussions on the future of AI in live performance.',
+        url: 'https://www.reddit.com/r/DJs/'
+      }
+    ]
+  },
+
+  // --- MUSIC AI SANDBOX ---
+  'music-sandbox': {
+    toolId: 'music-sandbox',
+    tagline: 'Experimental Music Creation with Lyria',
+    overview: 'The Music AI Sandbox is a suite of tools built on Google\'s most advanced music model, Lyria. It allows artists to generate high-fidelity instrumental loops, transform audio styles, and compose new ideas from simple hums or text.',
+    useCases: [
+      'Generating royalty-free samples for production',
+      'Style transfer: Turning a hum into a saxophone',
+      'Exploring new genres and soundscapes',
+      'Collaborative AI jamming'
+    ],
+    creators: [
+      {
+        name: 'Marc Rebillet',
+        focus: 'Demo',
+        description: 'Renowned loop artist testing the limits of the Sandbox.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@MarcRebillet'
+      },
+      {
+        name: 'Google Arts & Culture',
+        focus: 'Experiments',
+        description: 'Showcasing artist collaborations with Lyria.',
+        platform: 'Blog',
+        url: 'https://artsandculture.google.com/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Music AI Sandbox with Marc Rebillet',
+        channel: 'Google',
+        description: 'Watch Marc build a track live using AI-generated stems.',
+        duration: '02:45'
+      }
+    ],
+    articles: [
+      {
+        title: 'Transforming the Future of Music Creation',
+        source: 'Google Blog',
+        description: 'Announcement of the Lyria model and YouTube Shorts integration.',
+        url: 'https://blog.google/technology/ai/google-deepmind-lyria-model-youtube-shorts/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/MusicProduction',
+        source: 'Reddit',
+        description: 'Debates on the role of generative AI in music.',
+        url: 'https://www.reddit.com/r/musicproduction/'
+      }
+    ]
+  },
+
+  // --- GEMINI GEMS ---
+  'gemini-gems': {
+    toolId: 'gemini-gems',
+    tagline: 'Custom AI Experts for Any Task',
+    overview: 'Gemini Gems allow you to customize Gemini into your own personal experts on any topic. By providing specific instructions, you can create a "Coding Partner", "Creative Writing Coach", or "Fitness Trainer" that remembers your preferences.',
+    useCases: [
+      'Creating a specialized coding debugger',
+      'Building a consistent brand voice editor',
+      'Personalized learning tutors for specific subjects',
+      'Role-playing scenarios for interview prep'
+    ],
+    creators: [
+      {
+        name: 'The AI Advantage',
+        focus: 'Prompt Engineering',
+        description: 'Tutorials on structuring system instructions for Gems.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@TheAIAdvantage'
+      },
+      {
+        name: 'Google Workspace',
+        focus: 'Productivity',
+        description: 'Official examples of Gems for project management.',
+        platform: 'Blog',
+        url: 'https://workspace.google.com/blog'
+      }
+    ],
+    videos: [
+      {
+        title: 'How to Create Custom Gemini Gems',
+        channel: 'Google',
+        description: 'Step-by-step guide to building and saving your own Gem.',
+        duration: '04:20'
+      }
+    ],
+    articles: [
+      {
+        title: 'Introducing Gemini Gems',
+        source: 'Google Blog',
+        description: 'Overview of the feature and starter templates.',
+        url: 'https://blog.google/products/gemini/gemini-gems/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/Bard',
+        source: 'Reddit',
+        description: 'Sharing custom Gem prompts and use cases.',
+        url: 'https://www.reddit.com/r/Bard/'
+      }
+    ]
+  },
+
+  // --- GOOGLE EARTH ---
+  'google-earth': {
+    toolId: 'google-earth',
+    tagline: 'The World\'s Most Detailed Globe',
+    overview: 'Google Earth has evolved into a powerful storytelling and visualization platform. With new creation tools, 3D tiles, and timelapse features, it is an essential tool for researchers, educators, and journalists to visualize geospatial data.',
+    useCases: [
+      'Creating guided tours of historical sites',
+      'Visualizing climate change with Timelapse',
+      'Planning travel or logistics with 3D terrain',
+      'Educational storytelling in the classroom'
+    ],
+    creators: [
+      {
+        name: 'Google Earth Outreach',
+        focus: 'Storytelling',
+        description: 'Helping non-profits and storytellers use Earth tools.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@GoogleEarth'
+      },
+      {
+        name: 'Get Lost in the World',
+        focus: 'Exploration',
+        description: 'Discovering hidden gems and anomalies on the globe.',
+        platform: 'YouTube',
+        url: '#'
+      }
+    ],
+    videos: [
+      {
+        title: 'Google Earth Timelapse: A perspective of time',
+        channel: 'Google Earth',
+        description: 'Showcasing 40 years of planetary change.',
+        duration: '02:15'
+      },
+      {
+        title: 'How to create a project in Google Earth',
+        channel: 'Google Earth',
+        description: 'Tutorial on building your own guided tours.',
+        duration: '06:40'
+      }
+    ],
+    articles: [
+      {
+        title: 'Google Earth Help',
+        source: 'Support',
+        description: 'Guide to keyboard shortcuts and creation tools.',
+        url: 'https://support.google.com/earth'
+      }
+    ],
+    communities: [
+      {
+        title: 'Google Earth Community',
+        source: 'Forum',
+        description: 'Sharing KMZ files and discoveries.',
+        url: 'https://productforums.google.com/forum/#!forum/gec'
+      }
+    ]
+  },
+
+  // --- TENSORFLOW ---
+  'tensorflow': {
+    toolId: 'tensorflow',
+    tagline: 'End-to-End Machine Learning Platform',
+    overview: 'TensorFlow is the open-source machine learning platform that powers much of Google\'s AI. From research models to production deployment on edge devices with TensorFlow Lite, it is the comprehensive ecosystem for building ML applications.',
+    useCases: [
+      'Training deep learning models from scratch',
+      'Deploying models to mobile (iOS/Android)',
+      'Running ML in the browser with TensorFlow.js',
+      'Production MLOps with TFX'
+    ],
+    creators: [
+      {
+        name: 'Sentdex',
+        focus: 'Python ML',
+        description: 'Legendary tutorials on Neural Networks and TensorFlow.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@sentdex'
+      },
+      {
+        name: 'TensorFlow Official',
+        focus: 'Updates',
+        description: 'News on Keras integration and new APIs.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@TensorFlow'
+      },
+      {
+        name: 'Jason Brownlee',
+        focus: 'Mastery',
+        description: 'Machine Learning Mastery blog for deep technical guides.',
+        platform: 'Blog',
+        url: 'https://machinelearningmastery.com/'
+      }
+    ],
+    videos: [
+      {
+        title: 'TensorFlow in 10 Minutes',
+        channel: 'TensorFlow',
+        description: 'Quick overview of the ecosystem components.',
+        duration: '10:00'
+      },
+      {
+        title: 'Deep Learning with Python and TensorFlow',
+        channel: 'Sentdex',
+        description: 'The definitive getting started series.',
+        duration: '25:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'TensorFlow Documentation',
+        source: 'Official',
+        description: 'API references and tutorials for beginners to experts.',
+        url: 'https://www.tensorflow.org/learn'
+      },
+      {
+        title: 'Keras: The Python Deep Learning API',
+        source: 'Keras',
+        description: 'Guide to the high-level API used within TensorFlow.',
+        url: 'https://keras.io/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/tensorflow',
+        source: 'Reddit',
+        description: 'Technical support and project showcases.',
+        url: 'https://www.reddit.com/r/tensorflow/'
+      }
+    ]
+  },
+
+  // --- CODE WIKI ---
+  'codewiki': {
+    toolId: 'codewiki',
+    tagline: 'The Engineering Knowledge Base',
+    overview: 'Code Wiki acts as the central nervous system for engineering standards. It consolidates design patterns, API style guides, and AI coding best practices into a single, searchable source of truth for high-performance development.',
+    useCases: [
+      'Standardizing API design across teams',
+      'Learning Google-scale engineering patterns',
+      'Accessing AI-assisted coding guidelines',
+      'Onboarding new engineers to the stack'
+    ],
+    creators: [
+      {
+        name: 'Google Engineering',
+        focus: 'Standards',
+        description: 'Authors of the "Software Engineering at Google" book.',
+        platform: 'Book',
+        url: 'https://abseil.io/resources/swe-book'
+      }
+    ],
+    videos: [
+      {
+        title: 'Software Engineering at Google',
+        channel: 'Google TechTalks',
+        description: 'Talks on the culture of documentation and code quality.',
+        duration: '45:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Google Style Guides',
+        source: 'GitHub',
+        description: 'Public version of the legendary internal style guides.',
+        url: 'https://google.github.io/styleguide/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Hacker News',
+        source: 'YCombinator',
+        description: 'Discussions on engineering culture and practices.',
+        url: 'https://news.ycombinator.com/'
       }
     ]
   },

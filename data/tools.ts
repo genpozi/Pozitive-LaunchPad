@@ -13,6 +13,7 @@ export const toolsData: Tool[] = [
     featured: true,
     isNew: true,
     toolbar: true,
+    learnAppId: 'imagefx',
     color: '#FFD700'
   },
   {
@@ -25,6 +26,7 @@ export const toolsData: Tool[] = [
     icon: 'Palette',
     featured: true,
     toolbar: true,
+    learnAppId: 'textfx',
     color: '#F25C05'
   },
   {
@@ -36,7 +38,31 @@ export const toolsData: Tool[] = [
     tags: ['Audio', 'Music', 'Labs'],
     icon: 'Music',
     toolbar: true,
+    learnAppId: 'musicfx',
     color: '#FF6B6B'
+  },
+  {
+    id: 'music-sandbox',
+    name: 'Music AI Sandbox',
+    description: 'A suite of experimental AI music tools featuring the Lyria model. Compose and transform audio.',
+    url: 'https://www.youtube.com/watch?v=Fj2Fq5X_zYc', // Placeholder or demo link as it's often limited access
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Music', 'Lyria', 'Experimental'],
+    icon: 'Disc',
+    isNew: true,
+    learnAppId: 'music-sandbox',
+    color: '#FF4081'
+  },
+  {
+    id: 'mixboard',
+    name: 'Mixboard',
+    description: 'An AI-powered music whiteboard that helps you mix and mash up tracks effortlessly.',
+    url: 'https://research.google/blog/mixboard-helping-robots-and-humans-mix-music/',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Music', 'Mixing', 'Research'],
+    icon: 'Sliders',
+    learnAppId: 'mixboard',
+    color: '#00BCD4'
   },
   {
     id: 'videofx',
@@ -48,6 +74,7 @@ export const toolsData: Tool[] = [
     icon: 'Video',
     isNew: true,
     toolbar: true,
+    learnAppId: 'videofx',
     color: '#4ECDC4'
   },
   {
@@ -59,6 +86,18 @@ export const toolsData: Tool[] = [
     tags: ['3D', 'Animation', 'Geo'],
     icon: 'Globe',
     color: '#4285F4'
+  },
+  {
+    id: 'google-earth',
+    name: 'Google Earth',
+    description: 'The world\'s most detailed globe. Now with advanced 3D and creation tools.',
+    url: 'https://earth.google.com/web/',
+    category: ToolCategory.CREATIVE_STUDIO,
+    tags: ['Geo', '3D', 'Exploration'],
+    icon: 'Globe',
+    toolbar: true,
+    learnAppId: 'google-earth',
+    color: '#34A853'
   },
   {
     id: 'arts-culture-experiments',
@@ -98,6 +137,18 @@ export const toolsData: Tool[] = [
     toolbar: true,
     learnAppId: 'antigravity',
     color: '#8AB4F8'
+  },
+  {
+    id: 'project-jules',
+    name: 'Project Jules',
+    description: 'An experimental AI code agent that helps you write, debug, and understand code.',
+    url: 'https://labs.google/', // Placeholder as Jules is often internal/waitlist
+    category: ToolCategory.DEV_LAB,
+    tags: ['Code', 'Agent', 'Experimental'],
+    icon: 'Bot',
+    isNew: true,
+    learnAppId: 'project-jules',
+    color: '#9C27B0'
   },
   {
     id: 'stitch',
@@ -160,6 +211,7 @@ export const toolsData: Tool[] = [
     icon: 'BookOpen',
     toolbar: true,
     isNew: true,
+    learnAppId: 'codewiki',
     color: '#34A853'
   },
   {
@@ -270,6 +322,31 @@ export const toolsData: Tool[] = [
 
   // --- MODELS & FRAMEWORKS ---
   {
+    id: 'veo',
+    name: 'Veo',
+    description: 'Google\'s most capable generative video model. Available via VideoFX or Vertex AI.',
+    url: 'https://deepmind.google/technologies/veo/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Model', 'Video', 'SOTA'],
+    icon: 'Video',
+    featured: true,
+    isNew: true,
+    learnAppId: 'veo',
+    color: '#4ECDC4'
+  },
+  {
+    id: 'genie',
+    name: 'Genie',
+    description: 'Generative Interactive Environments. AI that learns to create playable worlds from video.',
+    url: 'https://deepmind.google/technologies/genie/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['World Model', 'Gaming', 'Research'],
+    icon: 'Gamepad2',
+    isNew: true,
+    learnAppId: 'genie',
+    color: '#9C27B0'
+  },
+  {
     id: 'project-astra',
     name: 'Project Astra',
     description: 'Google\'s universal AI assistant prototype. Multimodal, real-time, and context-aware.',
@@ -293,6 +370,17 @@ export const toolsData: Tool[] = [
     icon: 'Box',
     featured: true,
     color: '#4285F4'
+  },
+  {
+    id: 'tensorflow',
+    name: 'TensorFlow',
+    description: 'An end-to-end machine learning platform. Build and deploy ML models anywhere.',
+    url: 'https://www.tensorflow.org/',
+    category: ToolCategory.MODELS_FRAMEWORKS,
+    tags: ['Framework', 'ML', 'Flow'],
+    icon: 'Cpu',
+    learnAppId: 'tensorflow',
+    color: '#FF6F00'
   },
   {
     id: 'jax',
@@ -348,6 +436,18 @@ export const toolsData: Tool[] = [
     featured: true,
     toolbar: true,
     color: '#4285F4'
+  },
+  {
+    id: 'gemini-gems',
+    name: 'Gemini Gems',
+    description: 'Create custom versions of Gemini for specific topics or tasks. Your personalized experts.',
+    url: 'https://gemini.google.com/gems',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Custom', 'Experts', 'Personal'],
+    icon: 'Gem',
+    isNew: true,
+    learnAppId: 'gemini-gems',
+    color: '#E040FB'
   },
   {
     id: 'google-vids',

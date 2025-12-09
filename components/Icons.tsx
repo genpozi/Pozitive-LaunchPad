@@ -59,7 +59,10 @@ import {
   Mic,
   Twitter,
   Linkedin,
-  PlayCircle
+  PlayCircle,
+  Sliders,
+  Disc,
+  Gamepad2
 } from 'lucide-react';
 import { IconMap } from '../types';
 
@@ -297,6 +300,9 @@ export const Icons: IconMap = {
   Twitter,
   Linkedin,
   PlayCircle,
+  Sliders,
+  Disc,
+  Gamepad2,
   // Brand Icons Mapped
   GoogleG,
   GoogleGemini,

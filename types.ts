@@ -71,7 +71,7 @@ export interface Creator {
   name: string;
   focus: string;
   description: string;
-  platform: 'YouTube' | 'Medium' | 'Blog' | 'Social';
+  platform: 'YouTube' | 'Medium' | 'Blog' | 'Social' | 'Book';
   url?: string;
 }
 

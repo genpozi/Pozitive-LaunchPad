@@ -4,12 +4,13 @@ import { DesignSystems } from './pages/DesignSystems';
 import { BuildSystems } from './pages/BuildSystems';
 import { LearnApp } from './pages/LearnApp';
 import { Page } from './types';
-import { Sparkles, Palette, Code2 } from 'lucide-react';
+import { Sparkles, Palette, Code2, Menu, X, ChevronRight, LayoutGrid } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('GOOGLE_SYSTEMS');
   const [learnToolId, setLearnToolId] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -23,13 +24,38 @@ const App: React.FC = () => {
   const handleLearn = (toolId: string) => {
     setLearnToolId(toolId);
     setCurrentPage('LEARN_APP');
+    setIsNavOpen(false);
     window.scrollTo(0,0);
   };
 
+  const handleNavigate = (page: Page) => {
+      setCurrentPage(page);
+      setIsNavOpen(false);
+      window.scrollTo(0,0);
+  };
+
   const navItems = [
-    { id: 'GOOGLE_SYSTEMS' as Page, label: 'Google Systems', icon: Sparkles },
-    { id: 'DESIGN_SYSTEMS' as Page, label: 'Design', icon: Palette },
-    { id: 'BUILD_SYSTEMS' as Page, label: 'Build', icon: Code2 },
+    { 
+        id: 'GOOGLE_SYSTEMS' as Page, 
+        label: 'Google Tools', 
+        description: 'Ecosystem & Workspace',
+        icon: Sparkles,
+        color: 'text-google-blue' 
+    },
+    { 
+        id: 'DESIGN_SYSTEMS' as Page, 
+        label: 'Design Systems', 
+        description: 'Generative UI & FX',
+        icon: Palette,
+        color: 'text-pink-400' 
+    },
+    { 
+        id: 'BUILD_SYSTEMS' as Page, 
+        label: 'Build Systems', 
+        description: 'Engineering & Agents',
+        icon: Code2,
+        color: 'text-emerald-400' 
+    },
   ];
 
   // If showing Learn App, render full screen page without standard nav
@@ -40,14 +66,12 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen relative overflow-x-hidden selection:bg-google-blue/30 selection:text-white bg-[#050505]">
       
-      {/* Desktop & Tablet Navigation Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-black/80 backdrop-blur-xl border-white/10 py-3' : 'bg-transparent py-4 md:py-6'}`}>
+      {/* --- Header (Logo Only) --- */}
+      <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-black/80 backdrop-blur-xl border-white/10 py-3' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          
-          {/* Logo */}
           <div 
             className="flex items-center gap-3 cursor-pointer group" 
-            onClick={() => setCurrentPage('GOOGLE_SYSTEMS')}
+            onClick={() => handleNavigate('GOOGLE_SYSTEMS')}
           >
              <div className="p-2 bg-gradient-to-br from-google-blue to-purple-600 rounded-lg shadow-lg shadow-google-blue/20 group-hover:rotate-12 transition-transform duration-300">
                 <Sparkles className="text-white" size={20} />
@@ -58,61 +82,93 @@ const App: React.FC = () => {
                </h1>
              </div>
           </div>
-
-          {/* Desktop Nav Pills */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5">
-             {navItems.map((item) => (
-                <button 
-                  key={item.id}
-                  onClick={() => setCurrentPage(item.id)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${currentPage === item.id ? 'bg-white text-black shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
-                >
-                  <item.icon size={14} />
-                  <span>{item.label}</span>
-                </button>
-             ))}
-          </nav>
         </div>
       </header>
 
-      {/* Main Page Content - Added padding bottom for mobile nav */}
-      <main className="pt-24 pb-24 md:pb-0 min-h-screen">
-         {currentPage === 'GOOGLE_SYSTEMS' && <GoogleSystems onNavigate={setCurrentPage} onLearn={handleLearn} />}
+      {/* --- Floating Navigation Trigger --- */}
+      <button 
+        onClick={() => setIsNavOpen(true)}
+        className={`fixed top-24 left-6 z-40 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md text-white shadow-2xl transition-all duration-300 hover:scale-110 group ${isNavOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+        aria-label="Open Navigation"
+      >
+        <Menu size={24} className="group-hover:text-google-blue transition-colors" />
+      </button>
+
+      {/* --- Slide-Out Navigation Drawer --- */}
+      <div className={`fixed inset-0 z-50 transition-all duration-500 ${isNavOpen ? 'visible' : 'invisible'}`}>
+        
+        {/* Backdrop */}
+        <div 
+            className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isNavOpen ? 'opacity-100' : 'opacity-0'}`}
+            onClick={() => setIsNavOpen(false)}
+        />
+
+        {/* Panel */}
+        <div className={`absolute top-0 left-0 h-full w-80 bg-[#0a0a0a] border-r border-white/10 shadow-2xl transform transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            
+            {/* Drawer Header */}
+            <div className="p-6 flex items-center justify-between border-b border-white/5">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500">Navigation</h2>
+                <button 
+                    onClick={() => setIsNavOpen(false)}
+                    className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+                >
+                    <X size={20} />
+                </button>
+            </div>
+
+            {/* Navigation Items */}
+            <div className="p-4 space-y-2">
+                {navItems.map((item) => (
+                    <button
+                        key={item.id}
+                        onClick={() => handleNavigate(item.id)}
+                        className={`w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 group ${
+                            currentPage === item.id 
+                            ? 'bg-white/5 border border-white/10 shadow-lg' 
+                            : 'hover:bg-white/5 border border-transparent'
+                        }`}
+                    >
+                        <div className={`p-3 rounded-lg bg-black/40 ${currentPage === item.id ? item.color : 'text-gray-400 group-hover:text-white'}`}>
+                            <item.icon size={20} />
+                        </div>
+                        <div className="text-left">
+                            <h3 className={`font-bold text-base ${currentPage === item.id ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                                {item.label}
+                            </h3>
+                            <p className="text-xs text-gray-600 group-hover:text-gray-500">{item.description}</p>
+                        </div>
+                        {currentPage === item.id && (
+                            <ChevronRight size={16} className="ml-auto text-white/20" />
+                        )}
+                    </button>
+                ))}
+            </div>
+
+            {/* Quick Actions / Footer */}
+            <div className="absolute bottom-0 left-0 w-full p-6 border-t border-white/5">
+                 <div className="p-4 rounded-xl bg-gradient-to-br from-google-blue/10 to-purple-600/10 border border-white/5">
+                    <div className="flex items-center gap-3 mb-2">
+                        <LayoutGrid size={18} className="text-google-blue" />
+                        <span className="font-bold text-white text-sm">Quick Actions</span>
+                    </div>
+                    <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                        Use <strong>Command + K</strong> (concept) to search across all tools instantly.
+                    </p>
+                 </div>
+                 <div className="mt-6 text-center">
+                    <p className="text-[10px] text-gray-600 uppercase tracking-widest">v3.2.0 • Pozitive AI</p>
+                 </div>
+            </div>
+        </div>
+      </div>
+
+      {/* --- Main Page Content --- */}
+      <main className="pt-24 min-h-screen transition-all duration-500">
+         {currentPage === 'GOOGLE_SYSTEMS' && <GoogleSystems onNavigate={handleNavigate} onLearn={handleLearn} />}
          {currentPage === 'DESIGN_SYSTEMS' && <DesignSystems onLearn={handleLearn} />}
          {currentPage === 'BUILD_SYSTEMS' && <BuildSystems onLearn={handleLearn} />}
       </main>
-
-      {/* Mobile Bottom Navigation Bar */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-xl border-t border-white/10 pb-safe pt-2 px-6">
-        <div className="flex justify-around items-center h-16">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setCurrentPage(item.id)}
-              className="flex flex-col items-center gap-1 w-full"
-            >
-              <div className={`p-1.5 rounded-full transition-all duration-300 ${currentPage === item.id ? 'bg-white text-black' : 'text-gray-500'}`}>
-                <item.icon size={20} />
-              </div>
-              <span className={`text-[10px] font-medium tracking-wide ${currentPage === item.id ? 'text-white' : 'text-gray-500'}`}>
-                {item.label}
-              </span>
-            </button>
-          ))}
-        </div>
-      </nav>
-
-      {/* Footer (Hidden on mobile to avoid clutter above nav bar) */}
-      <footer className="relative z-10 border-t border-white/5 py-12 bg-black/50 hidden md:block">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 text-sm">
-            Interactive Resource Directory. Not affiliated with Google.
-          </p>
-          <div className="flex gap-6">
-            <span className="text-gray-600 text-sm">v3.1.0</span>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
