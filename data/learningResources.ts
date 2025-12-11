@@ -1,1140 +1,872 @@
 import { LearningHubData } from '../types';
 
 export const learningResourcesData: Record<string, LearningHubData> = {
-  // --- IMAGEFX ---
-  'imagefx': {
-    toolId: 'imagefx',
-    tagline: 'Photorealistic Creation with Imagen 3',
-    overview: 'ImageFX allows you to generate high-quality images with simple text prompts. Powered by Imagen 3, it introduces "expressive chips" that let you quickly iterate on creative ideas by swapping out keywords without rewriting the whole prompt.',
+  // --- LOVABLE ---
+  'lovable': {
+    toolId: 'lovable',
+    tagline: 'Idea to App in Minutes',
+    overview: 'Lovable is a next-generation AI coding platform often called "GPT Engineer." It allows you to build full-stack web applications by simply chatting. Unlike standard code assistants, Lovable handles the entire project structure, dependency management, and deployment, making it possible to ship real apps without touching an IDE.',
     useCases: [
-      'Rapid concept art generation',
-      'Creating photorealistic marketing assets',
-      'Exploring visual styles with expressive chips',
-      'High-fidelity texture generation for 3D'
+      'Building MVP SaaS platforms in hours',
+      'Creating internal tools and dashboards',
+      'Rapidly prototyping UI/UX concepts',
+      'Fixing bugs through conversational debugging'
+    ],
+    tips: [
+        "Mention 'Supabase' in your prompt to auto-configure a backend database + auth.",
+        "Upload a screenshot of a UI you like and ask Lovable to 'clone this design'.",
+        "Use the 'Deploy' button early to get a live URL for testing on mobile devices.",
+        "If a feature fails, ask Lovable to 'add logging' to debug the issue."
     ],
     creators: [
       {
-        name: 'Google Design',
-        focus: 'Tips',
-        description: 'Official tips on using expressive chips effectively.',
-        platform: 'Social',
-        url: 'https://twitter.com/GoogleDesign'
-      },
-      {
-        name: 'AI Art Community',
-        focus: 'Prompting',
-        description: 'Deep dives into the specific keywords Imagen 3 responds to.',
-        platform: 'Social',
-        url: '#'
-      }
-    ],
-    videos: [
-      {
-        title: 'ImageFX: A new way to create images',
-        channel: 'Google',
-        description: 'Official introduction to the interface and capabilities.',
-        duration: '01:45'
-      }
-    ],
-    articles: [
-      {
-        title: 'Imagen 3 Research Paper',
-        source: 'Google DeepMind',
-        description: 'Understanding the diffusion model behind the tool.',
-        url: 'https://deepmind.google/technologies/imagen-3/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/GoogleAI',
-        source: 'Reddit',
-        description: 'Sharing creations and prompts.',
-        url: 'https://www.reddit.com/r/GoogleAI/'
-      }
-    ]
-  },
-
-  // --- TEXTFX ---
-  'textfx': {
-    toolId: 'textfx',
-    tagline: 'AI Tools for Rappers & Writers',
-    overview: 'TextFX is an AI experiment designed with Lupe Fiasco. It uses large language models to help writers explore creative possibilities with tools like Simile, Explode, Unexpect, and Chain, breaking through writer\'s block.',
-    useCases: [
-      'Generating complex rhyme schemes',
-      'Breaking down words into phonetic components',
-      'Creating unexpected metaphors and similes',
-      'Brainstorming conceptual associations'
-    ],
-    creators: [
-      {
-        name: 'Lupe Fiasco',
-        focus: 'Creative Process',
-        description: 'Demonstrating how he uses the tool for lyricism.',
+        name: 'Lovable Team',
+        focus: 'Official Demos',
+        description: 'Showcasing complex apps built with Lovable.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/watch?v=EqLdZtF1A34'
+        url: 'https://lovable.dev/'
       }
     ],
     videos: [
       {
-        title: 'Lupe Fiasco & Google: TextFX',
-        channel: 'Google',
-        description: 'The philosophy behind AI as a tool for rap.',
-        duration: '04:20'
+        title: 'Building a SaaS with Lovable',
+        channel: 'Lovable',
+        description: 'From blank canvas to deployed application.',
+        duration: '10:30'
       }
     ],
     articles: [
       {
-        title: 'TextFX: AI for Wordplay',
-        source: 'Google Blog',
-        description: 'How the 10 tools were designed for lyricists.',
-        url: 'https://blog.google/technology/ai/textfx-lupe-fiasco-google-lab-sessions/'
-      }
-    ],
-    communities: [
-      {
-        title: 'HipHopHeads',
-        source: 'Reddit',
-        description: 'Discussions on AI\'s role in lyric writing.',
-        url: 'https://www.reddit.com/r/hiphopheads/'
-      }
-    ]
-  },
-
-  // --- MUSICFX ---
-  'musicfx': {
-    toolId: 'musicfx',
-    tagline: 'Turn Text into Music',
-    overview: 'MusicFX allows you to generate original musical loops and tracks using the MusicLM model. It\'s designed for creators who want to experiment with sound, generate backing tracks, or explore new genres by combining disparate descriptions.',
-    useCases: [
-      'Generating royalty-free backing tracks',
-      'Brainstorming melodies from abstract emotions',
-      'Creating seamless loops for video content',
-      'Exploring genre fusion (e.g., "Jazz-Trap")'
-    ],
-    creators: [
-      {
-        name: 'Google Arts & Culture',
-        focus: 'Experiments',
-        description: 'Artists pushing the boundaries of AI music.',
-        platform: 'YouTube',
-        url: 'https://artsandculture.google.com/'
-      }
-    ],
-    videos: [
-      {
-        title: 'MusicFX: Create music with AI',
-        channel: 'Google',
-        description: 'Overview of the DJ mode and text-to-music features.',
-        duration: '01:30'
-      }
-    ],
-    articles: [
-      {
-        title: 'MusicLM: Generating Music From Text',
-        source: 'Google Research',
-        description: 'The research behind high-fidelity music generation.',
-        url: 'https://google-research.github.io/seanet/musiclm/examples/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/MusicProduction',
-        source: 'Reddit',
-        description: 'Debating the use of AI tools in production workflows.',
-        url: 'https://www.reddit.com/r/musicproduction/'
-      }
-    ]
-  },
-
-  // --- VIDEOFX ---
-  'videofx': {
-    toolId: 'videofx',
-    tagline: 'Dream it. Stream it.',
-    overview: 'VideoFX is the playground for Google\'s Veo model. It allows users to generate 1080p video clips from text prompts, offering a glimpse into the future of generative filmmaking with controls for cinematic style and camera movement.',
-    useCases: [
-      'Storyboarding complex scenes rapidly',
-      'Generating abstract motion graphics',
-      'Testing cinematic lighting setups',
-      'Creating social media video assets'
-    ],
-    creators: [
-      {
-        name: 'CuriousRefuge',
-        focus: 'AI Filmmaking',
-        description: 'Tutorials on using generative video for storytelling.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@CuriousRefuge'
-      }
-    ],
-    videos: [
-      {
-        title: 'VideoFX powered by Veo',
-        channel: 'Google Labs',
-        description: 'Demo of the interface and prompt adherence.',
-        duration: '02:00'
-      }
-    ],
-    articles: [
-      {
-        title: 'Veo: Generative Video Model',
-        source: 'DeepMind',
-        description: 'Technical details on the model powering VideoFX.',
-        url: 'https://deepmind.google/technologies/veo/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/aivideo',
-        source: 'Reddit',
-        description: 'Sharing generations and prompting tips.',
-        url: 'https://www.reddit.com/r/aivideo/'
-      }
-    ]
-  },
-
-  // --- GENIE ---
-  'genie': {
-    toolId: 'genie',
-    tagline: 'Generative Interactive Environments',
-    overview: 'Genie is a foundation model from Google DeepMind that can generate an endless variety of playable (action-controllable) worlds from image prompts or even sketches. It learns to control characters without any labels, effectively dreaming up games.',
-    useCases: [
-      'Prototyping 2D platformer levels instantly',
-      'Training generalist AI agents in diverse worlds',
-      'Converting sketches into playable interactive demos',
-      'Research into unsupervised learning of dynamics'
-    ],
-    creators: [
-      {
-        name: 'Tim Rocktäschel',
-        focus: 'Research Lead',
-        description: 'Explaining the path from video to playable world.',
-        platform: 'Social',
-        url: 'https://twitter.com/_rockt'
-      },
-      {
-        name: 'Two Minute Papers',
-        focus: 'Analysis',
-        description: 'Breaking down the "Genie" paper for the public.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@TwoMinutePapers'
-      }
-    ],
-    videos: [
-      {
-        title: 'Genie: Generative Interactive Environments',
-        channel: 'Google DeepMind',
-        description: 'The official research reveal video.',
-        duration: '02:50'
-      },
-      {
-        title: 'Google\'s Genie AI Explained',
-        channel: 'AI Explained',
-        description: 'Deep dive into the implications for game dev.',
-        duration: '12:15'
-      }
-    ],
-    articles: [
-      {
-        title: 'Genie Research Blog',
-        source: 'Google DeepMind',
-        description: 'Full technical breakdown of the 11B parameter model.',
-        url: 'https://deepmind.google/discover/blog/genie-generative-interactive-environments/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/MachineLearning',
-        source: 'Reddit',
-        description: 'Technical discussion on the ST-Transformer architecture.',
-        url: 'https://www.reddit.com/r/MachineLearning/'
-      }
-    ]
-  },
-
-  // --- ANTIGRAVITY ---
-  'antigravity': {
-    toolId: 'antigravity',
-    tagline: 'The Agent-First Development Platform',
-    overview: 'Google Antigravity is an experimental, agent-first development platform where you define the goal, and AI agents autonomously plan, execute, and verify the work. It moves beyond chat to execution, handling complex multi-step workflows with built-in reasoning loops.',
-    useCases: [
-      'Building autonomous research & data agents',
-      'Automating complex, multi-step business logic',
-      'Visual agent orchestration without code',
-      'Self-verifying code generation & execution'
-    ],
-    creators: [
-      {
-        name: 'Romin Irani',
-        focus: 'Quickstarts',
-        description: 'Detailed guides on the Agent-First Interface and verification loops.',
-        platform: 'Medium',
-        url: 'https://medium.com/'
-      },
-      {
-        name: 'Thomas Chong',
-        focus: 'Visual Builder',
-        description: 'Tutorials on designing complex flows with the Visual Agent Builder.',
-        platform: 'Medium',
-        url: '#'
-      },
-      {
-        name: 'Execute Automation',
-        focus: 'Business Logic',
-        description: 'Real-world examples of automating support tickets and scheduling.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'Google Developers',
-        focus: 'Official',
-        description: 'Core concepts: Planning, Execution, Verification.',
-        platform: 'Blog',
-        url: 'https://developers.googleblog.com/'
-      },
-      {
-        name: 'The AI Strategist',
-        focus: 'Debugging',
-        description: 'Advanced strategies for ensuring agent reliability.',
-        platform: 'Blog',
-        url: '#'
-      }
-    ],
-    videos: [
-      {
-        title: 'Tutorial: Getting Started with Antigravity',
-        channel: 'Romin Irani',
-        description: 'Step-by-step: Creating your first agent and defining goals.',
-        duration: '12:15'
-      },
-      {
-        title: 'The AI Platform That Codes Itself',
-        channel: 'Automation Tech',
-        description: 'Building an autonomous social media research agent.',
-        duration: '14:40'
-      },
-      {
-        title: 'Antigravity vs. Project Astra',
-        channel: 'Deep Dive',
-        description: 'When to use the Dev Platform vs. the Assistant.',
-        duration: '09:30'
-      },
-      {
-        title: 'Antigravity and Gemini: Autonomous Workflows',
-        channel: 'Google Developers',
-        description: 'Technical deep dive into the reasoning engine.',
-        duration: '22:10'
-      },
-      {
-        title: 'Visual Agent Builder Walkthrough',
-        channel: 'Thomas Chong',
-        description: 'Designing non-linear flows visually.',
-        duration: '11:05'
-      }
-    ],
-    articles: [
-      {
-        title: 'Antigravity Landing Page',
+        title: 'Lovable Documentation',
         source: 'Official',
-        description: 'Access the preview environment and core docs.',
-        url: 'https://antigravity.google/'
-      },
-      {
-        title: 'New Agent-First Interface',
-        source: 'Google Blog',
-        description: 'Understanding the shift from prompt-based to goal-based AI.',
-        url: '#'
-      },
-      {
-        title: 'Debugging Failed Agent Runs',
-        source: 'Dev Forum',
-        description: 'How to analyze verification logs for robust agents.',
-        url: '#'
-      },
-      {
-        title: 'Gemini API Agentic Sections',
-        source: 'Docs',
-        description: 'Underlying framework for tools and function calling.',
-        url: 'https://ai.google.dev/'
+        description: 'Guide to integrations and custom domains.',
+        url: 'https://docs.lovable.dev/'
       }
     ],
     communities: [
       {
-        title: 'Google Cloud Community',
-        source: 'Official Forum',
-        description: 'Active discussions on Antigravity and Vertex AI Agents.',
-        url: 'https://www.googlecloudcommunity.com/'
+        title: 'Lovable Discord',
+        source: 'Discord',
+        description: 'Share your builds and get help from the team.',
+        url: 'https://discord.gg/lovable'
       }
     ]
   },
 
-  // --- GOOGLE VIDS ---
-  'google-vids': {
-    toolId: 'google-vids',
-    tagline: 'AI-Powered Video Creation for Work',
-    overview: 'Google Vids is an AI-powered video creation app for work. It sits alongside Docs, Sheets, and Slides, allowing you to generate professional video drafts—scripts, voiceovers, and stock media—from simple prompts or existing Drive documents.',
+  // --- CURSOR ---
+  'cursor': {
+    toolId: 'cursor',
+    tagline: 'The AI-First Code Editor',
+    overview: 'Cursor is a fork of VS Code designed for pair-programming with AI. It features "Tab" (auto-complete on steroids), "Composer" (multi-file editing), and a chat interface that understands your entire codebase. It is widely considered the best AI coding experience available.',
     useCases: [
-      'Turning meeting notes into executive video recaps',
-      'Creating scalable employee training & onboarding',
-      'Generating sales pitches from product briefs',
-      'Rapid internal communication updates'
+      'Refactoring entire modules with natural language',
+      'Fixing linting errors automatically',
+      'Understanding complex legacy codebases',
+      'Writing documentation based on code context'
+    ],
+    tips: [
+        "Use 'Cmd+K' (or Ctrl+K) to generate or edit code in-place.",
+        "Type '@Codebase' in chat to force Cursor to scan your entire project context.",
+        "Use 'Composer' (Cmd+I) to edit multiple files simultaneously for big refactors.",
+        "Add a '.cursorrules' file to your root to teach the AI your specific coding style."
     ],
     creators: [
       {
-        name: 'TeacherCast',
-        focus: 'Education',
-        description: 'Creating PD content and welcome messages for schools.',
-        platform: 'YouTube',
-        url: 'https://www.teachercast.net/'
+        name: 'Greg Isenberg',
+        focus: 'Productivity',
+        description: 'How Cursor changes the economics of coding.',
+        platform: 'Social',
+        url: 'https://twitter.com/gregisenberg'
       },
       {
-        name: 'Workspace Learning',
-        focus: 'Official',
-        description: 'Step-by-step guides on templates and script editing.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'Horst Web Design',
-        focus: 'Editing',
-        description: 'Detailed tutorials on the timeline and object animation.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'New Creator Economy',
-        focus: 'Business',
-        description: 'Repurposing Docs and Slides into dynamic video assets.',
-        platform: 'Blog',
-        url: '#'
+        name: 'Sahil Lavingia',
+        focus: 'Indie Dev',
+        description: 'Building Gumroad features with Cursor.',
+        platform: 'Social',
+        url: 'https://twitter.com/shl'
       }
     ],
     videos: [
       {
-        title: 'How to Use Google Vids: Step-by-Step',
-        channel: 'Horst Web Design',
-        description: 'From script generation to exporting MP4s with Veo 3.',
+        title: 'Cursor Composer: The Future of Coding',
+        channel: 'Fireship',
+        description: 'Deep dive into the multi-file editing capabilities.',
+        duration: '08:45'
+      },
+      {
+        title: 'How to Master Cursor AI',
+        channel: 'Tech With Tim',
+        description: 'Setting up custom rules and keyboard shortcuts.',
         duration: '15:20'
-      },
-      {
-        title: 'Google Vids for Teachers',
-        channel: 'TeacherCast',
-        description: 'Scaling instructional coaching with AI video.',
-        duration: '12:45'
-      },
-      {
-        title: 'Create your first video in Google Vids',
-        channel: 'Workspace Learning',
-        description: 'Official guide on "Help me create" and media replacement.',
-        duration: '08:30'
-      },
-      {
-        title: 'Executive Recap: Notes to Video in 5 Min',
-        channel: 'Workflow Demo',
-        description: 'Real-time demo of converting a Doc to a video summary.',
-        duration: '05:55'
-      },
-      {
-        title: 'Generating Clips with Veo inside Vids',
-        channel: 'Official Demo',
-        description: 'Using the generative video features within the timeline.',
-        duration: '04:20'
       }
     ],
     articles: [
       {
-        title: 'Google Vids Help Center',
-        source: 'Google Workspace',
-        description: 'The central hub for features and troubleshooting.',
-        url: 'https://support.google.com/'
-      },
-      {
-        title: 'Using Templates for Brand Consistency',
-        source: 'Tutorial',
-        description: 'Applying corporate themes and colors automatically.',
-        url: '#'
-      },
-      {
-        title: 'Collaboration in Vids',
-        source: 'Guide',
-        description: 'How to comment, share, and edit together in real-time.',
-        url: '#'
+        title: 'Cursor Features Guide',
+        source: 'Official',
+        description: 'Documentation on privacy mode and codebase indexing.',
+        url: 'https://cursor.sh/features'
       }
     ],
     communities: [
       {
-        title: 'Google Workspace Community',
-        source: 'Forum',
-        description: 'Discussions on enterprise adoption and custom templates.',
-        url: 'https://www.googlecloudcommunity.com/'
+        title: 'r/cursor',
+        source: 'Reddit',
+        description: 'Tips, tricks, and prompt strategies.',
+        url: 'https://www.reddit.com/r/cursor/'
       }
     ]
   },
 
-  // --- PROJECT ASTRA ---
-  'project-astra': {
-    toolId: 'project-astra',
-    tagline: 'The Future of Universal Assistants',
-    overview: 'Project Astra is Google DeepMind\'s vision for a universal AI agent. It processes multimodal inputs (video, audio, text) in real-time with ultra-low latency, capable of "seeing" your world, remembering context, and taking proactive action.',
+  // --- WINDSURF ---
+  'windsurf': {
+    toolId: 'windsurf',
+    tagline: 'The First Agentic IDE',
+    overview: 'Windsurf by Codeium is an "Agentic IDE" that goes beyond autocomplete. It introduces "Flows," where the AI can independently explore your codebase, reason about architecture, and perform complex multi-step refactors while keeping you in the loop.',
     useCases: [
-      'Real-time visual assistance (identifying objects)',
-      'Context-aware memory (finding misplaced items)',
-      'Hands-free complex task guidance (coding, repair)',
-      'Accessibility aid for blind/low-vision users'
+      'Deep context-aware code generation',
+      'Agentic refactoring of large systems',
+      'Intelligent terminal command execution',
+      'Seamless context switching between files'
+    ],
+    tips: [
+        "Hold 'Cmd+.' to toggle 'Cascade' view for inline agent suggestions.",
+        "Pin critical files to context by clicking the 'Chip' icon in the file explorer.",
+        "Use the 'Terminal' tab in Cascade to let the AI run tests and fix errors autonomously.",
+        "Ask Windsurf to 'Explain this flow' to generate architecture diagrams."
     ],
     creators: [
       {
-        name: 'Logan Kilpatrick',
-        focus: 'Hands-On Demos',
-        description: 'Real-world tests like brewing espresso or identifying parts.',
-        platform: 'Social',
-        url: 'https://twitter.com/'
-      },
-      {
-        name: 'Google DeepMind',
-        focus: 'Research',
-        description: 'The science behind multimodal memory and latency.',
+        name: 'Codeium',
+        focus: 'Official',
+        description: 'Developers of the underlying model.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/@GoogleDeepMind'
-      },
-      {
-        name: 'Kanerika',
-        focus: 'Business Apps',
-        description: 'Breakdowns of Action Intelligence in healthcare and enterprise.',
-        platform: 'Blog',
-        url: '#'
-      },
-      {
-        name: 'Android Police',
-        focus: 'Tech Analysis',
-        description: 'Deep dives into how the memory encoding works.',
-        platform: 'Blog',
-        url: 'https://www.androidpolice.com/'
-      },
-      {
-        name: 'Conor Grennan',
-        focus: 'Impressions',
-        description: 'First-hand accounts of the fluidity and speed.',
-        platform: 'Social',
-        url: 'https://www.linkedin.com/'
+        url: 'https://codeium.com/'
       }
     ],
     videos: [
       {
-        title: 'Astra: Real-Time Visual Assistance Demo',
-        channel: 'Google I/O',
-        description: 'The famous demo: drawing code, finding glasses, identifying speakers.',
-        duration: '03:45'
-      },
+        title: 'Windsurf vs Cursor: Which is better?',
+        channel: 'Builder.io',
+        description: 'A fair comparison of the two leading AI editors.',
+        duration: '12:15'
+      }
+    ],
+    articles: [
       {
-        title: 'Project Astra: Exploring a Universal Assistant',
-        channel: 'DeepMind',
-        description: 'Discussion on memory, latency, and future vision.',
-        duration: '18:20'
-      },
+        title: 'Introducing Windsurf',
+        source: 'Codeium Blog',
+        description: 'The philosophy behind agentic coding flows.',
+        url: 'https://codeium.com/blog/windsurf-launch'
+      }
+    ],
+    communities: [
       {
-        title: 'Using Astra to Brew Espresso',
-        channel: 'Logan Kilpatrick',
-        description: 'Step-by-step visual guidance and error correction.',
-        duration: '02:15'
-      },
+        title: 'Codeium Discord',
+        source: 'Discord',
+        description: 'Community for Windsurf and Codeium plugin users.',
+        url: 'https://discord.gg/codeium'
+      }
+    ]
+  },
+
+  // --- BOLT.NEW ---
+  'bolt-new': {
+    toolId: 'bolt-new',
+    tagline: 'Full-Stack Development in the Browser',
+    overview: 'Bolt.new allows you to prompt, run, edit, and deploy full-stack web applications directly in your browser. Powered by WebContainers, it requires no local environment setup, making it the fastest way to spin up a Next.js, Remix, or SvelteKit project.',
+    useCases: [
+      'Instant reproduction of bugs',
+      'Collaborative live coding sessions',
+      'Testing new frameworks without installation',
+      'Deploying prototypes to Netlify/Vercel instantly'
+    ],
+    tips: [
+        "Type 'Deploy to Netlify' to get a live URL in seconds.",
+        "Paste a screenshot of a dashboard and ask Bolt to 'make it functional with mock data'.",
+        "If the shell hangs, type 'Ctrl+C' in the terminal panel to kill the process.",
+        "Use 'fix the lint errors' as a follow-up prompt to clean up code."
+    ],
+    creators: [
       {
-        title: '8 Exciting Abilities of Project Astra',
-        channel: 'FavTutor',
-        description: 'List of high-value use cases like first aid and coding help.',
-        duration: '10:00'
-      },
+        name: 'StackBlitz',
+        focus: 'Official',
+        description: 'The team behind the WebContainer technology.',
+        platform: 'YouTube',
+        url: 'https://stackblitz.com/'
+      }
+    ],
+    videos: [
       {
-        title: 'Taking Astra for a Spin',
-        channel: 'Dave Demo',
-        description: 'Continuous conversation about physics and environment.',
+        title: 'Bolt.new: The AI Web Developer',
+        channel: 'Fireship',
+        description: 'Building a full app with database in minutes.',
         duration: '05:30'
       }
     ],
     articles: [
       {
-        title: 'Project Astra Official Page',
-        source: 'DeepMind',
-        description: 'The primary source for the vision and waitlist.',
-        url: 'https://deepmind.google/technologies/project-astra/'
-      },
-      {
-        title: 'The AI Assistant Revolution',
-        source: 'Impetus',
-        description: 'Analysis of visual guidance and multi-method interaction.',
-        url: '#'
-      },
-      {
-        title: 'Google AI Updates',
-        source: 'Blog',
-        description: 'News on Astra features coming to Gemini Live.',
-        url: 'https://blog.google/technology/ai/'
+        title: 'WebContainers API',
+        source: 'StackBlitz',
+        description: 'How Node.js runs inside the browser.',
+        url: 'https://webcontainers.io/'
       }
     ],
     communities: [
       {
-        title: 'r/GoogleGemini',
-        source: 'Reddit',
-        description: 'Speculation and discussion on Astra\'s public release.',
-        url: 'https://www.reddit.com/r/GoogleGemini/'
+        title: 'StackBlitz Discord',
+        source: 'Discord',
+        description: 'Discussion on Bolt and browser-based dev.',
+        url: 'https://discord.gg/stackblitz'
       }
     ]
   },
 
-  // --- VEO ---
-  'veo': {
-    toolId: 'veo',
-    tagline: 'Generative Video for the Future of Cinema',
-    overview: 'Veo is Google\'s most capable generative video model, designed to capture the nuance of cinematic language. It generates high-quality, 1080p+ video with consistent physics, understanding commands like "timelapse" or "aerial shot".',
+  // --- SUPABASE ---
+  'supabase': {
+    toolId: 'supabase',
+    tagline: 'The Open Source Firebase Alternative',
+    overview: 'Supabase is an open source Firebase alternative. It provides all the backend features you need to build a product: a Postgres database, Authentication, instant APIs, Edge Functions, and Realtime subscriptions. It is heavily optimized for AI with pgvector.',
     useCases: [
-      'High-fidelity storyboard visualization',
-      'Generating stock footage replacements',
-      'Creative filmmaking & music video production',
-      'Consistent character animation experimentation'
+      'Storing embeddings for RAG applications (pgvector)',
+      'Handling user authentication and row-level security',
+      'Listening to database changes in real-time',
+      'Running AI logic on Edge Functions'
+    ],
+    tips: [
+        "Enable Row Level Security (RLS) immediately. It is off by default on new tables.",
+        "Use 'pgvector' with 'hybrid_search' to combine keyword matching (BM25) with semantic search.",
+        "Generate TypeScript types automatically with 'supabase gen types typescript --project-id <id>'.",
+        "Use Storage RLS policies to securely serve user-generated images."
     ],
     creators: [
       {
-        name: 'Runway/Pika Experts',
-        focus: 'Comparison',
-        description: 'Creators comparing Veo against SOTA models like Gen-3 Alpha.',
+        name: 'Supabase Team',
+        focus: 'Engineering',
+        description: 'Deep dives into Postgres performance.',
         platform: 'YouTube',
-        url: '#'
+        url: 'https://www.youtube.com/@Supabase'
       },
       {
-        name: 'DeepMind Researchers',
-        focus: 'Technical',
-        description: 'The team behind the latent diffusion architecture.',
-        platform: 'Blog',
-        url: 'https://deepmind.google/technologies/veo/'
+        name: 'Ant Wilson',
+        focus: 'DevRel',
+        description: 'CTO of Supabase, sharing SQL tips.',
+        platform: 'Social',
+        url: 'https://twitter.com/AntWilson'
       }
     ],
     videos: [
       {
-        title: 'Introducing Veo',
-        channel: 'Google DeepMind',
-        description: 'Official launch video showcasing cinematic capabilities.',
-        duration: '02:30'
+        title: 'Supabase in 100 Seconds',
+        channel: 'Fireship',
+        description: 'Quick overview of the platform.',
+        duration: '01:50'
       },
       {
-        title: 'Veo vs. Sora: The Battle for AI Video',
-        channel: 'AI Explained',
-        description: 'Deep dive comparison of physics and prompt adherence.',
-        duration: '15:00'
+        title: 'Vector Embeddings with Supabase',
+        channel: 'Supabase',
+        description: 'Building a semantic search engine.',
+        duration: '14:20'
       }
     ],
     articles: [
       {
-        title: 'Veo Research Paper',
-        source: 'DeepMind',
-        description: 'Technical details on the generative video architecture.',
-        url: 'https://deepmind.google/technologies/veo/'
+        title: 'Supabase Documentation',
+        source: 'Official',
+        description: 'Guides on Auth, Database, and Edge Functions.',
+        url: 'https://supabase.com/docs'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/supabase',
+        source: 'Reddit',
+        description: 'Help with SQL queries and architecture.',
+        url: 'https://www.reddit.com/r/supabase/'
+      }
+    ]
+  },
+
+  // --- VERCEL AI SDK ---
+  'vercel-ai': {
+    toolId: 'vercel-ai',
+    tagline: 'Build AI-Powered User Interfaces',
+    overview: 'The Vercel AI SDK is the TypeScript library for building AI-powered user interfaces. It abstracts the complexity of streaming responses from LLMs (Gemini, OpenAI, Anthropic) to the frontend, offering hooks like `useChat` and `useCompletion` for seamless UX.',
+    useCases: [
+      'Building streaming chat interfaces',
+      'Generative UI (rendering React components from text)',
+      'Standardizing API calls across multiple LLM providers',
+      'Handling tool calling and function execution on the client'
+    ],
+    tips: [
+        "Use 'maxSteps: 5' in 'useChat' config to enable multi-step tool calls (agents).",
+        "Implement 'onFinish' callbacks to save chat history to your database after the stream ends.",
+        "Use 'streamObject' instead of 'streamText' to force structured JSON outputs for UI generation.",
+        "Use 'experimental_toolObj' to stream tool status updates to the UI."
+    ],
+    creators: [
+      {
+        name: 'Vercel',
+        focus: 'Official',
+        description: 'Announcements on Next.js integration.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@VercelHQ'
+      },
+      {
+        name: 'Jared Palmer',
+        focus: 'Engineering',
+        description: 'VP of AI at Vercel.',
+        platform: 'Social',
+        url: 'https://twitter.com/jaredpalmer'
+      }
+    ],
+    videos: [
+      {
+        title: 'Building Generative UI with Vercel AI SDK',
+        channel: 'Vercel',
+        description: 'How to stream React components from the server.',
+        duration: '22:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'AI SDK Documentation',
+        source: 'Vercel',
+        description: 'API reference for Core, React, and RSC.',
+        url: 'https://sdk.vercel.ai/docs'
+      }
+    ],
+    communities: [
+      {
+        title: 'Vercel Community',
+        source: 'Github',
+        description: 'Discussions and issue tracking.',
+        url: 'https://github.com/vercel/ai/discussions'
+      }
+    ]
+  },
+
+  // --- DOCKER ---
+  'docker': {
+    toolId: 'docker',
+    tagline: 'Accelerate How You Build, Share, and Run',
+    overview: 'Docker helps developers build, share, and run applications anywhere — without the "it works on my machine" headache. In the AI era, Docker is essential for packaging models, managing dependencies (CUDA, Python versions), and deploying to the cloud.',
+    useCases: [
+      'Containerizing Python AI applications',
+      'Managing complex microservices architectures',
+      'Ensuring consistent environments across Dev/Prod',
+      'Sharing reproducible research environments'
+    ],
+    tips: [
+        "Use multi-stage builds to keep your final image size small (e.g. build in one stage, copy artifacts to a slim runtime).",
+        "Use 'docker system prune' periodically to clear unused images and reclaim disk space.",
+        "Mount volumes with '-v' to persist database data or model weights across container restarts.",
+        "Use 'host' networking mode on Linux for lower latency in local AI inference."
+    ],
+    creators: [
+      {
+        name: 'Docker',
+        focus: 'Official',
+        description: 'Tutorials on Docker Desktop and Compose.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@Docker'
+      }
+    ],
+    videos: [
+      {
+        title: 'Docker for Beginners',
+        channel: 'TechWorld with Nana',
+        description: 'The definitive guide to containers.',
+        duration: '45:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Docker GenAI Stack',
+        source: 'Docker',
+        description: 'Pre-configured containers for LLM development.',
+        url: 'https://www.docker.com/products/ai-machine-learning/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/docker',
+        source: 'Reddit',
+        description: 'Troubleshooting networking and volume issues.',
+        url: 'https://www.reddit.com/r/docker/'
+      }
+    ]
+  },
+
+  // --- GROQ ---
+  'groq': {
+    toolId: 'groq',
+    tagline: 'Inference at the Speed of Thought',
+    overview: 'Groq is an AI infrastructure company that built the LPU (Language Processing Unit), a new type of processor designed specifically for LLM inference. It delivers unprecedented speed (500+ tokens/sec), enabling real-time voice and interactive AI experiences.',
+    useCases: [
+      'Real-time voice-to-voice agents',
+      'High-speed text generation for productivity',
+      'Serving open-source models (Llama 3, Mixtral) cheaply',
+      'Latency-sensitive RAG applications'
+    ],
+    tips: [
+        "Use 'llama3-70b-8192' for complex reasoning, but 'llama3-8b-8192' for raw speed.",
+        "Groq is OpenAI API compatible; just change the 'baseURL' and 'apiKey' in your existing code.",
+        "Keep system prompts concise; inference is so fast that network latency becomes the bottleneck.",
+        "Use the JSON mode to guarantee structured output for tool calling."
+    ],
+    creators: [
+      {
+        name: 'Groq',
+        focus: 'Official',
+        description: 'Demos of LPU performance.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@GroqInc'
+      }
+    ],
+    videos: [
+      {
+        title: 'Groq vs GPU: Why it\'s so fast',
+        channel: 'Asianometry',
+        description: 'Technical breakdown of the deterministic architecture.',
+        duration: '14:30'
+      }
+    ],
+    articles: [
+      {
+        title: 'Groq API Docs',
+        source: 'Official',
+        description: 'OpenAI-compatible API reference.',
+        url: 'https://console.groq.com/docs/quickstart'
+      }
+    ],
+    communities: [
+      {
+        title: 'Groq Discord',
+        source: 'Discord',
+        description: 'Chat with the engineers building the LPU.',
+        url: 'https://discord.gg/groq'
+      }
+    ]
+  },
+
+  // --- OLLAMA ---
+  'ollama': {
+    toolId: 'ollama',
+    tagline: 'Get Up and Running with Llama 3',
+    overview: 'Ollama is the easiest way to run open-source large language models locally. It bundles model weights, configuration, and data into a single package (Modelfile), allowing you to run powerful AI on your laptop via a simple CLI or API.',
+    useCases: [
+      'Running Llama 3, Phi 3, Mistral offline',
+      'Building private, local RAG applications',
+      'Testing models without API costs',
+      'Integrating local AI into desktop apps'
+    ],
+    tips: [
+        "Run 'ollama run llama3' to chat immediately in the terminal.",
+        "Create a 'Modelfile' to save custom system prompts (e.g. 'FROM llama3 SYSTEM \"You are Mario\"').",
+        "Use 'ollama serve' to expose a local REST API on port 11434.",
+        "Check 'ollama ps' to see which models are currently loaded in VRAM."
+    ],
+    creators: [
+      {
+        name: 'Matt Williams',
+        focus: 'Tutorials',
+        description: 'Deep dives into Ollama commands and Modelfiles.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@technovangelist'
+      }
+    ],
+    videos: [
+      {
+        title: 'Ollama Course for Beginners',
+        channel: 'NetworkChuck',
+        description: 'Running AI on a Raspberry Pi or Laptop.',
+        duration: '18:20'
+      }
+    ],
+    articles: [
+      {
+        title: 'Ollama Library',
+        source: 'Official',
+        description: 'Browse available models and tags.',
+        url: 'https://ollama.com/library'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/LocalLLaMA',
+        source: 'Reddit',
+        description: 'The home of local AI enthusiasts.',
+        url: 'https://www.reddit.com/r/LocalLLaMA/'
+      }
+    ]
+  },
+
+  // --- FLUX.1 ---
+  'flux-1': {
+    toolId: 'flux-1',
+    tagline: 'The New King of Open Source Image Gen',
+    overview: 'Flux.1 is a suite of text-to-image models by Black Forest Labs that defines a new state-of-the-art in image detail, prompt adherence, and style diversity. It comes in three variants: Pro (Closed), Dev (Open Weights), and Schnell (Fast/Distilled).',
+    useCases: [
+      'Generating photorealistic human portraits',
+      'Rendering complex text within images accurately',
+      'Creating consistent character sheets',
+      'High-speed generation for real-time apps (Schnell)'
+    ],
+    tips: [
+        "Use 'guidance_scale' between 2.0 and 3.5 for best results. Flux is sensitive.",
+        "For 8GB VRAM cards, use the 'Schnell' model or 'GGUF' quantized versions (Q4_K_S).",
+        "Flux understands natural language. Don't use 'masterpiece, best quality' tag salad; just describe the scene.",
+        "Use 'Realism' LoRAs at 0.6 strength to enhance skin texture without burning the image."
+    ],
+    creators: [
+      {
+        name: 'MattVidPro AI',
+        focus: 'News & Demos',
+        description: 'Comprehensive comparisons between Flux, Midjourney, and Ideogram.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@MattVidPro'
+      },
+      {
+        name: 'Black Forest Labs',
+        focus: 'Official',
+        description: 'The research team behind the model.',
+        platform: 'Website',
+        url: 'https://blackforestlabs.ai/'
+      }
+    ],
+    videos: [
+      {
+        title: 'FLUX.1 - The New King of AI Art?',
+        channel: 'MattVidPro AI',
+        description: 'Detailed analysis of prompt adherence and text capabilities.',
+        duration: '14:20'
+      },
+      {
+        title: 'How to Run Flux Locally (Easy Guide)',
+        channel: 'Aitrepreneur',
+        description: 'Step-by-step installation using Forge or ComfyUI.',
+        duration: '10:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'Flux.1 Hugging Face Repo',
+        source: 'Hugging Face',
+        description: 'Download the weights and view the model card.',
+        url: 'https://huggingface.co/black-forest-labs/FLUX.1-dev'
       }
     ],
     communities: [
       {
         title: 'r/StableDiffusion',
         source: 'Reddit',
-        description: 'Discussions on generative video tech and open alternatives.',
+        description: 'The main hub for Flux discussions and workflows.',
         url: 'https://www.reddit.com/r/StableDiffusion/'
       }
     ]
   },
 
-  // --- PROJECT JULES ---
-  'project-jules': {
-    toolId: 'project-jules',
-    tagline: 'Your AI Coding Companion',
-    overview: 'Project Jules is an experimental AI code agent designed to collaborate with you on complex software projects. It integrates deeply with your repository to understand context, suggest refactors, and even write PR descriptions.',
+  // --- MIDJOURNEY ---
+  'midjourney': {
+    toolId: 'midjourney',
+    tagline: 'The Gold Standard of AI Aesthetics',
+    overview: 'Midjourney is renowned for its artistic style and high-fidelity output. Operating primarily through Discord (and now a web alpha), it excels at abstract concepts, painting styles, and photorealism without complex prompt engineering.',
     useCases: [
-      'Automated code reviews & refactoring',
-      'Understanding legacy codebases instantly',
-      'Generating unit tests based on implementation',
-      'Context-aware pair programming'
+      'Concept art for games and movies',
+      'Editorial illustration and cover art',
+      'Style exploration with --sref (Style Reference)',
+      'Creating seamless textures and patterns'
+    ],
+    tips: [
+        "Use '--sref [url]' to transfer the style of any image to your prompt.",
+        "Use '--p' to apply your personalized style code (needs tuning first).",
+        "Use '--tile' to generate seamless repeating patterns.",
+        "Use '--cref [url]' to keep a character's face consistent across images."
     ],
     creators: [
       {
-        name: 'Google Labs',
-        focus: 'Official Demos',
-        description: 'Showcases of Jules operating within VS Code and GitHub.',
-        platform: 'YouTube',
-        url: 'https://labs.google/'
-      }
-    ],
-    videos: [
-      {
-        title: 'Project Jules: The Future of Coding',
-        channel: 'Google Labs',
-        description: 'Demo of the agent handling a multi-file refactor.',
-        duration: '04:15'
-      }
-    ],
-    articles: [
-      {
-        title: 'Join the Jules Waitlist',
-        source: 'Google Labs',
-        description: 'Sign up for early access to the experimental agent.',
-        url: 'https://labs.google/'
-      }
-    ],
-    communities: [
-      {
-        title: 'Google Developers',
-        source: 'Discord',
-        description: 'Channels dedicated to experimental AI coding tools.',
-        url: '#'
-      }
-    ]
-  },
-
-  // --- MIXBOARD ---
-  'mixboard': {
-    toolId: 'mixboard',
-    tagline: 'The AI Music Whiteboard',
-    overview: 'Mixboard is a research prototype that reimagines the music mixing interface. It allows you to drag, drop, and "mash up" tracks on a 2D canvas, with AI handling the beat-matching, key shifting, and seamless transitions.',
-    useCases: [
-      'Rapid prototyping of DJ sets',
-      'Creative mashups of disparate genres',
-      'Visualizing music structure and arrangement',
-      'Educational tool for understanding mixing'
-    ],
-    creators: [
-      {
-        name: 'Google Research',
-        focus: 'Innovation',
-        description: 'The researchers bridging HCI and Music Information Retrieval.',
-        platform: 'Blog',
-        url: 'https://research.google/'
-      }
-    ],
-    videos: [
-      {
-        title: 'Mixboard: Helping Robots and Humans Mix Music',
-        channel: 'Google Research',
-        description: 'Demonstration of the infinite canvas interface.',
-        duration: '03:50'
-      }
-    ],
-    articles: [
-      {
-        title: 'Mixboard Blog Post',
-        source: 'Google Research',
-        description: 'Deep dive into the underlying tempo-matching algorithms.',
-        url: 'https://research.google/blog/mixboard-helping-robots-and-humans-mix-music/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/DJs',
-        source: 'Reddit',
-        description: 'Discussions on the future of AI in live performance.',
-        url: 'https://www.reddit.com/r/DJs/'
-      }
-    ]
-  },
-
-  // --- MUSIC AI SANDBOX ---
-  'music-sandbox': {
-    toolId: 'music-sandbox',
-    tagline: 'Experimental Music Creation with Lyria',
-    overview: 'The Music AI Sandbox is a suite of tools built on Google\'s most advanced music model, Lyria. It allows artists to generate high-fidelity instrumental loops, transform audio styles, and compose new ideas from simple hums or text.',
-    useCases: [
-      'Generating royalty-free samples for production',
-      'Style transfer: Turning a hum into a saxophone',
-      'Exploring new genres and soundscapes',
-      'Collaborative AI jamming'
-    ],
-    creators: [
-      {
-        name: 'Marc Rebillet',
-        focus: 'Demo',
-        description: 'Renowned loop artist testing the limits of the Sandbox.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@MarcRebillet'
-      },
-      {
-        name: 'Google Arts & Culture',
-        focus: 'Experiments',
-        description: 'Showcasing artist collaborations with Lyria.',
-        platform: 'Blog',
-        url: 'https://artsandculture.google.com/'
-      }
-    ],
-    videos: [
-      {
-        title: 'Music AI Sandbox with Marc Rebillet',
-        channel: 'Google',
-        description: 'Watch Marc build a track live using AI-generated stems.',
-        duration: '02:45'
-      }
-    ],
-    articles: [
-      {
-        title: 'Transforming the Future of Music Creation',
-        source: 'Google Blog',
-        description: 'Announcement of the Lyria model and YouTube Shorts integration.',
-        url: 'https://blog.google/technology/ai/google-deepmind-lyria-model-youtube-shorts/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/MusicProduction',
-        source: 'Reddit',
-        description: 'Debates on the role of generative AI in music.',
-        url: 'https://www.reddit.com/r/musicproduction/'
-      }
-    ]
-  },
-
-  // --- GEMINI GEMS ---
-  'gemini-gems': {
-    toolId: 'gemini-gems',
-    tagline: 'Custom AI Experts for Any Task',
-    overview: 'Gemini Gems allow you to customize Gemini into your own personal experts on any topic. By providing specific instructions, you can create a "Coding Partner", "Creative Writing Coach", or "Fitness Trainer" that remembers your preferences.',
-    useCases: [
-      'Creating a specialized coding debugger',
-      'Building a consistent brand voice editor',
-      'Personalized learning tutors for specific subjects',
-      'Role-playing scenarios for interview prep'
-    ],
-    creators: [
-      {
-        name: 'The AI Advantage',
-        focus: 'Prompt Engineering',
-        description: 'Tutorials on structuring system instructions for Gems.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@TheAIAdvantage'
-      },
-      {
-        name: 'Google Workspace',
-        focus: 'Productivity',
-        description: 'Official examples of Gems for project management.',
-        platform: 'Blog',
-        url: 'https://workspace.google.com/blog'
-      }
-    ],
-    videos: [
-      {
-        title: 'How to Create Custom Gemini Gems',
-        channel: 'Google',
-        description: 'Step-by-step guide to building and saving your own Gem.',
-        duration: '04:20'
-      }
-    ],
-    articles: [
-      {
-        title: 'Introducing Gemini Gems',
-        source: 'Google Blog',
-        description: 'Overview of the feature and starter templates.',
-        url: 'https://blog.google/products/gemini/gemini-gems/'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/Bard',
-        source: 'Reddit',
-        description: 'Sharing custom Gem prompts and use cases.',
-        url: 'https://www.reddit.com/r/Bard/'
-      }
-    ]
-  },
-
-  // --- GOOGLE EARTH ---
-  'google-earth': {
-    toolId: 'google-earth',
-    tagline: 'The World\'s Most Detailed Globe',
-    overview: 'Google Earth has evolved into a powerful storytelling and visualization platform. With new creation tools, 3D tiles, and timelapse features, it is an essential tool for researchers, educators, and journalists to visualize geospatial data.',
-    useCases: [
-      'Creating guided tours of historical sites',
-      'Visualizing climate change with Timelapse',
-      'Planning travel or logistics with 3D terrain',
-      'Educational storytelling in the classroom'
-    ],
-    creators: [
-      {
-        name: 'Google Earth Outreach',
-        focus: 'Storytelling',
-        description: 'Helping non-profits and storytellers use Earth tools.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@GoogleEarth'
-      },
-      {
-        name: 'Get Lost in the World',
-        focus: 'Exploration',
-        description: 'Discovering hidden gems and anomalies on the globe.',
-        platform: 'YouTube',
-        url: '#'
-      }
-    ],
-    videos: [
-      {
-        title: 'Google Earth Timelapse: A perspective of time',
-        channel: 'Google Earth',
-        description: 'Showcasing 40 years of planetary change.',
-        duration: '02:15'
-      },
-      {
-        title: 'How to create a project in Google Earth',
-        channel: 'Google Earth',
-        description: 'Tutorial on building your own guided tours.',
-        duration: '06:40'
-      }
-    ],
-    articles: [
-      {
-        title: 'Google Earth Help',
-        source: 'Support',
-        description: 'Guide to keyboard shortcuts and creation tools.',
-        url: 'https://support.google.com/earth'
-      }
-    ],
-    communities: [
-      {
-        title: 'Google Earth Community',
-        source: 'Forum',
-        description: 'Sharing KMZ files and discoveries.',
-        url: 'https://productforums.google.com/forum/#!forum/gec'
-      }
-    ]
-  },
-
-  // --- TENSORFLOW ---
-  'tensorflow': {
-    toolId: 'tensorflow',
-    tagline: 'End-to-End Machine Learning Platform',
-    overview: 'TensorFlow is the open-source machine learning platform that powers much of Google\'s AI. From research models to production deployment on edge devices with TensorFlow Lite, it is the comprehensive ecosystem for building ML applications.',
-    useCases: [
-      'Training deep learning models from scratch',
-      'Deploying models to mobile (iOS/Android)',
-      'Running ML in the browser with TensorFlow.js',
-      'Production MLOps with TFX'
-    ],
-    creators: [
-      {
-        name: 'Sentdex',
-        focus: 'Python ML',
-        description: 'Legendary tutorials on Neural Networks and TensorFlow.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@sentdex'
-      },
-      {
-        name: 'TensorFlow Official',
+        name: 'Future Tech Pilot',
         focus: 'Updates',
-        description: 'News on Keras integration and new APIs.',
+        description: 'Weekly breakdowns of "Office Hours" and new features.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/@TensorFlow'
-      },
-      {
-        name: 'Jason Brownlee',
-        focus: 'Mastery',
-        description: 'Machine Learning Mastery blog for deep technical guides.',
-        platform: 'Blog',
-        url: 'https://machinelearningmastery.com/'
+        url: 'https://www.youtube.com/@FutureTechPilot'
       }
     ],
     videos: [
       {
-        title: 'TensorFlow in 10 Minutes',
-        channel: 'TensorFlow',
-        description: 'Quick overview of the ecosystem components.',
-        duration: '10:00'
-      },
-      {
-        title: 'Deep Learning with Python and TensorFlow',
-        channel: 'Sentdex',
-        description: 'The definitive getting started series.',
+        title: 'Midjourney v6.1 Complete Guide',
+        channel: 'Tokenized AI',
+        description: 'Mastering parameters like --chaos, --weird, and --stylize.',
         duration: '25:00'
       }
     ],
     articles: [
       {
-        title: 'TensorFlow Documentation',
-        source: 'Official',
-        description: 'API references and tutorials for beginners to experts.',
-        url: 'https://www.tensorflow.org/learn'
-      },
-      {
-        title: 'Keras: The Python Deep Learning API',
-        source: 'Keras',
-        description: 'Guide to the high-level API used within TensorFlow.',
-        url: 'https://keras.io/'
+        title: 'Midjourney Documentation',
+        source: 'Official Docs',
+        description: 'The bible of parameters and command usage.',
+        url: 'https://docs.midjourney.com/'
       }
     ],
     communities: [
       {
-        title: 'r/tensorflow',
-        source: 'Reddit',
-        description: 'Technical support and project showcases.',
-        url: 'https://www.reddit.com/r/tensorflow/'
+        title: 'Midjourney Discord',
+        source: 'Discord',
+        description: 'The largest AI art community in the world.',
+        url: 'https://discord.gg/midjourney'
       }
     ]
   },
 
-  // --- CODE WIKI ---
-  'codewiki': {
-    toolId: 'codewiki',
-    tagline: 'The Engineering Knowledge Base',
-    overview: 'Code Wiki acts as the central nervous system for engineering standards. It consolidates design patterns, API style guides, and AI coding best practices into a single, searchable source of truth for high-performance development.',
+  // --- RUNWAY ---
+  'runway': {
+    toolId: 'runway',
+    tagline: 'Moving Creativity Forward',
+    overview: 'Runway is an applied AI research company shaping the next era of art, entertainment, and human creativity. Their Gen-3 Alpha model offers unprecedented control over AI video generation, including motion brush, camera controls, and lip sync.',
     useCases: [
-      'Standardizing API design across teams',
-      'Learning Google-scale engineering patterns',
-      'Accessing AI-assisted coding guidelines',
-      'Onboarding new engineers to the stack'
+      'Generating B-roll for video production',
+      'Animating static images with Motion Brush',
+      'Creating surreal transitions and effects',
+      'Storyboard visualization for film'
+    ],
+    tips: [
+        "Use 'Motion Brush' to highlight specific areas (like water or clouds) you want to move.",
+        "Chain clips together using the 'Extend' feature for consistent scenes longer than 4s.",
+        "Use 'Camera Control' to force a specific pan or zoom, preventing random camera movement.",
+        "Low 'Motion' values (1-3) are better for realistic dialogue; High values (7-10) for action."
     ],
     creators: [
       {
-        name: 'Google Engineering',
-        focus: 'Standards',
-        description: 'Authors of the "Software Engineering at Google" book.',
-        platform: 'Book',
-        url: 'https://abseil.io/resources/swe-book'
+        name: 'Runway',
+        focus: 'Academy',
+        description: 'Official tutorials on Gen-3 Alpha controls.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@RunwayML'
+      },
+      {
+        name: 'CuriousRefuge',
+        focus: 'Filmmaking',
+        description: 'Using Runway in professional post-production workflows.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@CuriousRefuge'
       }
     ],
     videos: [
       {
-        title: 'Software Engineering at Google',
-        channel: 'Google TechTalks',
-        description: 'Talks on the culture of documentation and code quality.',
-        duration: '45:00'
+        title: 'Getting Started with Gen-3 Alpha',
+        channel: 'Runway',
+        description: 'Official guide to prompting for video.',
+        duration: '05:30'
+      },
+      {
+        title: 'Runway Gen-3: The Filmmaker\'s Guide',
+        channel: 'Corridor Crew',
+        description: 'Testing the limits of AI video in production.',
+        duration: '18:45'
       }
     ],
     articles: [
       {
-        title: 'Google Style Guides',
+        title: 'Runway Academy',
+        source: 'Runway',
+        description: 'Learn to use the full suite of magic tools.',
+        url: 'https://runwayml.com/academy'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/runwayml',
+        source: 'Reddit',
+        description: 'Sharing generations and motion brush techniques.',
+        url: 'https://www.reddit.com/r/runwayml/'
+      }
+    ]
+  },
+
+  // --- COMFYUI ---
+  'comfyui': {
+    toolId: 'comfyui',
+    tagline: 'The Modular Stable Diffusion Engine',
+    overview: 'ComfyUI is a node-based graphical user interface for Stable Diffusion. It lets you design and execute advanced generative pipelines by connecting blocks, offering granular control over every step of the generation process.',
+    useCases: [
+      'Building complex "img2img" workflows',
+      'Upscaling with ControlNet tile refinement',
+      'Automating batch generation tasks',
+      'Experimenting with new research papers instantly'
+    ],
+    tips: [
+        "Double-click the background to open the node search menu instantly.",
+        "Drag and drop ANY image generated by ComfyUI into the window to load its workflow.",
+        "Use 'Reroute' nodes to keep your wire connections clean and readable.",
+        "Install 'ComfyUI Manager' first—it automates installing missing custom nodes."
+    ],
+    creators: [
+      {
+        name: 'Scott Detweiler',
+        focus: 'Deep Dives',
+        description: 'The professor of ComfyUI. Explains every node in detail.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@ScottDetweiler'
+      },
+      {
+        name: 'Olivio Sarikas',
+        focus: 'Workflows',
+        description: 'Practical workflows for high-end AI art.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@OlivioSarikas'
+      }
+    ],
+    videos: [
+      {
+        title: 'ComfyUI Beginner\'s Guide',
+        channel: 'Scott Detweiler',
+        description: 'Understanding the basic flow: Checkpoint -> CLIP -> VAE.',
+        duration: '22:15'
+      },
+      {
+        title: 'Flux in ComfyUI: Setup Guide',
+        channel: 'Nerdy Rodent',
+        description: 'How to run the latest Flux models in Comfy.',
+        duration: '12:30'
+      }
+    ],
+    articles: [
+      {
+        title: 'ComfyUI Examples',
         source: 'GitHub',
-        description: 'Public version of the legendary internal style guides.',
-        url: 'https://google.github.io/styleguide/'
+        description: 'Official library of JSON workflows to drag and drop.',
+        url: 'https://github.com/comfyanonymous/ComfyUI_examples'
       }
     ],
     communities: [
       {
-        title: 'Hacker News',
-        source: 'YCombinator',
-        description: 'Discussions on engineering culture and practices.',
-        url: 'https://news.ycombinator.com/'
+        title: 'Comfy Workflows',
+        source: 'Website',
+        description: 'Repository of community-created node graphs.',
+        url: 'https://comfyworkflows.com/'
       }
     ]
   },
 
-  'notebooklm': {
-    toolId: 'notebooklm',
-    tagline: 'Your Personalized AI Research Assistant',
-    overview: 'NotebookLM is an AI-first notebook, grounded in your own documents. It instantly becomes a subject matter expert in the sources you upload, allowing you to read, take notes, and collaborate with AI to organize your thinking.',
+  // --- FIGMA ---
+  'figma': {
+    toolId: 'figma',
+    tagline: 'How You Design, Align, and Build',
+    overview: 'Figma is the leading collaborative interface design tool. It brings teams together to build better products. With new AI features, you can generate text, translate content, and even generate images directly within your design files.',
     useCases: [
-      'Transform dense reports into audio podcasts',
-      'Turn unorganized notes into structured study guides',
-      'Competitive analysis & gap identification',
-      'Literature reviews with grounded citations'
+      'Real-time collaborative UI design',
+      'Building comprehensive Design Systems',
+      'Prototyping user flows and interactions',
+      'Developer handoff with Dev Mode'
+    ],
+    tips: [
+        "Use 'Cmd+/' (Quick Actions) to access plugins and commands instantly.",
+        "In Dev Mode, use 'Compare Changes' to see what changed between versions.",
+        "Use 'Auto Layout' (Shift+A) everywhere. It is the CSS Flexbox of Figma.",
+        "Name your layers. It helps AI plugins (and developers) understand your structure."
     ],
     creators: [
       {
-        name: 'Jen Lehner',
-        focus: 'Business & Marketing',
-        description: 'Deep dives on competitive analysis and creating compelling case studies.',
-        platform: 'Social',
-        url: 'https://www.socialmediaexaminer.com/'
-      },
-      {
-        name: 'Mihailo Zoin',
-        focus: 'Structured Learning',
-        description: 'Strategies for turning chaotic content into systematic knowledge systems.',
-        platform: 'Medium',
-        url: 'https://medium.com/'
-      },
-      {
-        name: 'Julian Goldie',
-        focus: 'Content Repurposing',
-        description: 'Mastering the Audio Overview feature for lead gen and consulting.',
+        name: 'Figma',
+        focus: 'Official',
+        description: 'Keynotes, tutorials, and feature deep dives.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/@JulianGoldieSEO'
+        url: 'https://www.youtube.com/@Figma'
       },
       {
-        name: 'BlazingZebra',
-        focus: 'Real-World Workflows',
-        description: 'Specific tips for integrating NotebookLM into daily productivity.',
+        name: 'Mizko',
+        focus: 'UX Mastery',
+        description: 'Advanced tutorials on Auto Layout and Design Systems.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'The AI News',
-        focus: 'Tutorials & Updates',
-        description: 'Fast updates on new features like Studio and multimodal inputs.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@TheAiNews'
+        url: 'https://www.youtube.com/@Mizko'
       }
     ],
     videos: [
       {
-        title: 'NEW NotebookLM Features 📝 Video Overview + Studio',
-        channel: 'wanderloots',
-        description: 'Excellent walkthrough of the Video Overview feature and the new Studio panel.',
-        duration: '12:45'
+        title: 'Figma for Beginners: Complete Course',
+        channel: 'Envato Tuts+',
+        description: 'From zero to functional prototype.',
+        duration: '45:00'
       },
       {
-        title: 'Ep 627: NotebookLM: New features & walkthrough',
-        channel: 'Everyday AI',
-        description: 'Complete guide to Drive integration and Learning Guide styles.',
-        duration: '25:30'
-      },
-      {
-        title: 'NotebookLM: A Guide With Practical Examples',
-        channel: 'DataCamp',
-        description: 'Academic focus: Consolidating info and generating structured notes.',
-        duration: '15:10'
-      },
-      {
-        title: 'The Secret Tool Creating $10K Content for Free',
-        channel: 'Julian Goldie',
-        description: 'Structuring source material for high-value analytical content.',
-        duration: '08:55'
-      },
-      {
-        title: '5 Strategies That 99% of Users Don\'t Know',
-        channel: 'Mihailo Zoin',
-        description: 'Advanced prompts to move from summarization to asset creation.',
-        duration: '18:20'
+        title: 'Figma Dev Mode Explained',
+        channel: 'Figma',
+        description: 'Bridging the gap between design and code.',
+        duration: '06:30'
       }
     ],
     articles: [
       {
-        title: 'NotebookLM Help Center',
-        source: 'Google Official',
-        description: 'Step-by-step instructions on Mind Maps, Infographics, and Slide Decks.',
-        url: 'https://support.google.com/notebooklm'
-      },
-      {
-        title: 'The Complete Guide for Business',
-        source: 'Devoteam',
-        description: '8-step roadmap for enterprise adoption and knowledge retention.',
-        url: '#'
-      },
-      {
-        title: 'How to Use NotebookLM: Study Notes',
-        source: 'Codecademy',
-        description: 'Tutorial on uploading sources and creating structured presentations.',
-        url: '#'
-      },
-      {
-        title: 'The Ultimate Guide to Google NotebookLM',
-        source: 'Deimos Cloud',
-        description: 'IT use cases: Multi-cloud strategy and technical documentation.',
-        url: '#'
+        title: 'Figma Learn',
+        source: 'Official',
+        description: 'Courses on everything from vector networks to variables.',
+        url: 'https://help.figma.com/hc/en-us'
       }
     ],
     communities: [
       {
-        title: 'r/notebooklm',
-        source: 'Reddit',
-        description: 'The most active community. Real-world use cases, prompts, and dev discussions.',
-        url: 'https://www.reddit.com/r/notebooklm/'
-      },
-      {
-        title: 'Google DeepMind',
-        source: 'X (Twitter)',
-        description: 'Official updates on underlying models and feature rollouts.',
-        url: 'https://twitter.com/GoogleDeepMind'
+        title: 'Figma Community',
+        source: 'Website',
+        description: 'Thousands of free plugins and files.',
+        url: 'https://www.figma.com/community'
       }
     ]
   },
-  
+
+  // --- BLENDER ---
+  'blender': {
+    toolId: 'blender',
+    tagline: 'Free and Open Source 3D Creation',
+    overview: 'Blender is the free and open source 3D creation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation pipeline.',
+    useCases: [
+      '3D Modeling and Sculpting',
+      'Photorealistic Rendering (Cycles)',
+      'VFX and Motion Graphics',
+      'Game Asset Creation'
+    ],
+    creators: [
+      {
+        name: 'Blender Guru',
+        focus: 'Tutorials',
+        description: 'Creator of the famous Donut tutorial series.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@BlenderGuru'
+      },
+      {
+        name: 'CGGeek',
+        focus: 'Environments',
+        description: 'Creating massive nature scenes and VFX.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@CGGeek'
+      }
+    ],
+    videos: [
+      {
+        title: 'Blender 4.0 Beginner Donut Tutorial',
+        channel: 'Blender Guru',
+        description: 'The rite of passage for every 3D artist.',
+        duration: '20:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Blender Manual',
+        source: 'Official Docs',
+        description: 'Detailed reference for all features.',
+        url: 'https://docs.blender.org/'
+      }
+    ],
+    communities: [
+      {
+        title: 'r/blender',
+        source: 'Reddit',
+        description: 'Showcasing renders and getting help.',
+        url: 'https://www.reddit.com/r/blender/'
+      }
+    ]
+  },
+
   // --- AI STUDIO ---
   'aistudio': {
     toolId: 'aistudio',
@@ -1146,28 +878,13 @@ export const learningResourcesData: Record<string, LearningHubData> = {
       'Multimodal Reasoning (Video/Audio/Code Analysis)',
       'Building Custom Chatbots & Agents'
     ],
+    tips: [
+        "Upload a video file to test Gemini 1.5 Pro's 2M context window.",
+        "Use 'System Instructions' to define the persona and constraints globally.",
+        "Click 'Get Code' to instantly export your prompt as Python or JavaScript.",
+        "Use {{variable}} syntax to create template prompts for batch testing."
+    ],
     creators: [
-      {
-        name: 'Julian Goldie',
-        focus: 'Business Automation',
-        description: 'Actionable guides on using "Vibe Coding" to build profitable business tools.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@JulianGoldieSEO'
-      },
-      {
-        name: 'Richard Seroter',
-        focus: 'Official Strategy',
-        description: 'Chief Evangelist sharing best practices and integration strategies.',
-        platform: 'Blog',
-        url: 'https://cloud.google.com/blog'
-      },
-      {
-        name: 'Ahmed Bahaa Eldin',
-        focus: 'Entrepreneurship',
-        description: 'Cost-effective, time-saving use cases for marketers and founders.',
-        platform: 'Medium',
-        url: 'https://medium.com/'
-      },
       {
         name: 'Google for Developers',
         focus: 'Core Docs',
@@ -1191,28 +908,10 @@ export const learningResourcesData: Record<string, LearningHubData> = {
         duration: '10:05'
       },
       {
-        title: 'You\'re Missing Google\'s Most Powerful Free AI Tool',
-        channel: 'Workflow Focus',
-        description: 'Practical use cases for real-time document analysis and visuals.',
-        duration: '12:30'
-      },
-      {
-        title: 'The Ultimate Tool to Automate Everything',
-        channel: 'Julian Goldie',
-        description: 'Using the Build feature to rapidly prototype complex tasks.',
-        duration: '14:20'
-      },
-      {
         title: 'Prompt Design Strategies | Gemini API',
         channel: 'Google for Developers',
         description: 'Must-watch on prompt chaining, XML delimiters, and long context.',
         duration: '18:45'
-      },
-      {
-        title: 'How to Use Google AI Studio to Analyze YouTube',
-        channel: 'Tutorial',
-        description: 'Using the video input feature to summarize and extract key info.',
-        duration: '08:15'
       }
     ],
     articles: [
@@ -1223,22 +922,10 @@ export const learningResourcesData: Record<string, LearningHubData> = {
         url: 'https://ai.google.dev/gemini-api/docs/ai-studio-quickstart'
       },
       {
-        title: 'Prompting Essentials Course',
-        source: 'Coursera',
-        description: 'Free structured course by Google experts on the 5-step framework.',
-        url: 'https://www.coursera.org/'
-      },
-      {
         title: 'Advanced Prompt Design Strategies',
         source: 'Google Build',
         description: 'Deep dive into few-shot learning and agentic workflows.',
         url: 'https://ai.google.dev/docs/prompt_best_practices'
-      },
-      {
-        title: 'Explore Capabilities',
-        source: 'Official Docs',
-        description: 'Details on Long Context, Structured Outputs (JSON), and Function Calling.',
-        url: 'https://ai.google.dev/gemini-api/docs'
       }
     ],
     communities: [
@@ -1247,320 +934,608 @@ export const learningResourcesData: Record<string, LearningHubData> = {
         source: 'Official',
         description: 'Connect with other developers and Google engineers.',
         url: 'https://developers.google.com/community'
-      },
-      {
-        title: 'r/AIAgentsInAction',
-        source: 'Reddit',
-        description: 'Real-world applications and agent prototyping discussions.',
-        url: 'https://www.reddit.com/r/AIAgentsInAction/'
       }
     ]
   },
 
-  // --- STITCH ---
-  'stitch': {
-    toolId: 'stitch',
-    tagline: 'AI-Powered UI/UX & Code Gen',
-    overview: 'Google Stitch is an AI-powered UI/UX design and code generation tool highly valuable for rapid prototyping. It focuses on effective prompt engineering, workflow integration with Figma, and converting sketches to production-ready UI code (React/Tailwind).',
+  // --- NOTEBOOKLM ---
+  'notebooklm': {
+    toolId: 'notebooklm',
+    tagline: 'Your Personalized AI Research Assistant',
+    overview: 'NotebookLM is an AI-first notebook, grounded in your own documents. It instantly becomes a subject matter expert in the sources you upload, allowing you to read, take notes, and collaborate with AI to organize your thinking.',
     useCases: [
-      'Rapid Prototyping (Wireframe > Code)',
-      'Sketch-to-UI Conversion',
-      'Generating React/HTML/Tailwind Components',
-      'Multi-Screen App Flow Design'
+      'Transform dense reports into audio podcasts',
+      'Turn unorganized notes into structured study guides',
+      'Competitive analysis & gap identification',
+      'Literature reviews with grounded citations'
     ],
-    creators: [
-      {
-        name: 'KunalxArora',
-        focus: 'Prompt Strategy',
-        description: 'Highly structured guides on "speaking Stitch\'s language" and iterative prompting.',
-        platform: 'Medium',
-        url: 'https://medium.com/'
-      },
-      {
-        name: 'UX Pilot',
-        focus: 'Design Flow',
-        description: 'Strategies for choosing between Standard Mode and Experimental Mode.',
-        platform: 'Blog',
-        url: 'https://uxpilot.ai/'
-      },
-      {
-        name: 'Execute Automation',
-        focus: 'Developer Handoff',
-        description: 'Generating production-ready code for internal tools and dashboards.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'The AI Fire',
-        focus: 'Workflow',
-        description: 'Privacy shields and managing consistency across multi-screen apps.',
-        platform: 'Blog',
-        url: '#'
-      },
-      {
-        name: 'Codecademy',
-        focus: 'Practical Prototyping',
-        description: 'Step-by-step guides on building specific UIs (e.g., crypto dashboards).',
-        platform: 'Social',
-        url: 'https://www.codecademy.com/'
-      }
-    ],
-    videos: [
-      {
-        title: 'Google Stitch Tutorial for Beginners',
-        channel: 'YouTube',
-        description: 'Designing a full app flow and comparing Standard vs. Experimental modes.',
-        duration: '14:20'
-      },
-      {
-        title: 'Easy Way to Make Amazing App Designs Fast',
-        channel: 'YouTube',
-        description: 'Building a professional investment portfolio tracker with Stitch.',
-        duration: '10:15'
-      },
-      {
-        title: 'Google Stitch: Free UI Designer',
-        channel: 'YouTube',
-        description: 'Effective prompting for early design exploration and Figma export.',
-        duration: '08:45'
-      },
-      {
-        title: 'Google Stitch 3.0: FULLY FREE Coding Agent',
-        channel: 'World of AI',
-        description: 'Automating repetitive coding tasks and generating complex flows.',
-        duration: '12:30'
-      },
-      {
-        title: 'Google Stitch: AI Reshaping Martech',
-        channel: 'Metromax',
-        description: 'Enterprise use cases for marketing campaigns and widget generation.',
-        duration: '16:00'
-      }
-    ],
-    articles: [
-      {
-        title: 'Stitch Prompt Guide',
-        source: 'Google Developers',
-        description: 'Official guide on prompt construction: Vibe, Device, Layout, Color.',
-        url: 'https://developers.google.com/stitch'
-      },
-      {
-        title: 'How to get the absolute best out of Stitch',
-        source: 'Medium',
-        description: 'Definitive guide on Sketch-to-UI and intentional prompting.',
-        url: '#'
-      },
-      {
-        title: 'Google Stitch AI Walkthrough',
-        source: 'UX Pilot',
-        description: 'Usage limits, privacy settings, and feature comparisons.',
-        url: '#'
-      },
-      {
-        title: 'Design Mobile App UI with Google Stitch',
-        source: 'Codecademy',
-        description: 'Practical exercise on designing a Crypto Dashboard UI.',
-        url: '#'
-      }
-    ],
-    communities: [
-      {
-        title: 'Google AI Developers Forum',
-        source: 'Official Forum',
-        description: 'Official answers and community-driven prompt examples.',
-        url: '#'
-      },
-      {
-        title: 'r/UI_Design',
-        source: 'Reddit',
-        description: 'Discussions on integrating AI-generated code into professional systems.',
-        url: 'https://www.reddit.com/r/UI_Design/'
-      }
-    ]
-  },
-
-  // --- GOOGLE KEEP ---
-  'keep': {
-    toolId: 'keep',
-    tagline: 'Capture Ideas, Powered by AI',
-    overview: 'Google Keep is evolving from a simple note-taking app to an AI-powered idea capture system. With features like "Help me create", automatic list generation, and intelligent OCR, it serves as the second brain for the Google ecosystem.',
-    useCases: [
-      'Quick-capture of fleeting ideas',
-      'AI-generated shopping and to-do lists',
-      'Extracting text from images (OCR)',
-      'Organizing research with labels and colors'
-    ],
-    creators: [
-      {
-        name: 'Simpletivity',
-        focus: 'Productivity',
-        description: 'Mastering Google Workspace tools for maximum efficiency.',
-        platform: 'YouTube',
-        url: 'https://www.youtube.com/@Simpletivity'
-      },
-      {
-        name: 'Keep Product Team',
-        focus: 'Updates',
-        description: 'Official announcements on the Google Workspace blog.',
-        platform: 'Blog',
-        url: 'https://workspace.google.com/blog'
-      }
-    ],
-    videos: [
-      {
-        title: '7 Google Keep Tips You Need to Know',
-        channel: 'Simpletivity',
-        description: 'Advanced organization techniques using labels and colors.',
-        duration: '11:20'
-      },
-      {
-        title: 'How to use "Help me create" in Keep',
-        channel: 'Google Workspace',
-        description: 'Short feature highlight on the new GenAI integration.',
-        duration: '01:30'
-      }
-    ],
-    articles: [
-      {
-        title: 'The Guide to "Help me create"',
-        source: 'Google Support',
-        description: 'Official documentation on using generative AI within notes.',
-        url: 'https://support.google.com/keep'
-      }
-    ],
-    communities: [
-      {
-        title: 'r/gsuite',
-        source: 'Reddit',
-        description: 'Discussion for all things Google Workspace, including Keep.',
-        url: 'https://www.reddit.com/r/gsuite/'
-      }
-    ]
-  },
-
-  // --- OPAL ---
-  'opal': {
-    toolId: 'opal',
-    tagline: 'Build Powerful AI Apps Without Code',
-    overview: 'Opal is an experimental, no-code AI app builder that lets users create powerful, multi-step workflows (mini-apps) using natural language. It abstracts away the complexity of chaining prompts, models (like Gemini and Imagen), and tools into simple, shareable applications.',
-    useCases: [
-      'Building custom content writers & SEO tools',
-      'Creating YouTube summarizers & quiz generators',
-      'Automating repetitive productivity tasks',
-      'Chaining multiple AI models (Gemini, Veo) visually'
+    tips: [
+        "Upload multiple source types (PDF, Text, MP3) to create a richer Audio Overview.",
+        "Ask NotebookLM to 'Critique this argument' based ONLY on the sources.",
+        "Use the 'Saved Responses' feature to pin key citations.",
+        "Generate a 'Briefing Doc' or 'FAQ' directly from the suggested actions."
     ],
     creators: [
       {
         name: 'Julian Goldie',
-        focus: 'Business & Automation',
-        description: 'Shows how to build profitable SEO and lead-gen tools using Opal.',
+        focus: 'Content Repurposing',
+        description: 'Mastering the Audio Overview feature for lead gen and consulting.',
         platform: 'YouTube',
         url: 'https://www.youtube.com/@JulianGoldieSEO'
       },
       {
-        name: 'BlazingZebra',
-        focus: 'Productivity',
-        description: 'Hands-on tutorials for everyday time-saving automations.',
+        name: 'The AI News',
+        focus: 'Tutorials & Updates',
+        description: 'Fast updates on new features like Studio and multimodal inputs.',
         platform: 'YouTube',
-        url: 'https://www.youtube.com/'
-      },
-      {
-        name: 'KDnuggets',
-        focus: 'Technical Deep Dive',
-        description: 'Structured articles on node logic and multi-step workflow design.',
-        platform: 'Blog',
-        url: 'https://www.kdnuggets.com/'
-      },
-      {
-        name: 'The AI Fire',
-        focus: 'No-Code Prototyping',
-        description: 'Beginner-friendly guides on generating apps from plain English.',
-        platform: 'Blog',
-        url: '#'
-      },
-      {
-        name: 'Google Developers',
-        focus: 'Official Guides',
-        description: 'The source for understanding model integration and gallery templates.',
-        platform: 'Blog',
-        url: 'https://developers.googleblog.com/'
+        url: 'https://www.youtube.com/@TheAiNews'
       }
     ],
     videos: [
       {
-        title: 'Google Opal Tutorial: Beginner\'s Guide',
-        channel: 'DataCamp',
-        description: 'Comprehensive guide on natural language editing and visual workflows.',
-        duration: '15:45'
+        title: 'NEW NotebookLM Features 📝 Video Overview + Studio',
+        channel: 'wanderloots',
+        description: 'Excellent walkthrough of the Video Overview feature and the new Studio panel.',
+        duration: '12:45'
       },
       {
-        title: 'I Built 5 Profitable Apps in 10 Minutes',
-        channel: 'Julian Goldie',
-        description: 'Building Blog Empires, Lead Magnets, and Proposal Writers.',
-        duration: '12:20'
-      },
-      {
-        title: '3 Automations That Save Me HOURS',
-        channel: 'BlazingZebra',
-        description: 'Practical examples of automating repetitive daily tasks.',
-        duration: '09:15'
-      },
-      {
-        title: 'Google Opal: The best FREE AI Super Agent!',
-        channel: 'AI Automation',
-        description: 'Deep dive into building a workflow from scratch with Voice-mode.',
-        duration: '18:30'
-      },
-      {
-        title: 'How to Use Google Opal AI (Tutorial)',
-        channel: 'Tech Guide',
-        description: 'Step-by-step on connecting steps and setting outputs to Docs/Slides.',
-        duration: '10:10'
+        title: 'Ep 627: NotebookLM: New features & walkthrough',
+        channel: 'Everyday AI',
+        description: 'Complete guide to Drive integration and Learning Guide styles.',
+        duration: '25:30'
       }
     ],
     articles: [
       {
-        title: 'Quickstart | Opal',
-        source: 'Google Developers',
-        description: 'Official structured walkthrough of the editor and tool integration.',
-        url: 'https://opal.google/landing'
-      },
-      {
-        title: 'Comprehensive AI Intelligence Hub',
-        source: 'Opal Guide',
-        description: 'Overview of key features, limitations, and productivity use cases.',
-        url: '#'
-      },
-      {
-        title: 'Building AI Automations with Google Opal',
-        source: 'KDnuggets',
-        description: 'Technical breakdown of Input, Generate, and Output nodes.',
-        url: 'https://www.kdnuggets.com/'
-      },
-      {
-        title: 'The Ultimate Guide to Google Opal AI',
-        source: 'MarketingBox',
-        description: 'From Vibe to App: A clear process for Marketers and Writers.',
-        url: '#'
+        title: 'NotebookLM Help Center',
+        source: 'Google Official',
+        description: 'Step-by-step instructions on Mind Maps, Infographics, and Slide Decks.',
+        url: 'https://support.google.com/notebooklm'
       }
     ],
     communities: [
       {
-        title: 'Opal Gallery',
-        source: 'Official',
-        description: 'Remixable templates built by Google and the community.',
-        url: 'https://opal.google/landing'
-      },
-      {
-        title: 'r/AISEOInsider',
+        title: 'r/notebooklm',
         source: 'Reddit',
-        description: 'Advanced business use cases for Opal automation.',
-        url: 'https://www.reddit.com/r/AISEOInsider/'
+        description: 'The most active community. Real-world use cases, prompts, and dev discussions.',
+        url: 'https://www.reddit.com/r/notebooklm/'
       }
     ]
   },
 
-  // Default fallback data for other tools to prevent empty pages
+  // --- LUMA ---
+  'luma': {
+      toolId: 'luma',
+      tagline: 'Dream Machine',
+      overview: 'High quality video generation. Luma Labs is pioneering realistic video models capable of generating physically accurate, consistent and eventful shots from text and images.',
+      useCases: ['Video generation', 'VFX', 'Social Media Assets'],
+      tips: [
+          "Use 'Loop' mode to create seamless video backgrounds for websites.",
+          "End your prompt with 'cinematic lighting, 4k, high fidelity' for better aesthetics.",
+          "Upload a reference image to control the starting frame composition.",
+          "Use the 'Enhance' prompt feature if your initial idea is too simple."
+      ],
+      creators: [
+          {
+              name: 'MattVidPro AI',
+              focus: 'News & Demos',
+              description: 'Coverage of Dream Machine capabilities and updates.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@MattVidPro'
+          },
+          {
+              name: 'Luma Labs',
+              focus: 'Official',
+              description: 'Official showcase of community generations.',
+              platform: 'Social',
+              url: 'https://twitter.com/LumaLabsAI'
+          }
+      ], 
+      videos: [
+          {
+              title: 'Luma Dream Machine Guide',
+              channel: 'CuriousRefuge',
+              description: 'How to prompt for consistent characters in Luma.',
+              duration: '12:20'
+          }
+      ],
+      articles: [
+          {
+              title: 'Dream Machine Research',
+              source: 'Luma AI',
+              description: 'Technical blog on the transformer architecture.',
+              url: 'https://lumalabs.ai/blog'
+          }
+      ],
+      communities: [
+          {
+              title: 'Luma Discord',
+              source: 'Discord',
+              description: 'Community sharing prompts and results.',
+              url: 'https://discord.gg/lumalabs'
+          }
+      ]
+  },
+
+  // --- SPLINE ---
+  'spline': {
+      toolId: 'spline',
+      tagline: '3D for Web',
+      overview: 'Interactive 3D design tool built for the browser. Spline allows designers to create 3D scenes, animate them, and integrate them into React or Webflow websites with simple embed codes.',
+      useCases: ['Web 3D', 'Interactivity', 'Game UI', 'Landing Pages'],
+      tips: [
+          "Export as 'React Component' to drop directly into your Next.js codebase.",
+          "Use the 'AI Texture' generator to create unique materials from text prompts.",
+          "Use 'Game Controls' to create simple walking simulators without code.",
+          "Optimize your scene by using 'Cloner' objects instead of duplicating meshes."
+      ],
+      creators: [
+          {
+              name: 'DesignCourse',
+              focus: 'Web Design',
+              description: 'Integrating Spline 3D into modern websites.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@DesignCourse'
+          },
+          {
+              name: 'Spline Tool',
+              focus: 'Official',
+              description: 'Tutorials on physics, game controls, and events.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@splinetool'
+          }
+      ],
+      videos: [
+          {
+              title: 'Spline 3D Course for Beginners',
+              channel: 'DesignCourse',
+              description: 'Building a 3D portfolio site from scratch.',
+              duration: '40:00'
+          }
+      ],
+      articles: [
+          {
+              title: 'Spline Docs',
+              source: 'Official',
+              description: 'Guide to events, states, and export settings.',
+              url: 'https://docs.spline.design/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Spline Community',
+              source: 'Website',
+              description: 'Remixable 3D scenes from the community.',
+              url: 'https://community.spline.design/'
+          }
+      ]
+  },
+
+  // --- IMAGEFX ---
+  'imagefx': {
+      toolId: 'imagefx',
+      tagline: 'Imagen 3 Lab',
+      overview: 'Google\'s image playground powered by Imagen 3. It features "expressive chips" that let you quickly iterate on creative ideas by swapping out keywords without rewriting the whole prompt.',
+      useCases: ['Image Gen', 'Ideation', 'Mockups', 'Concept Art'],
+      tips: [
+          "Click the 'Chips' (highlighted words) to instantly swap concepts (e.g. 'Cyberpunk' -> 'Steampunk').",
+          "Use the 'SynthID' watermark check to verify outputs if you are unsure of origin.",
+          "Prompts with 'photorealistic, 8k, highly detailed' work exceptionally well on Imagen 3.",
+          "Use the 'Edit' mode to refine specific parts of the image (inpainting)."
+      ],
+      creators: [
+          {
+              name: 'Google Design',
+              focus: 'Tips',
+              description: 'Official tips on using expressive chips effectively.',
+              platform: 'Social',
+              url: 'https://twitter.com/GoogleDesign'
+          }
+      ],
+      videos: [
+          {
+              title: 'ImageFX: A new way to create images',
+              channel: 'Google',
+              description: 'Official introduction to the interface and capabilities.',
+              duration: '01:45'
+          }
+      ],
+      articles: [
+          {
+              title: 'Imagen 3 Research Paper',
+              source: 'Google DeepMind',
+              description: 'Understanding the diffusion model behind the tool.',
+              url: 'https://deepmind.google/technologies/imagen-3/'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/GoogleAI',
+              source: 'Reddit',
+              description: 'Sharing creations and prompts.',
+              url: 'https://www.reddit.com/r/GoogleAI/'
+          }
+      ]
+  },
+
+  // --- PROJECT IDX ---
+  'idx': {
+      toolId: 'idx',
+      tagline: 'Cloud IDE',
+      overview: 'Project IDX is Google\'s next-gen browser-based IDE. Built on VS Code, it runs in the cloud and offers full-stack previews, built-in AI assistance, and instant emulators for Android and iOS.',
+      useCases: ['Development', 'Flutter', 'Fullstack Web', 'Cloud Dev'],
+      tips: [
+          "Use the 'Android Emulator' preview to test mobile layouts directly in the browser.",
+          "Ask the AI chat to 'Add a backend route' to generate boilerplate code for Go or Node.js.",
+          "Customize your environment using the `.idx/dev.nix` file (NixOS based).",
+          "Share your workspace link with teammates for instant onboarding."
+      ],
+      creators: [
+          {
+              name: 'Fireship',
+              focus: 'Review',
+              description: 'First impressions and feature breakdown.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@Fireship'
+          },
+          {
+              name: 'Flutter Team',
+              focus: 'Mobile',
+              description: 'Building Flutter apps in the cloud.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@flutterdev'
+          }
+      ],
+      videos: [
+          {
+              title: 'Google Project IDX First Look',
+              channel: 'Fireship',
+              description: 'Is this the VS Code killer? Overview of cloud features.',
+              duration: '06:15'
+          }
+      ],
+      articles: [
+          {
+              title: 'Getting Started with Project IDX',
+              source: 'Google IDX',
+              description: 'Official onboarding guide and template library.',
+              url: 'https://idx.dev/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Project IDX Community',
+              source: 'Discord',
+              description: 'Direct feedback channel to the IDX product team.',
+              url: '#'
+          }
+      ]
+  },
+
+  // --- VERTEX AI ---
+  'vertex-ai': {
+      toolId: 'vertex-ai',
+      tagline: 'Enterprise AI Platform',
+      overview: 'Vertex AI is Google Cloud\'s unified platform for building, deploying, and scaling ML models. It brings together AutoML, custom training, MLOps, and the Model Garden into a single environment.',
+      useCases: ['Enterprise Deployment', 'MLOps', 'Model Garden', 'Fine-tuning'],
+      tips: [
+          "Use 'Model Garden' to deploy open-source models like Llama 3 or Mistral with one click.",
+          "Enable 'Grounding with Google Search' to give your models access to real-time internet data.",
+          "Use 'AutoML' for tabular data tasks if you don't have a data science team.",
+          "Monitor model performance and drift using Vertex AI Monitoring."
+      ],
+      creators: [
+          {
+              name: 'Google Cloud Tech',
+              focus: 'Official Training',
+              description: 'Comprehensive guides on every feature of the platform.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@GoogleCloudTech'
+          },
+          {
+              name: 'Tech with Tim',
+              focus: 'Python & Cloud',
+              description: 'Integrating Vertex AI into real-world Python applications.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@TechWithTim'
+          }
+      ],
+      videos: [
+          {
+              title: 'Build a RAG Application with Vertex AI',
+              channel: 'Google Cloud Tech',
+              description: 'Step-by-step tutorial on retrieval augmented generation.',
+              duration: '14:30'
+          }
+      ],
+      articles: [
+          {
+              title: 'Vertex AI Documentation',
+              source: 'Google Cloud',
+              description: 'The definitive technical reference for all services.',
+              url: 'https://cloud.google.com/vertex-ai/docs'
+          }
+      ],
+      communities: [
+          {
+              title: 'Google Cloud Community',
+              source: 'Forum',
+              description: 'Q&A with Google engineers and cloud architects.',
+              url: 'https://www.googlecloudcommunity.com/'
+          }
+      ]
+  },
+
+  // --- TENSORFLOW ---
+  'tensorflow': {
+      toolId: 'tensorflow',
+      tagline: 'End-to-End ML Platform',
+      overview: 'TensorFlow is the open-source machine learning platform that powers much of Google\'s AI. From research models to production deployment on edge devices with TensorFlow Lite, it is the comprehensive ecosystem for building ML applications.',
+      useCases: ['ML Training', 'Deep Learning', 'Edge Deployment', 'Research'],
+      tips: [
+          "Use 'Keras' (tf.keras) as the high-level API; it's much easier than raw TF.",
+          "Convert models to 'TFLite' to run them on Android or iOS devices.",
+          "Use 'TensorBoard' to visualize your training loss and accuracy graphs in real-time.",
+          "Leverage 'TF Hub' to find pre-trained models for transfer learning."
+      ],
+      creators: [
+          {
+              name: 'Sentdex',
+              focus: 'Python ML',
+              description: 'Legendary tutorials on Neural Networks and TensorFlow.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@sentdex'
+          },
+          {
+              name: 'TensorFlow Official',
+              focus: 'Updates',
+              description: 'News on Keras integration and new APIs.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@TensorFlow'
+          }
+      ],
+      videos: [
+          {
+              title: 'TensorFlow in 10 Minutes',
+              channel: 'TensorFlow',
+              description: 'Quick overview of the ecosystem components.',
+              duration: '10:00'
+          }
+      ],
+      articles: [
+          {
+              title: 'TensorFlow Documentation',
+              source: 'Official',
+              description: 'API references and tutorials for beginners to experts.',
+              url: 'https://www.tensorflow.org/learn'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/tensorflow',
+              source: 'Reddit',
+              description: 'Technical support and project showcases.',
+              url: 'https://www.reddit.com/r/tensorflow/'
+          }
+      ]
+  },
+
+  // --- FIREBASE ---
+  'firebase': {
+      toolId: 'firebase',
+      tagline: 'App Development Platform',
+      overview: 'Firebase is Google\'s mobile platform that helps you quickly develop high-quality apps and grow your business. Now with generative AI extensions, you can easily integrate LLM features like chatbots and vector search directly into your backend.',
+      useCases: ['Mobile Dev', 'Web Apps', 'Serverless', 'Auth'],
+      tips: [
+          "Use 'Firebase Extensions' to add AI capabilities (like chatbot) instantly without writing code.",
+          "Test security rules in the 'Firebase Emulator Suite' before deploying to production.",
+          "Use 'Remote Config' to A/B test different AI prompts or model parameters.",
+          "Enable 'App Check' to protect your API keys from abuse."
+      ],
+      creators: [
+          {
+              name: 'Fireship',
+              focus: 'Fullstack',
+              description: 'High-speed tutorials on Firebase features and integrations.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@Fireship'
+          },
+          {
+              name: 'Firebase Official',
+              focus: 'Updates',
+              description: 'Deep dives into new GenAI extensions and SQL support.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@Firebase'
+          }
+      ],
+      videos: [
+          {
+              title: 'Firebase in 100 Seconds',
+              channel: 'Fireship',
+              description: 'Rapid overview of the entire ecosystem.',
+              duration: '01:40'
+          },
+          {
+              title: 'Build an AI Chatbot with Firebase',
+              channel: 'Firebase',
+              description: 'Using the Vertex AI extension for Firestore.',
+              duration: '12:15'
+          }
+      ],
+      articles: [
+          {
+              title: 'Firebase Documentation',
+              source: 'Google',
+              description: 'Comprehensive guides for iOS, Android, and Web.',
+              url: 'https://firebase.google.com/docs'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/firebase',
+              source: 'Reddit',
+              description: 'Help with security rules and database structuring.',
+              url: 'https://www.reddit.com/r/firebase/'
+          }
+      ]
+  },
+
+  // --- COLAB ---
+  'colab': {
+      toolId: 'colab',
+      tagline: 'Cloud Notebooks',
+      overview: 'Google Colab is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs. It is the de facto standard for sharing data science and machine learning projects.',
+      useCases: ['Data Science', 'Education', 'ML Training', 'Prototyping'],
+      tips: [
+          "Change runtime type to 'T4 GPU' (free) for significantly faster model training.",
+          "Mount Google Drive to persist your datasets and save model checkpoints.",
+          "Use '%%time' magic command to measure cell execution duration.",
+          "Use 'Colab Pro' if you need longer runtimes or access to A100 GPUs."
+      ],
+      creators: [
+          {
+              name: 'Data School',
+              focus: 'Education',
+              description: 'Maximizing the free tier for deep learning.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@dataschool'
+          }
+      ],
+      videos: [
+          {
+              title: 'Google Colab: Zero to Hero',
+              channel: 'TensorFlow',
+              description: 'Complete walkthrough of features and keyboard shortcuts.',
+              duration: '15:00'
+          }
+      ],
+      articles: [
+          {
+              title: 'Welcome to Colaboratory',
+              source: 'Google',
+              description: 'The official getting started notebook.',
+              url: 'https://colab.research.google.com/'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/GoogleColab',
+              source: 'Reddit',
+              description: 'Troubleshooting runtime disconnects and sharing tips.',
+              url: 'https://www.reddit.com/r/GoogleColab/'
+          }
+      ]
+  },
+
+  // --- GEMMA ---
+  'gemma': {
+      toolId: 'gemma',
+      tagline: 'Open Models',
+      overview: 'Gemma is a family of lightweight, state-of-the-art open models built from the same research and technology used to create the Gemini models. Available in 2B and 7B sizes, they are designed for responsible AI development and can run on developer laptops or cloud instances.',
+      useCases: ['Local Inference', 'Fine-tuning', 'Privacy-first Chat', 'Edge Devices'],
+      tips: [
+          "Use the '2B' model for mobile/edge devices; it is surprisingly capable.",
+          "Fine-tune on Kaggle using free TPU quotas for domain adaptation.",
+          "Use the 'Instruct' versions for chat applications; base models are for completion.",
+          "Run with 'Ollama' locally to test without any cloud costs."
+      ],
+      creators: [
+          {
+              name: 'Hugging Face',
+              focus: 'Implementation',
+              description: 'Guides on running Gemma with Transformers library.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@HuggingFace'
+          },
+          {
+              name: 'Sam Witteveen',
+              focus: 'Fine-Tuning',
+              description: 'Detailed tutorials on QLoRA fine-tuning of Gemma.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@SamWitteveenAI'
+          }
+      ],
+      videos: [
+          {
+              title: 'Gemma: Google\'s Open Models Explained',
+              channel: 'Google Cloud Tech',
+              description: 'Overview of architecture, benchmarks, and safety.',
+              duration: '09:15'
+          }
+      ],
+      articles: [
+          {
+              title: 'Gemma Technical Report',
+              source: 'Google DeepMind',
+              description: 'Deep dive into the model architecture and training data.',
+              url: 'https://storage.googleapis.com/deepmind-media/gemma/gemma-report.pdf'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/LocalLLaMA',
+              source: 'Reddit',
+              description: 'The hub for open-source model discussion and quantization.',
+              url: 'https://www.reddit.com/r/LocalLLaMA/'
+          }
+      ]
+  },
+
+  // --- SHEETS ---
+  'sheets': {
+      toolId: 'sheets',
+      tagline: 'Intelligent Spreadsheets',
+      overview: 'Google Sheets is more than just rows and columns. With built-in intelligence like Smart Fill and Gemini integration, it allows you to analyze data, visualize insights, and collaborate in real-time.',
+      useCases: ['Data Analysis', 'Finance', 'Project Tracking', 'Lightweight DB'],
+      tips: [
+          "Use 'Smart Fill' to automate repetitive data cleaning tasks.",
+          "Connect to 'BigQuery' to analyze massive datasets without leaving Sheets.",
+          "Use the '=GOOGLEFINANCE' function for real-time market data.",
+          "Use 'Help me organize' to generate complex project trackers from a prompt."
+      ],
+      creators: [
+          {
+              name: 'Ben Collins',
+              focus: 'Advanced Formulas',
+              description: 'The definitive expert on Google Sheets scripting and formulas.',
+              platform: 'Blog',
+              url: 'https://www.benlcollins.com/'
+          },
+          {
+              name: 'Google Workspace',
+              focus: 'Productivity',
+              description: 'Official tips on new AI features.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@GoogleWorkspace'
+          }
+      ],
+      videos: [
+          {
+              title: 'Top 10 Google Sheets Tips',
+              channel: 'Productivity',
+              description: 'Mastering pivot tables and query functions.',
+              duration: '12:00'
+          }
+      ],
+      articles: [
+          {
+              title: 'Google Sheets Functions List',
+              source: 'Support',
+              description: 'Complete reference for every formula.',
+              url: 'https://support.google.com/google-ads/answer/9004417'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/googlesheets',
+              source: 'Reddit',
+              description: 'Active community solving complex formula problems.',
+              url: 'https://www.reddit.com/r/googlesheets/'
+          }
+      ]
+  },
+
+  // --- Default Fallback ---
   'default': {
     toolId: 'default',
     tagline: 'Master this tool',
@@ -1570,9 +1545,150 @@ export const learningResourcesData: Record<string, LearningHubData> = {
     videos: [],
     articles: [],
     communities: []
+  },
+
+  // --- Remaining Minor Placeholders (Still maintained for type safety) ---
+  'textfx': {
+      toolId: 'textfx',
+      tagline: 'AI for Writers',
+      overview: 'Tools for rappers and writers. Break out of creative blocks.',
+      useCases: ['Lyrics', 'Creative Writing', 'Wordplay'],
+      tips: ["Use 'Explode' to find words that sound similar but mean different things.", "Use 'Chain' to build semantic bridges between unrelated concepts."],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'videofx': {
+      toolId: 'videofx',
+      tagline: 'Veo Lab',
+      overview: 'Generate video from text. Google\'s premier video model sandbox.',
+      useCases: ['Video Gen', 'Storyboarding'],
+      tips: ["Describe the camera movement (e.g., 'drone shot', 'pan left') explicitly.", "Keep prompts under 200 characters for better coherence."],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'genie': {
+      toolId: 'genie',
+      tagline: 'World Models',
+      overview: 'Playable worlds from images. Research preview.',
+      useCases: ['Research', 'Game Dev'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'antigravity': {
+      toolId: 'antigravity',
+      tagline: 'Agent Platform',
+      overview: 'Build autonomous agents. Google\'s agent-first ecosystem.',
+      useCases: ['Automation', 'Enterprise'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'google-vids': {
+      toolId: 'google-vids',
+      tagline: 'Video for Work',
+      overview: 'AI video creation for workspace. Turn docs into videos.',
+      useCases: ['Internal comms', 'Training'],
+      tips: ["Start with a Google Doc script to get the best structure.", "Use 'Help me create' to generate a storyboard from a single prompt."],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'project-astra': {
+      toolId: 'project-astra',
+      tagline: 'Universal Assistant',
+      overview: 'Multimodal realtime agent. The future of interaction.',
+      useCases: ['Assistance', 'Multimodal'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'veo': {
+      toolId: 'veo',
+      tagline: 'Generative Video',
+      overview: 'High def video model. Cinematic quality.',
+      useCases: ['Video', 'Cinema'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'project-jules': {
+      toolId: 'project-jules',
+      tagline: 'Code Agent',
+      overview: 'Experimental coding agent. Deep GitHub integration.',
+      useCases: ['Coding', 'Maintenance'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'mixboard': {
+      toolId: 'mixboard',
+      tagline: 'Music Whiteboard',
+      overview: 'AI music mixing. Visual tracks.',
+      useCases: ['DJing', 'Remixing'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'music-sandbox': {
+      toolId: 'music-sandbox',
+      tagline: 'Music AI Tools',
+      overview: 'Suite of music tools. Lyria model access.',
+      useCases: ['Music', 'Audio'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'gemini-gems': {
+      toolId: 'gemini-gems',
+      tagline: 'Custom Gems',
+      overview: 'Personalized AI experts. Custom instructions.',
+      useCases: ['Personalization', 'Coaching'],
+      tips: ["Give your Gem a specific persona (e.g., 'Grumpy Editor').", "Upload knowledge files to ground the Gem in your specific data."],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'google-earth': {
+      toolId: 'google-earth',
+      tagline: 'The Globe',
+      overview: 'Detailed 3D globe. Visualization tools.',
+      useCases: ['Visualization', 'Storytelling'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'codewiki': {
+      toolId: 'codewiki',
+      tagline: 'Code Knowledge',
+      overview: 'Engineering standards. Internal docs.',
+      useCases: ['Docs', 'Standards'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'stitch': {
+      toolId: 'stitch',
+      tagline: 'UI Designer',
+      overview: 'AI UI generation. Figma integration.',
+      useCases: ['Prototyping', 'Design'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'keep': {
+      toolId: 'keep',
+      tagline: 'Notes & Lists',
+      overview: 'AI powered notes. Quick capture.',
+      useCases: ['Organization', 'Brainstorming'],
+      tips: ["Use 'Help me create' to generate a grocery list from a recipe.", "Pin important notes to the top for easy access."],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'opal': {
+      toolId: 'opal',
+      tagline: 'No Code AI',
+      overview: 'Build apps without code. Visual builder.',
+      useCases: ['App Building', 'Automation'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'mesop': {
+      toolId: 'mesop',
+      tagline: 'Python UI',
+      overview: 'UI framework for Python. Internal tools.',
+      useCases: ['Internal Tools', 'Demos'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'illuminate': {
+      toolId: 'illuminate',
+      tagline: 'Paper to Audio',
+      overview: 'Listen to papers. AI hosts.',
+      useCases: ['Learning', 'Research'],
+      creators: [], videos: [], articles: [], communities: []
+  },
+  'kaggle': {
+      toolId: 'kaggle',
+      tagline: 'Data Community',
+      overview: 'Datasets and competitions. Models.',
+      useCases: ['Data Science', 'Models'],
+      creators: [], videos: [], articles: [], communities: []
   }
 };
 
 export const getLearningData = (id: string): LearningHubData => {
+  // Return specific data if found, otherwise basic fallback but preserve ID
   return learningResourcesData[id] || { ...learningResourcesData['default'], toolId: id };
 };

@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { ArrowLeft, BookOpen, GraduationCap, Video, FileText, ExternalLink, PlayCircle, Users, MessageSquare, Newspaper, Zap } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import { ArrowLeft, BookOpen, GraduationCap, Video, FileText, ExternalLink, PlayCircle, Users, MessageSquare, Newspaper, Zap, Copy, Check } from 'lucide-react';
 import { toolsData } from '../data/tools';
 import { designToolsData } from '../data/designTools';
 import { buildToolsData } from '../data/buildTools';
@@ -12,6 +12,7 @@ interface LearnAppProps {
 }
 
 export const LearnApp: React.FC<LearnAppProps> = ({ toolId, onBack }) => {
+  const [copiedTipIndex, setCopiedTipIndex] = useState<number | null>(null);
   
   const tool = useMemo(() => {
     const allTools = [...toolsData, ...designToolsData, ...buildToolsData];
@@ -32,6 +33,12 @@ export const LearnApp: React.FC<LearnAppProps> = ({ toolId, onBack }) => {
       </div>
     );
   }
+
+  const handleCopyTip = (tip: string, index: number) => {
+      navigator.clipboard.writeText(tip);
+      setCopiedTipIndex(index);
+      setTimeout(() => setCopiedTipIndex(null), 2000);
+  };
 
   const accentColor = tool.color || '#4285F4';
 
@@ -105,6 +112,43 @@ export const LearnApp: React.FC<LearnAppProps> = ({ toolId, onBack }) => {
             </div>
         </div>
 
+        {/* Section: Pro Tips / Cheatsheet (Updated UI) */}
+        {learningData.tips && learningData.tips.length > 0 && (
+            <div className="mb-16 animate-fade-in" style={{ animationDelay: '50ms' }}>
+                <div className="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[80px] rounded-full pointer-events-none"></div>
+                    
+                    <div className="flex items-center gap-2 mb-6 relative z-10">
+                        <div className="p-2 bg-yellow-500/20 rounded-lg text-yellow-400">
+                            <Zap size={20} fill="currentColor" />
+                        </div>
+                        <h2 className="text-2xl font-bold text-white">Pro Tips & Shortcuts</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+                        {learningData.tips.map((tip, idx) => (
+                            <div 
+                                key={idx} 
+                                className="flex items-start justify-between p-4 rounded-xl bg-[#0a0a0a] border border-white/10 group hover:border-white/30 transition-all cursor-pointer"
+                                onClick={() => handleCopyTip(tip, idx)}
+                            >
+                                <div className="flex gap-3">
+                                    <span className="text-xs font-bold text-gray-600 mt-0.5">0{idx + 1}</span>
+                                    <span className="text-gray-300 text-sm font-medium pr-4">{tip}</span>
+                                </div>
+                                <button 
+                                    className={`p-2 rounded-lg transition-all duration-300 shrink-0 ${copiedTipIndex === idx ? 'bg-green-500/20 text-green-400 scale-110' : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10'}`}
+                                    title="Copy tip"
+                                >
+                                    {copiedTipIndex === idx ? <Check size={16} /> : <Copy size={16} />}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        )}
+
         {/* Section: Focus Creators */}
         {learningData.creators.length > 0 && (
             <div className="mb-16 animate-fade-in" style={{ animationDelay: '100ms' }}>
@@ -145,77 +189,85 @@ export const LearnApp: React.FC<LearnAppProps> = ({ toolId, onBack }) => {
             
             {/* Main Content: Top Videos */}
             <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <div className="flex items-center gap-2 mb-6">
-                    <PlayCircle className="text-gray-400" size={24} />
-                    <h2 className="text-2xl font-bold text-white">Top Tutorials</h2>
-                </div>
+                {learningData.videos.length > 0 && (
+                    <>
+                    <div className="flex items-center gap-2 mb-6">
+                        <PlayCircle className="text-gray-400" size={24} />
+                        <h2 className="text-2xl font-bold text-white">Top Tutorials</h2>
+                    </div>
 
-                <div className="space-y-4">
-                    {learningData.videos.map((video, idx) => (
-                        <div key={idx} className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors cursor-pointer">
-                            <div className="w-full sm:w-48 aspect-video rounded-xl bg-black/40 flex items-center justify-center shrink-0 border border-white/5 group-hover:border-white/20 relative overflow-hidden">
-                                 {/* Placeholder Thumbnail Effect */}
-                                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-                                 <PlayCircle size={32} className="text-white/50 group-hover:text-white transition-colors z-10" />
-                                 <span className="absolute bottom-2 right-2 text-[10px] font-bold bg-black/80 px-1.5 py-0.5 rounded text-white">{video.duration}</span>
-                            </div>
-                            <div className="flex-1 min-w-0 py-1">
-                                <h3 className="text-lg font-bold text-white mb-1 group-hover:underline decoration-white/30 underline-offset-4 truncate">{video.title}</h3>
-                                <div className="flex items-center gap-2 mb-2 text-sm text-gray-400">
-                                    <span className="font-medium text-white">{video.channel}</span>
-                                    <span>•</span>
-                                    <span>YouTube</span>
+                    <div className="space-y-4">
+                        {learningData.videos.map((video, idx) => (
+                            <div key={idx} className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors cursor-pointer">
+                                <div className="w-full sm:w-48 aspect-video rounded-xl bg-black/40 flex items-center justify-center shrink-0 border border-white/5 group-hover:border-white/20 relative overflow-hidden">
+                                    {/* Placeholder Thumbnail Effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+                                    <PlayCircle size={32} className="text-white/50 group-hover:text-white transition-colors z-10" />
+                                    <span className="absolute bottom-2 right-2 text-[10px] font-bold bg-black/80 px-1.5 py-0.5 rounded text-white">{video.duration}</span>
                                 </div>
-                                <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{video.description}</p>
+                                <div className="flex-1 min-w-0 py-1">
+                                    <h3 className="text-lg font-bold text-white mb-1 group-hover:underline decoration-white/30 underline-offset-4 truncate">{video.title}</h3>
+                                    <div className="flex items-center gap-2 mb-2 text-sm text-gray-400">
+                                        <span className="font-medium text-white">{video.channel}</span>
+                                        <span>•</span>
+                                        <span>YouTube</span>
+                                    </div>
+                                    <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{video.description}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                    </>
+                )}
             </div>
 
             {/* Sidebar: Resources & Communities */}
             <div className="space-y-10 animate-fade-in" style={{ animationDelay: '300ms' }}>
                 
                 {/* Knowledge Base */}
-                <div>
-                     <div className="flex items-center gap-2 mb-6">
-                        <Newspaper className="text-gray-400" size={24} />
-                        <h2 className="text-2xl font-bold text-white">Knowledge Base</h2>
+                {learningData.articles.length > 0 && (
+                    <div>
+                        <div className="flex items-center gap-2 mb-6">
+                            <Newspaper className="text-gray-400" size={24} />
+                            <h2 className="text-2xl font-bold text-white">Knowledge Base</h2>
+                        </div>
+                        <div className="space-y-3">
+                            {learningData.articles.map((article, idx) => (
+                                <a key={idx} href={article.url} className="block p-4 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 group">
+                                    <div className="flex items-center justify-between mb-1">
+                                        <span className="text-[10px] font-bold uppercase text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">{article.source}</span>
+                                        <ExternalLink size={12} className="text-gray-600 group-hover:text-white" />
+                                    </div>
+                                    <h4 className="text-base font-bold text-white mb-1 group-hover:text-[var(--accent)]" style={{ '--accent': accentColor } as any}>{article.title}</h4>
+                                    <p className="text-xs text-gray-500">{article.description}</p>
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                    <div className="space-y-3">
-                        {learningData.articles.map((article, idx) => (
-                            <a key={idx} href={article.url} className="block p-4 rounded-xl bg-[#0a0a0a] border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 group">
-                                <div className="flex items-center justify-between mb-1">
-                                    <span className="text-[10px] font-bold uppercase text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">{article.source}</span>
-                                    <ExternalLink size={12} className="text-gray-600 group-hover:text-white" />
-                                </div>
-                                <h4 className="text-base font-bold text-white mb-1 group-hover:text-[var(--accent)]" style={{ '--accent': accentColor } as any}>{article.title}</h4>
-                                <p className="text-xs text-gray-500">{article.description}</p>
-                            </a>
-                        ))}
-                    </div>
-                </div>
+                )}
 
                 {/* Communities */}
-                 <div>
-                     <div className="flex items-center gap-2 mb-6">
-                        <MessageSquare className="text-gray-400" size={24} />
-                        <h2 className="text-2xl font-bold text-white">Communities</h2>
+                {learningData.communities.length > 0 && (
+                    <div>
+                        <div className="flex items-center gap-2 mb-6">
+                            <MessageSquare className="text-gray-400" size={24} />
+                            <h2 className="text-2xl font-bold text-white">Communities</h2>
+                        </div>
+                        <div className="grid grid-cols-1 gap-3">
+                            {learningData.communities.map((comm, idx) => (
+                                <a key={idx} href={comm.url} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                    <div className="p-2.5 rounded-full bg-black/40 text-gray-300">
+                                        <Users size={18} />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-sm font-bold text-white">{comm.title}</h4>
+                                        <p className="text-xs text-gray-500">{comm.description}</p>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-3">
-                        {learningData.communities.map((comm, idx) => (
-                             <a key={idx} href={comm.url} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                 <div className="p-2.5 rounded-full bg-black/40 text-gray-300">
-                                     <Users size={18} />
-                                 </div>
-                                 <div>
-                                     <h4 className="text-sm font-bold text-white">{comm.title}</h4>
-                                     <p className="text-xs text-gray-500">{comm.description}</p>
-                                 </div>
-                             </a>
-                        ))}
-                    </div>
-                </div>
+                )}
 
             </div>
 

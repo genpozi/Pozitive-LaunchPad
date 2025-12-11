@@ -5,7 +5,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'flux-1',
     name: 'Flux.1',
-    description: 'The new king of open weights image generation. Superior prompt adherence and text rendering.',
+    description: 'The open-weights image generation king. Unrivaled prompt adherence and text rendering capabilities.',
     url: 'https://github.com/black-forest-labs/flux',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Model', 'SOTA', 'Local'],
@@ -14,12 +14,13 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'flux-1',
     color: '#00cc88'
   },
   {
     id: 'comfyui',
     name: 'ComfyUI',
-    description: 'The most powerful node-based GUI for Stable Diffusion and Flux. Infinite customizability.',
+    description: 'The ultimate node-based engine for Stable Diffusion and Flux. Build complex, repeatable generative workflows.',
     url: 'https://github.com/comfyanonymous/ComfyUI',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Nodes', 'Workflow', 'Advanced'],
@@ -27,12 +28,13 @@ export const designToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'comfyui',
     color: '#6c5ce7'
   },
   {
     id: 'penpot',
     name: 'Penpot',
-    description: 'The open-source design & prototyping platform. The free alternative to Figma.',
+    description: 'The open-source design & prototyping platform. A true community-driven alternative to Figma.',
     url: 'https://penpot.app/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['UI/UX', 'Vector', 'Collab'],
@@ -43,19 +45,20 @@ export const designToolsData: Tool[] = [
   {
     id: 'blender',
     name: 'Blender',
-    description: 'The 3D creation suite. Paired with AI render plugins, it is unstoppable.',
+    description: 'The professional 3D creation suite. Now turbocharged with AI rendering and texture generation plugins.',
     url: 'https://www.blender.org/',
     category: ToolCategory.VECTOR_3D,
     tags: ['3D', 'Modeling', 'Animation'],
     icon: 'BlenderLogo',
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'blender',
     color: '#e67e22'
   },
   {
     id: 'invoke',
     name: 'InvokeAI',
-    description: 'A professional creative engine for Stable Diffusion models with a unified canvas.',
+    description: 'A professional creative engine for Stable Diffusion. Features a unified canvas for infinite outpainting.',
     url: 'https://invoke-ai.com/',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Canvas', 'Inpainting', 'Local'],
@@ -68,7 +71,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'napkin-ai',
     name: 'Napkin.ai',
-    description: 'Turn boring text into engaging visuals instantly. Essential for documentation and storytelling.',
+    description: 'Transform boring documentation into engaging visual storytelling instantly using generative diagrams.',
     url: 'https://napkin.ai/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['Docs', 'Visuals', 'Storytelling'],
@@ -77,12 +80,12 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
-    color: '#FFFFFF'
+    color: '#0052FF'
   },
   {
     id: 'ideogram',
     name: 'Ideogram',
-    description: 'The best model for typography within AI images. Create posters, logos, and t-shirts effortlessly.',
+    description: 'The typography specialist. Create stunning logos, posters, and t-shirt designs with perfect text.',
     url: 'https://ideogram.ai/',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Typography', 'Logos', 'Art'],
@@ -96,7 +99,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'gamma',
     name: 'Gamma',
-    description: 'A new medium for presenting ideas. Powered by AI. Just start writing.',
+    description: 'A new medium for presenting ideas. Generate decks, documents, and websites from a single prompt.',
     url: 'https://gamma.app/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['Presentation', 'Slides', 'Web'],
@@ -107,7 +110,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'figma',
     name: 'Figma',
-    description: 'The industry standard interface design tool. Now with AI features for generation and organizing.',
+    description: 'The interface design standard. Connects everyone in the design process so teams can deliver faster.',
     url: 'https://www.figma.com/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['UI/UX', 'Standard', 'Web'],
@@ -115,12 +118,13 @@ export const designToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'figma',
     color: '#A259FF'
   },
   {
     id: 'relume',
     name: 'Relume',
-    description: 'AI-powered sitemap and wireframe generator. Moves from idea to design in minutes.',
+    description: 'AI-powered sitemap and wireframe generator. The fastest way to move from idea to structural design.',
     url: 'https://library.relume.io/',
     category: ToolCategory.GENERATIVE_UI,
     tags: ['Web', 'Wireframe', 'Speed'],
@@ -128,16 +132,16 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
-    color: '#000000'
+    color: '#FFFFFF' // Changed from black for visibility
   },
   {
     id: 'recraft',
     name: 'Recraft',
-    description: 'Generate vector art, icons, and 3D illustrations that are infinitely scalable. Best for logos.',
+    description: 'The infinite canvas for vector art. Generate SVG icons, logos, and 3D illustrations that scale perfectly.',
     url: 'https://www.recraft.ai/',
     category: ToolCategory.VECTOR_3D,
     tags: ['Vector', 'SVG', 'Logos'],
-    icon: 'PenTool',
+    icon: 'RecraftLogo',
     featured: true,
     isNew: true,
     toolbar: true,
@@ -147,7 +151,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'krea',
     name: 'Krea.ai',
-    description: 'Real-time generation and enhancement. Paint and see the AI update instantly.',
+    description: 'Real-time creative intelligence. Paint with shapes and see AI render high-fidelity images instantly.',
     url: 'https://www.krea.ai/',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Realtime', 'Upscale', 'Video'],
@@ -160,19 +164,20 @@ export const designToolsData: Tool[] = [
   {
     id: 'spline',
     name: 'Spline',
-    description: '3D design tool for the web with AI text-to-3D generation capabilities.',
+    description: '3D design tool for the web. Generate 3D objects from text and integrate them into websites easily.',
     url: 'https://spline.design/',
     category: ToolCategory.VECTOR_3D,
     tags: ['3D', 'Web', 'Interactive'],
-    icon: 'Box',
+    icon: 'SplineLogo',
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'spline',
     color: '#fd79a8'
   },
   {
     id: 'creatie',
     name: 'Creatie',
-    description: 'The AI-native design tool. Like Figma but built from the ground up with generative features.',
+    description: 'The AI-native design tool. A Figma alternative built from the ground up with generative features.',
     url: 'https://creatie.ai/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['UI', 'GenAI', 'Editor'],
@@ -184,7 +189,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'uizard',
     name: 'Uizard',
-    description: 'Rapidly design mobile apps and websites using AI text prompts or sketches.',
+    description: 'Rapidly design mobile apps and websites using AI text prompts or hand-drawn sketches.',
     url: 'https://uizard.io/',
     category: ToolCategory.GENERATIVE_UI,
     tags: ['Wireframe', 'Prototyping'],
@@ -195,19 +200,19 @@ export const designToolsData: Tool[] = [
   {
     id: 'bezi',
     name: 'Bezi',
-    description: '3D design platform for spatial computing (AR/VR/XR). AI-assisted prototyping.',
+    description: '3D design platform for spatial computing. Prototype AR/VR/XR experiences with AI assistance.',
     url: 'https://bezi.com/',
     category: ToolCategory.VECTOR_3D,
     tags: ['Spatial', 'XR', '3D'],
     icon: 'Glasses',
     isNew: true,
     pricing: PricingModel.FREEMIUM,
-    color: '#343434'
+    color: '#9CA3AF'
   },
    {
     id: 'dora',
     name: 'Dora',
-    description: 'Build 3D animated websites without code. Generative 3D scenes integrated.',
+    description: 'Build 3D animated websites without code. Generative 3D scenes integrated directly into the DOM.',
     url: 'https://www.dora.run/',
     category: ToolCategory.VECTOR_3D,
     tags: ['Web', '3D', 'No-Code'],
@@ -218,11 +223,11 @@ export const designToolsData: Tool[] = [
   {
     id: 'rive',
     name: 'Rive',
-    description: 'Create interactive animations that run anywhere. AI tools for bone rigging and motion.',
+    description: 'Create interactive animations that run anywhere. AI tools for bone rigging and state machine logic.',
     url: 'https://rive.app/',
     category: ToolCategory.VIDEO_FX,
     tags: ['Animation', 'Interactive', 'Runtime'],
-    icon: 'Film',
+    icon: 'RiveLogo',
     pricing: PricingModel.FREEMIUM,
     color: '#D04068'
   },
@@ -231,7 +236,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'midjourney',
     name: 'Midjourney',
-    description: 'The aesthetic gold standard for AI image generation. Web interface now available.',
+    description: 'The aesthetic gold standard for AI image generation. Now with a web interface for managing collections.',
     url: 'https://www.midjourney.com/',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Art', 'Reference', 'High-End'],
@@ -239,12 +244,13 @@ export const designToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.PAID,
-    color: '#ffffff'
+    learnAppId: 'midjourney',
+    color: '#FFFFFF' // White for visibility on dark
   },
   {
     id: 'hailuo',
     name: 'Hailuo AI',
-    description: 'Also known as MiniMax. The current leader in ultra-realistic video generation with consistent physics.',
+    description: 'MiniMax. The current leader in ultra-realistic video generation with consistent physics.',
     url: 'https://hailuoai.video/',
     category: ToolCategory.VIDEO_FX,
     tags: ['Video', 'SOTA', 'Realistic'],
@@ -258,7 +264,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'runway',
     name: 'Runway',
-    description: 'Gen-3 Alpha is pioneering video generation. Essential for motion designers.',
+    description: 'Gen-3 Alpha is pioneering video generation. Essential controls for motion designers and filmmakers.',
     url: 'https://runwayml.com/',
     category: ToolCategory.VIDEO_FX,
     tags: ['Video', 'Motion', 'Cinema'],
@@ -266,12 +272,13 @@ export const designToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.PAID,
-    color: '#000000'
+    learnAppId: 'runway',
+    color: '#CCFF00' // Acid Green for visibility
   },
   {
     id: 'luma',
-    name: 'Luma Dream Machine',
-    description: 'High-quality AI video generation model. Create realistic shots from text and images.',
+    name: 'Luma',
+    description: 'Dream Machine. High-quality AI video generation. Create realistic shots from text and images.',
     url: 'https://lumalabs.ai/dream-machine',
     category: ToolCategory.VIDEO_FX,
     tags: ['Video', 'Realistic', 'Physics'],
@@ -280,12 +287,13 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.PAID,
+    learnAppId: 'luma',
     color: '#00E5FF'
   },
   {
     id: 'kling',
     name: 'Kling AI',
-    description: 'Next-gen video model capable of generating long, coherent clips with complex motion.',
+    description: 'Next-gen video model capable of generating long, coherent clips with complex motion dynamics.',
     url: 'https://kling.kuaishou.com/',
     category: ToolCategory.VIDEO_FX,
     tags: ['Video', 'SOTA', 'Long-form'],
@@ -296,8 +304,8 @@ export const designToolsData: Tool[] = [
   },
   {
     id: 'adobe-firefly',
-    name: 'Adobe Firefly',
-    description: 'Commercially safe generative AI integrated directly into Photoshop and Illustrator.',
+    name: 'Firefly',
+    description: 'Commercially safe generative AI integrated directly into Photoshop and Illustrator workflows.',
     url: 'https://firefly.adobe.com/',
     category: ToolCategory.DESIGN_TOOL,
     tags: ['Enterprise', 'Safe', 'Creative Cloud'],
@@ -308,7 +316,7 @@ export const designToolsData: Tool[] = [
   {
     id: 'magnific',
     name: 'Magnific AI',
-    description: 'The most advanced AI upscaler and hallucinator. Adds incredible detail to low-res images.',
+    description: 'The most advanced AI upscaler. Adds incredible detail to low-res images via hallucination.',
     url: 'https://magnific.ai/',
     category: ToolCategory.IMAGE_GENERATION,
     tags: ['Upscale', 'Detail', 'Photography'],

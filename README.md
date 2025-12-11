@@ -1,83 +1,95 @@
 # POZITIVE AI | Launchpad
 
-A futuristic, high-performance resource directory designed to be the ultimate starting point for developers, designers, and researchers exploring the modern AI ecosystem.
+The definitive ecosystem explorer for Google's AI tools, Design Systems, and Build Infrastructure. A futuristic, high-performance web application designed for developers, researchers, and creative technologists.
 
-## 🚀 Overview
+![Launchpad Preview](https://via.placeholder.com/1200x600/050505/4285F4?text=POZITIVE+AI+Launchpad)
 
-POZITIVE AI acts as a unified "Launchpad" that aggregates the bleeding-edge tools from Google's ecosystem and the broader AI landscape. It organizes resources into three distinct pillars:
+## 🚀 Mission
 
-1.  **Google Tools**: A hub for Google's specific AI tools, Workspace integrations, and research labs (Gemini, DeepMind, Labs).
-2.  **Design Systems**: A curated gallery of Generative UI, Image FX, Video generation, and 3D tools for creatives.
-3.  **Build Systems**: A dev-centric dashboard for AI Engineering, Agents, LLMOps, and Infrastructure.
+POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expanding universe of Artificial Intelligence. It aggregates:
+1.  **Google Systems**: The core ecosystem (Gemini, DeepMind, Vertex AI, Workspace).
+2.  **Design Systems**: Next-gen generative UI, video models, and 3D tools.
+3.  **Build Systems**: The modern AI engineering stack (Agents, LLMOps, Vector DBs).
 
 ## ✨ Key Features
 
-### 🧠 Smart Search & Strategic Research
--   **Dual Mode**: Toggle between standard **Find** (Regex/Tag search) and **Research** (AI-powered advisory).
--   **3-Tier Strategy**: The AI Advisor doesn't just list tools; it provides three distinct plans:
-    -   **One-Shot**: The single best tool for the job.
-    -   **Bespoke**: A custom workflow combining 2-3 tools.
-    -   **Full Stack**: A scalable architecture recommendation.
--   **Fallback Mechanisms**: If the API key is missing or quota is exceeded, the search gracefully transitions to opening the query in Google Gemini external.
+### 🧠 Intelligent Research Engine
+*   **Dual-Mode Search**: 
+    *   **Quick Find**: Instant, regex-based filtering across all tool titles, tags, and descriptions.
+    *   **AI Advisor**: A "Research" mode powered by Gemini Flash 2.5. It doesn't just list tools; it acts as a consultant, recommending **One-Shot**, **Bespoke**, or **Full-Stack** strategies based on your specific problem.
+*   **Context Aware**: The search engine adapts its persona based on the active page (e.g., acting as a "Creative Technologist" on the Design page vs. a "DevOps Engineer" on the Build page).
 
-### ⚡ Quick Launch Dock
--   **Tabbed Organization**: Tools are grouped logically (e.g., "Dream", "Work", "Build") in a sticky, glass-morphic dock.
--   **Interactive Tooltips**: Hovering over dock items reveals rich, card-like details without cluttering the UI.
--   **Mobile Optimized**: The dock transforms into a swipeable carousel on touch devices.
+### 🔖 Global Collections (New)
+*   **Unified Favorites**: Save tools from *any* page (Google, Design, Build) into a single, persistent collection.
+*   **Browser Persistence**: Your stack is saved locally, ensuring your toolkit is ready whenever you return.
+*   **Quick Access Drawer**: Access your saved tools instantly from the global navigation header.
 
-### 🎓 Learn App Dashboard
--   **Deep Dives**: Major tools (like NotebookLM, AI Studio, Opal) feature a dedicated "Learn App" page.
--   **Curated Content**: Includes top creators to follow, essential video tutorials, and direct links to community hubs.
--   **Split Actions**: Tool cards feature a split-interaction model—click "Launch" to go to the tool, or "Learn" to access the dashboard.
+### ⚡ "Zero-Latency" Interface
+*   **Glassmorphic UI**: Built with a highly polished, dark-mode-first aesthetic using Tailwind CSS.
+*   **Mega-Drawer Navigation**: A smooth, gesture-ready slide-out drawer that houses both site navigation and your personalized tool dock.
+*   **Performance**: Optimized rendering with React 18, utilizing memoization for complex tool filtering and searching.
 
-### 🧭 Adaptive Navigation
--   **Floating Drawer**: A sleek, slide-out navigation panel accessed via a floating trigger button, keeping the main interface clean.
--   **State Driven**: The navigation state persists and animates smoothly, providing a native-app feel on the web.
+### 🎓 Deep-Dive Learn Hub
+*   **Integrated Learning**: Select tools feature a "Learn App" experience—a dedicated dashboard connecting you to:
+    *   **Pro Tips & Cheatsheets**: Copy-pasteable advanced workflows.
+    *   **Curated Video Tutorials**: The best content from YouTube's top AI educators.
+    *   **Community Hubs**: Direct links to Discords, Subreddits, and Documentation.
 
 ## 🛠 Tech Stack
 
--   **Frontend**: React 18, TypeScript
--   **Styling**: Tailwind CSS (with custom animations and utility extensions)
--   **Icons**: Lucide React + Custom SVG Paths (Brand Authentic)
--   **AI Integration**: Google GenAI SDK (`@google/genai`)
--   **Build Tooling**: Vite-compatible structure (ES Modules)
+*   **Framework**: React 18 + TypeScript
+*   **Styling**: Tailwind CSS (Custom Config for animations & glass effects)
+*   **Icons**: Lucide React + Custom SVG Brand Assets
+*   **AI Model**: Google Gemini 2.5 Flash (via `@google/genai` SDK)
+*   **Build**: Vite / ES Modules
 
-## 📂 Project Structure
+## 📂 Project Architecture
 
 ```
-├── index.html          # Entry point with Tailwind & Fonts
-├── index.tsx           # React Root
-├── App.tsx             # Main Layout, Router & Floating Navigation
-├── types.ts            # TypeScript Definitions & Data Models
+/
+├── index.html            # Entry & Tailwind Config
+├── App.tsx               # Root Layout & Global State (Favorites, Nav)
+├── types.ts              # Data Models (Tool, LearningHubData)
 ├── components/
-│   ├── DockItem.tsx    # Quick Launch buttons with tooltips
-│   ├── Icons.tsx       # Icon mapping & Custom Brand SVGs
-│   ├── SmartSearch.tsx # AI Search & Strategic Research Logic
-│   └── ToolCard.tsx    # Main grid cards with holographic effects
+│   ├── SmartSearch.tsx   # Gemini-powered Search Logic
+│   ├── ToolCard.tsx      # Interactive Grid Cards
+│   ├── DockItem.tsx      # Drawer/Dock Widgets
+│   └── Icons.tsx         # Centralized Icon System
 ├── data/
-│   ├── tools.ts        # Google Tools Data
-│   ├── designTools.ts  # Design System Data
-│   ├── buildTools.ts   # Build System Data
-│   └── learningResources.ts # Curated educational content
+│   ├── tools.ts          # Google Ecosystem Data
+│   ├── designTools.ts    # Design Ecosystem Data
+│   ├── buildTools.ts     # Build Ecosystem Data
+│   └── learningResources.ts # Education Content
 └── pages/
-    ├── GoogleSystems.tsx # Main Google Tools Dashboard
-    ├── DesignSystems.tsx # Design Dashboard
-    ├── BuildSystems.tsx  # Engineering Dashboard
-    └── LearnApp.tsx      # Educational Detail View
+    ├── GoogleSystems.tsx # Dashboard: Google
+    ├── DesignSystems.tsx # Dashboard: Design
+    ├── BuildSystems.tsx  # Dashboard: Engineering
+    └── LearnApp.tsx      # Detail View: Education
 ```
 
-## 🚀 Getting Started
+## 🚀 Deployment & Setup
 
-1.  **Environment**: Ensure `process.env.API_KEY` is set if you want the "Research" feature to work natively within the app.
-2.  **Dependencies**: The project uses ES modules imported via `importmap` in `index.html`. No `npm install` is strictly required for the runtime if served correctly, but standard React development environments apply.
+### Prerequisites
+*   A modern web browser (Chrome/Edge/Arc/Safari).
+*   (Optional) A Google Gemini API Key for the "Research" features.
+
+### Running Locally
+This project uses standard ES Modules. You can serve it using any static file server.
+
+1.  **Clone the repo**
+2.  **Serve**:
+    ```bash
+    npx serve .
+    ```
+3.  **Configure API Key**:
+    To enable the AI Research features, ensure `process.env.API_KEY` is available in your environment, or the app will gracefully fallback to opening Gemini in a new tab.
 
 ## 📱 Mobile Experience
-
-The application features a "Wow" mobile mode:
--   **Touch Optimizations**: Tooltips are disabled on touch to prevent sticky hover states.
--   **Snap Scrolling**: Docks use `snap-x` for smooth horizontal browsing.
--   **Viewport Locking**: Meta tags prevent accidental zooming for a native app feel.
+The app is fully responsive, featuring:
+*   Touch-optimized navigation drawer.
+*   Snap-scrolling tool docks.
+*   Adaptive grid layouts (1-col mobile to 6-col ultra-wide).
 
 ---
 
-*Built with ❤️ for the AI Community.*
+*Ready for Launch. Built 2025.*

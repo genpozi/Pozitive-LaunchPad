@@ -45,7 +45,7 @@ export const toolsData: Tool[] = [
     id: 'music-sandbox',
     name: 'Music AI Sandbox',
     description: 'A suite of experimental AI music tools featuring the Lyria model. Compose and transform audio.',
-    url: 'https://www.youtube.com/watch?v=Fj2Fq5X_zYc', // Placeholder or demo link as it's often limited access
+    url: 'https://www.youtube.com/watch?v=Fj2Fq5X_zYc', 
     category: ToolCategory.CREATIVE_STUDIO,
     tags: ['Music', 'Lyria', 'Experimental'],
     icon: 'Disc',
@@ -84,7 +84,7 @@ export const toolsData: Tool[] = [
     url: 'https://www.google.com/earth/studio/',
     category: ToolCategory.CREATIVE_STUDIO,
     tags: ['3D', 'Animation', 'Geo'],
-    icon: 'Globe',
+    icon: 'GoogleEarthLogo',
     color: '#4285F4'
   },
   {
@@ -94,7 +94,7 @@ export const toolsData: Tool[] = [
     url: 'https://earth.google.com/web/',
     category: ToolCategory.CREATIVE_STUDIO,
     tags: ['Geo', '3D', 'Exploration'],
-    icon: 'Globe',
+    icon: 'GoogleEarthLogo',
     toolbar: true,
     learnAppId: 'google-earth',
     color: '#34A853'
@@ -125,6 +125,18 @@ export const toolsData: Tool[] = [
     color: '#4285F4'
   },
   {
+    id: 'vertex-ai',
+    name: 'Vertex AI',
+    description: 'Build, deploy, and scale enterprise-grade AI models on Google Cloud.',
+    url: 'https://cloud.google.com/vertex-ai',
+    category: ToolCategory.DEV_LAB,
+    tags: ['Enterprise', 'Cloud', 'MLOps'],
+    icon: 'VertexAILogo',
+    toolbar: true,
+    learnAppId: 'vertex-ai',
+    color: '#4285F4'
+  },
+  {
     id: 'antigravity',
     name: 'Antigravity',
     description: 'Agent-first development platform. Autonomous agents that plan, execute, and verify tasks.',
@@ -142,7 +154,7 @@ export const toolsData: Tool[] = [
     id: 'project-jules',
     name: 'Project Jules',
     description: 'An experimental AI code agent that helps you write, debug, and understand code.',
-    url: 'https://labs.google/', // Placeholder as Jules is often internal/waitlist
+    url: 'https://labs.google/', 
     category: ToolCategory.DEV_LAB,
     tags: ['Code', 'Agent', 'Experimental'],
     icon: 'Bot',
@@ -175,6 +187,7 @@ export const toolsData: Tool[] = [
     featured: true,
     isNew: true,
     toolbar: true,
+    learnAppId: 'idx',
     color: '#8AB4F8'
   },
   {
@@ -186,6 +199,7 @@ export const toolsData: Tool[] = [
     tags: ['Backend', 'Serverless'],
     icon: 'FirebaseLogo',
     toolbar: true,
+    learnAppId: 'firebase',
     color: '#FFCA28'
   },
   {
@@ -199,6 +213,7 @@ export const toolsData: Tool[] = [
     featured: true,
     isNew: true,
     toolbar: true,
+    learnAppId: 'mesop',
     color: '#F4B400'
   },
   {
@@ -244,8 +259,9 @@ export const toolsData: Tool[] = [
     url: 'https://colab.research.google.com/',
     category: ToolCategory.DEV_LAB,
     tags: ['Python', 'Data Science'],
-    icon: 'PythonLogo',
+    icon: 'ColabLogo',
     toolbar: true,
+    learnAppId: 'colab',
     color: '#F4900C'
   },
   {
@@ -269,7 +285,7 @@ export const toolsData: Tool[] = [
     url: 'https://notebooklm.google.com/',
     category: ToolCategory.RESEARCH,
     tags: ['RAG', 'Research', 'Audio'],
-    icon: 'BookOpen',
+    icon: 'NotebookLMLogo',
     featured: true,
     isNew: true,
     toolbar: true,
@@ -283,8 +299,9 @@ export const toolsData: Tool[] = [
     url: 'https://illuminate.google.com/',
     category: ToolCategory.RESEARCH,
     tags: ['Audio', 'Papers', 'Learning'],
-    icon: 'Brain',
+    icon: 'IlluminateLogo',
     isNew: true,
+    learnAppId: 'illuminate',
     color: '#A142F4'
   },
   {
@@ -328,7 +345,7 @@ export const toolsData: Tool[] = [
     url: 'https://deepmind.google/technologies/veo/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Model', 'Video', 'SOTA'],
-    icon: 'Video',
+    icon: 'DeepMindLogo',
     featured: true,
     isNew: true,
     learnAppId: 'veo',
@@ -341,7 +358,7 @@ export const toolsData: Tool[] = [
     url: 'https://deepmind.google/technologies/genie/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['World Model', 'Gaming', 'Research'],
-    icon: 'Gamepad2',
+    icon: 'DeepMindLogo',
     isNew: true,
     learnAppId: 'genie',
     color: '#9C27B0'
@@ -353,7 +370,7 @@ export const toolsData: Tool[] = [
     url: 'https://deepmind.google/technologies/project-astra/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Multimodal', 'Realtime', 'Prototype'],
-    icon: 'Sparkles',
+    icon: 'DeepMindLogo',
     featured: true,
     isNew: true,
     toolbar: true,
@@ -367,8 +384,9 @@ export const toolsData: Tool[] = [
     url: 'https://ai.google.dev/gemma',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Open Source', 'LLM', 'Weights'],
-    icon: 'Box',
+    icon: 'GemmaLogo',
     featured: true,
+    learnAppId: 'gemma',
     color: '#4285F4'
   },
   {
@@ -378,7 +396,7 @@ export const toolsData: Tool[] = [
     url: 'https://www.tensorflow.org/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Framework', 'ML', 'Flow'],
-    icon: 'Cpu',
+    icon: 'TensorFlowLogo',
     learnAppId: 'tensorflow',
     color: '#FF6F00'
   },
@@ -389,7 +407,7 @@ export const toolsData: Tool[] = [
     url: 'https://jax.readthedocs.io/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Python', 'Research', 'HPC'],
-    icon: 'Zap',
+    icon: 'JaxLogo',
     color: '#7620ff'
   },
   {
@@ -409,8 +427,9 @@ export const toolsData: Tool[] = [
     url: 'https://www.kaggle.com/',
     category: ToolCategory.MODELS_FRAMEWORKS,
     tags: ['Community', 'Data', 'Competitions'],
-    icon: 'Database',
+    icon: 'KaggleLogo',
     toolbar: true,
+    learnAppId: 'kaggle',
     color: '#20BEFF'
   },
   {
@@ -466,7 +485,7 @@ export const toolsData: Tool[] = [
   {
     id: 'keep',
     name: 'Keep',
-    description: 'Notes & Lists. Now with "Help me create" generative AI features.',
+    description: 'Capture ideas, notes, and lists instantly. Now with generative AI to help you create.',
     url: 'https://keep.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Notes', 'GenAI'],
@@ -479,7 +498,7 @@ export const toolsData: Tool[] = [
   {
     id: 'drive',
     name: 'Drive',
-    description: 'Cloud storage.',
+    description: 'Secure cloud storage and file sharing. Store, access, and collaborate on files from any device.',
     url: 'https://drive.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Storage'],
@@ -490,7 +509,7 @@ export const toolsData: Tool[] = [
   {
     id: 'docs',
     name: 'Docs',
-    description: 'Documents.',
+    description: 'Collaborative online documents. Edit together in real-time with smart writing assistance.',
     url: 'https://docs.google.com/create',
     category: ToolCategory.WORKSPACE,
     tags: ['Writing'],
@@ -501,18 +520,52 @@ export const toolsData: Tool[] = [
   {
     id: 'sheets',
     name: 'Sheets',
-    description: 'Spreadsheets.',
+    description: 'Online spreadsheets with built-in intelligence. Analyze data, visualize insights, and collaborate.',
     url: 'https://sheets.google.com/create',
     category: ToolCategory.WORKSPACE,
     tags: ['Data'],
     icon: 'GoogleSheets',
     toolbar: true,
+    learnAppId: 'sheets',
     color: '#0F9D58'
+  },
+  {
+    id: 'slides',
+    name: 'Slides',
+    description: 'Beautiful presentations created together. Design professional slide decks with real-time collaboration.',
+    url: 'https://slides.google.com/create',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Presentation'],
+    icon: 'GoogleSlidesLogo',
+    toolbar: true,
+    color: '#F4B400'
+  },
+  {
+    id: 'forms',
+    name: 'Forms',
+    description: 'Easy-to-create surveys and forms. Collect data and analyze results instantly with automatic summaries.',
+    url: 'https://forms.google.com/create',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Data'],
+    icon: 'GoogleFormsLogo',
+    toolbar: true,
+    color: '#7248B9'
+  },
+  {
+    id: 'sites',
+    name: 'Sites',
+    description: 'Effortlessly create impactful team sites. Build internal project hubs and public websites without coding.',
+    url: 'https://sites.google.com/create',
+    category: ToolCategory.WORKSPACE,
+    tags: ['Web'],
+    icon: 'GoogleSitesLogo',
+    toolbar: true,
+    color: '#4285F4'
   },
   {
     id: 'calendar',
     name: 'Calendar',
-    description: 'Schedule.',
+    description: 'Smart online calendar and scheduling. Share calendars and schedule meetings to keep your team in sync.',
     url: 'https://calendar.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Time'],
@@ -523,7 +576,7 @@ export const toolsData: Tool[] = [
   {
     id: 'meet',
     name: 'Meet',
-    description: 'Video calls.',
+    description: 'Premium video meetings for everyone. Secure, high-quality video conferencing with screen sharing.',
     url: 'https://meet.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Calls'],
@@ -534,7 +587,7 @@ export const toolsData: Tool[] = [
   {
     id: 'mail',
     name: 'Gmail',
-    description: 'Email.',
+    description: 'Secure, smart, and easy-to-use email. Get things done with AI-powered features like Smart Compose.',
     url: 'https://mail.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Comm'],
@@ -545,7 +598,7 @@ export const toolsData: Tool[] = [
   {
     id: 'fonts',
     name: 'Fonts',
-    description: 'Typography.',
+    description: 'A robust directory of open source web fonts. Making the web more beautiful, fast, and open.',
     url: 'https://fonts.google.com/',
     category: ToolCategory.PLATFORM,
     tags: ['Design'],
@@ -555,11 +608,11 @@ export const toolsData: Tool[] = [
   {
     id: 'domains',
     name: 'Domains',
-    description: 'DNS Management.',
+    description: 'Find, buy, and manage your domain name. Simple, secure domain registration with built-in Google infrastructure.',
     url: 'https://domains.google/',
     category: ToolCategory.PLATFORM,
     tags: ['Web'],
     icon: 'Globe',
-    color: '#666'
+    color: '#4285F4'
   }
 ];

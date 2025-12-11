@@ -5,48 +5,51 @@ export const buildToolsData: Tool[] = [
   {
     id: 'lovable',
     name: 'Lovable',
-    description: 'The GPT Engineer. It builds, debugs, and deploys real full-stack apps from conversation.',
+    description: 'GPT Engineer. Build, debug, and deploy full-stack web apps just by chatting. The fastest route from idea to live URL.',
     url: 'https://lovable.dev/',
     category: ToolCategory.IDE_AGENT,
-    tags: ['Agent', 'Fullstack', 'Hot'],
+    tags: ['Agent', 'Fullstack', 'No-Code'],
     icon: 'Bot',
     featured: true,
     isNew: true,
     toolbar: true,
     pricing: PricingModel.PAID,
+    learnAppId: 'lovable',
     color: '#3B82F6'
   },
   {
     id: 'windsurf',
     name: 'Windsurf',
-    description: 'The first agentic IDE by Codeium. It flows with you, understanding deep context.',
+    description: 'The world\'s first Agentic IDE. Consumes your entire codebase to reason, act, and code alongside you in a flow state.',
     url: 'https://codeium.com/windsurf',
     category: ToolCategory.IDE_AGENT,
-    tags: ['IDE', 'Agent', 'Flow'],
-    icon: 'CursorLogo',
+    tags: ['IDE', 'Agent', 'Context'],
+    icon: 'Code2', // Using generic Code2 as placeholder for specific brand
     featured: true,
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'windsurf',
     color: '#00C8BC'
   },
   {
     id: 'cursor',
     name: 'Cursor',
-    description: 'The AI code editor. Built on VS Code, it uses custom models to predict your next edit.',
+    description: 'The AI-first code editor. Built to pair-program with you, predicting your next edit and fixing bugs before you see them.',
     url: 'https://cursor.sh/',
     category: ToolCategory.IDE_AGENT,
-    tags: ['IDE', 'Editor', 'Copilot'],
+    tags: ['IDE', 'VS Code', 'Copilot'],
     icon: 'CursorLogo',
     featured: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
-    color: '#000000'
+    learnAppId: 'cursor',
+    color: '#FFFFFF'
   },
   {
     id: 'zed',
     name: 'Zed',
-    description: 'High-performance, multiplayer code editor from the creators of Atom. AI-native.',
+    description: 'High-performance, multiplayer code editor from the creators of Atom. Now with Zed AI for context-aware generation.',
     url: 'https://zed.dev/',
     category: ToolCategory.IDE_AGENT,
     tags: ['Performance', 'Rust', 'Editor'],
@@ -59,21 +62,22 @@ export const buildToolsData: Tool[] = [
   {
     id: 'bolt-new',
     name: 'Bolt.new',
-    description: 'Prompt, run, edit, and deploy full-stack web apps directly in the browser.',
+    description: 'Prompt, run, edit, and deploy full-stack web apps instantly in the browser. No local setup required.',
     url: 'https://bolt.new/',
     category: ToolCategory.IDE_AGENT,
-    tags: ['WebContainers', 'Fullstack', 'No-Setup'],
-    icon: 'Container',
+    tags: ['WebContainers', 'Fullstack', 'Browser'],
+    icon: 'BoltLogo',
     featured: true,
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'bolt-new',
     color: '#FFFFFF'
   },
   {
     id: 'marblism',
     name: 'Marblism',
-    description: 'Generate a fully functional SaaS boilerplate from a single prompt. React/Node.',
+    description: 'Generate a fully functional SaaS boilerplate from a single prompt. React, Node, and Database ready to ship.',
     url: 'https://marblism.com/',
     category: ToolCategory.IDE_AGENT,
     tags: ['SaaS', 'Boilerplate', 'Generator'],
@@ -85,7 +89,7 @@ export const buildToolsData: Tool[] = [
   {
     id: 'trae',
     name: 'Trae',
-    description: 'The adaptive AI IDE by ByteDance. Customize your coding workflow with smart agents.',
+    description: 'The adaptive AI IDE by ByteDance. Customize your coding workflow with smart agents that learn your style.',
     url: 'https://www.trae.ai/',
     category: ToolCategory.IDE_AGENT,
     tags: ['IDE', 'Adaptive', 'New'],
@@ -99,11 +103,11 @@ export const buildToolsData: Tool[] = [
   {
     id: 'openrouter',
     name: 'OpenRouter',
-    description: 'A unified interface for LLMs. Access Gemini, Claude, Llama, and more with one API.',
+    description: 'A unified interface for LLMs. Access Gemini, Claude, Llama, and more with one standardized API.',
     url: 'https://openrouter.ai/',
     category: ToolCategory.LLM_OPS,
-    tags: ['API', 'Aggregator', 'Crypto'],
-    icon: 'Network',
+    tags: ['API', 'Aggregator', 'Models'],
+    icon: 'OpenRouterLogo',
     featured: true,
     toolbar: true,
     pricing: PricingModel.PAID,
@@ -112,7 +116,7 @@ export const buildToolsData: Tool[] = [
   {
     id: 'groq',
     name: 'Groq',
-    description: 'The fastest AI inference chip. Serving open-source models at lightning speeds.',
+    description: 'The LPU Inference Engine. Delivering near-instant AI inference speeds for real-time applications.',
     url: 'https://groq.com/',
     category: ToolCategory.LLM_OPS,
     tags: ['Inference', 'Hardware', 'Speed'],
@@ -120,12 +124,13 @@ export const buildToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'groq',
     color: '#f55036'
   },
   {
     id: 'ollama',
     name: 'Ollama',
-    description: 'Get up and running with large language models locally. Private and fast.',
+    description: 'Run Llama 3, Phi 3, and Mistral locally. The easiest way to get up and running with large language models.',
     url: 'https://ollama.com/',
     category: ToolCategory.LLM_OPS,
     tags: ['Local', 'Privacy', 'Offline'],
@@ -133,25 +138,26 @@ export const buildToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'ollama',
     color: '#FFFFFF'
   },
   {
     id: 'langsmith',
     name: 'LangSmith',
-    description: 'Platform for debugging, testing, evaluating, and monitoring your LLM applications.',
+    description: 'Platform for debugging, testing, evaluating, and monitoring your LLM applications in production.',
     url: 'https://www.langchain.com/langsmith',
     category: ToolCategory.LLM_OPS,
     tags: ['Observability', 'Testing', 'Debug'],
-    icon: 'Search',
+    icon: 'LangChainLogo',
     pricing: PricingModel.FREEMIUM,
-    color: '#1c3c3c'
+    color: '#34d399'
   },
 
   // --- BACKEND & INFRA (SHIP) ---
   {
     id: 'supabase',
     name: 'Supabase',
-    description: 'The open source Firebase alternative. Postgres database with built-in Vector support for AI.',
+    description: 'The open source Firebase alternative. Build AI apps with a Postgres vector database, Auth, and Edge Functions.',
     url: 'https://supabase.com/',
     category: ToolCategory.BACKEND_INFRA,
     tags: ['Database', 'Vector', 'Auth'],
@@ -159,12 +165,13 @@ export const buildToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'supabase',
     color: '#3ECF8E'
   },
   {
     id: 'vercel-ai',
     name: 'Vercel AI SDK',
-    description: 'The TypeScript library for building AI-powered user interfaces.',
+    description: 'The standard library for building AI web apps. Stream text and UI components from LLMs to the client with ease.',
     url: 'https://sdk.vercel.ai/docs',
     category: ToolCategory.AI_SDK,
     tags: ['Library', 'Streaming', 'React'],
@@ -172,27 +179,28 @@ export const buildToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
-    color: '#000000'
+    learnAppId: 'vercel-ai',
+    color: '#FFFFFF'
   },
   {
     id: 'pinecone',
     name: 'Pinecone',
-    description: 'The managed vector database for high-performance AI applications.',
+    description: 'The managed vector database for high-performance AI applications. Scale effortlessly with serverless indexes.',
     url: 'https://www.pinecone.io/',
     category: ToolCategory.BACKEND_INFRA,
     tags: ['Vector DB', 'Search', 'RAG'],
-    icon: 'Database',
+    icon: 'PineconeLogo',
     pricing: PricingModel.FREEMIUM,
-    color: '#132F4C'
+    color: '#3B82F6'
   },
   {
     id: 'neon',
     name: 'Neon',
-    description: 'Serverless Postgres. Scales to zero. Perfect for modern AI fleets.',
+    description: 'Serverless Postgres. Scales to zero. Perfect for modern AI fleets that need branching and instant provisioning.',
     url: 'https://neon.tech/',
     category: ToolCategory.BACKEND_INFRA,
     tags: ['Database', 'Serverless', 'Postgres'],
-    icon: 'Database',
+    icon: 'NeonLogo',
     isNew: true,
     pricing: PricingModel.FREEMIUM,
     color: '#00E599'
@@ -200,13 +208,14 @@ export const buildToolsData: Tool[] = [
   {
     id: 'docker',
     name: 'Docker',
-    description: 'Securely build, share and run any application, anywhere.',
+    description: 'Accelerate how you build, share, and run modern applications. The standard for containerized AI development.',
     url: 'https://www.docker.com/',
     category: ToolCategory.BACKEND_INFRA,
     tags: ['Container', 'DevOps'],
     icon: 'DockerLogo',
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'docker',
     color: '#2496ED'
   }
 ];

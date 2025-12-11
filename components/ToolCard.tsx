@@ -1,14 +1,16 @@
 import React from 'react';
 import { Tool, PricingModel } from '../types';
 import { DynamicIcon } from './Icons';
-import { ExternalLink, Github, CreditCard, Sparkles, ArrowUpRight, BookOpen } from 'lucide-react';
+import { ExternalLink, Github, CreditCard, Sparkles, ArrowUpRight, BookOpen, Bookmark } from 'lucide-react';
 
 interface ToolCardProps {
   tool: Tool;
   onLearn?: (id: string) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (id: string) => void;
 }
 
-export const ToolCard: React.FC<ToolCardProps> = ({ tool, onLearn }) => {
+export const ToolCard: React.FC<ToolCardProps> = ({ tool, onLearn, isFavorite, onToggleFavorite }) => {
   const getPricingIcon = () => {
     switch (tool.pricing) {
       case PricingModel.OPEN_SOURCE: return <Github size={12} className="mr-1" />;
@@ -57,11 +59,11 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onLearn }) => {
       <div className="relative z-10 flex flex-col h-full p-6">
         
         {/* Header: Icon & Badges */}
-        <div className="flex justify-between items-start mb-5">
+        <div className="flex justify-between items-start mb-5 relative">
           <div 
-            className="p-3 rounded-xl bg-white/5 border border-white/10 text-white group-hover:bg-white/10 transition-colors shadow-lg"
+            className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors shadow-lg"
             style={{ 
-              color: tool.featured ? accentColor : 'white',
+              color: accentColor,
               boxShadow: tool.featured ? `0 4px 12px ${accentColor}20` : 'none'
             }}
           >
@@ -69,19 +71,29 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onLearn }) => {
           </div>
 
           <div className="flex flex-col items-end gap-2">
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2">
+                {onToggleFavorite && (
+                    <button 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            onToggleFavorite(tool.id);
+                        }}
+                        className={`p-1.5 rounded-full transition-all duration-200 ${isFavorite ? 'text-yellow-400 bg-yellow-400/10' : 'text-gray-500 hover:text-white hover:bg-white/10'}`}
+                    >
+                        <Bookmark size={16} fill={isFavorite ? "currentColor" : "none"} />
+                    </button>
+                )}
+            </div>
+
              {tool.isNew && (
-                <div className="relative">
+                <div className="relative mt-2">
                     <div className="absolute inset-0 bg-google-yellow blur-[6px] opacity-40 animate-pulse"></div>
                     <span className="relative z-10 px-2 py-0.5 text-[10px] font-bold text-black bg-google-yellow rounded full uppercase tracking-wider">
                     New
                     </span>
                 </div>
-            )}
-             {tool.pricing && (
-                <span className={`flex items-center px-2 py-1 text-[10px] font-medium rounded border ${getPricingColor()}`}>
-                    {getPricingIcon()}
-                    {tool.pricing}
-                </span>
             )}
           </div>
         </div>
@@ -107,14 +119,17 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onLearn }) => {
                         {tag}
                     </span>
                     ))}
-                    {tool.tags.length > 2 && (
-                        <span className="text-[10px] text-gray-600 px-1 py-1">+</span>
+                    {tool.pricing && (
+                        <span className={`flex items-center px-2 py-1 text-[10px] font-medium rounded border ${getPricingColor()}`}>
+                            {getPricingIcon()}
+                            {tool.pricing === PricingModel.OPEN_SOURCE ? 'OSS' : tool.pricing}
+                        </span>
                     )}
                 </div>
 
                 {/* Standard Launch Hint (Only for non-learn apps) */}
                 {!tool.learnAppId && (
-                     <div className="flex items-center gap-1 text-sm font-bold text-white opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                     <div className="flex items-center gap-1 text-sm font-bold opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                         <span style={{ color: accentColor }}>Launch</span>
                         <ArrowUpRight size={14} style={{ color: accentColor }} />
                     </div>

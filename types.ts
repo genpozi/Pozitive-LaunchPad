@@ -71,7 +71,7 @@ export interface Creator {
   name: string;
   focus: string;
   description: string;
-  platform: 'YouTube' | 'Medium' | 'Blog' | 'Social' | 'Book';
+  platform: 'YouTube' | 'Medium' | 'Blog' | 'Social' | 'Book' | 'GitHub' | 'Website';
   url?: string;
 }
 
@@ -95,6 +95,7 @@ export interface LearningHubData {
   tagline: string;
   overview: string;
   useCases: string[];
+  tips?: string[]; // New: Quick tips or cheat sheet items
   creators: Creator[];
   videos: VideoResource[];
   articles: ArticleResource[];
