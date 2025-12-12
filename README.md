@@ -32,7 +32,7 @@ POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expa
 *   **Quick Access**: Toggle the drawer to "Saved" mode to view your personal tool dock instantly.
 
 ### 🎓 Deep-Dive Learn Hub
-*   **Integrated Learning**: Select tools (like Lovable, Cursor, ComfyUI) feature a "Learn App" experience—a dedicated dashboard connecting you to:
+*   **Integrated Learning**: Select tools (like Lovable, Cursor, ComfyUI, Gemini Advanced) feature a "Learn App" experience—a dedicated dashboard connecting you to:
     *   **Pro Tips & Cheatsheets**: Copy-pasteable advanced workflows.
     *   **Curated Video Tutorials**: The best content from YouTube's top AI educators.
     *   **Community Hubs**: Direct links to Discords, Subreddits, and Documentation.
@@ -40,40 +40,15 @@ POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expa
 ## 🛠 Tech Stack
 
 *   **Framework**: React 18 + TypeScript
-*   **Styling**: Tailwind CSS (Custom Config for animations & glass effects)
-*   **Icons**: Lucide React + Custom SVG Brand Assets (Procreate, Linearity, Galileo, etc.)
+*   **Styling**: Tailwind CSS (via CDN/Config) + Custom Animations
+*   **Icons**: Lucide React + Custom SVG Brand Assets
 *   **AI Model**: Google Gemini 2.5 Flash (via `@google/genai` SDK)
 *   **Build**: Vite / ES Modules
 
-## 📂 Project Architecture
-
-```
-/
-├── index.html            # Entry & Tailwind Config
-├── App.tsx               # Root Layout, Drawer Logic, Global State
-├── types.ts              # Data Models (Tool, LearningHubData)
-├── components/
-│   ├── SmartSearch.tsx   # Gemini-powered Search Logic
-│   ├── ToolCard.tsx      # Interactive Grid Cards
-│   ├── DockItem.tsx      # Drawer/Dock Widgets
-│   └── Icons.tsx         # Centralized Icon System
-├── data/
-│   ├── tools.ts          # Google Ecosystem Data
-│   ├── designTools.ts    # Design Ecosystem Data
-│   ├── buildTools.ts     # Build Ecosystem Data
-│   └── learningResources.ts # Education Content
-└── pages/
-    ├── GoogleSystems.tsx # Dashboard: GoogleSphere
-    ├── DesignSystems.tsx # Dashboard: Design (The Lab)
-    ├── BuildSystems.tsx  # Dashboard: Build (Open Source)
-    └── LearnApp.tsx      # Detail View: Education
-```
-
 ## 🚀 Getting Started
 
-1.  **Clone the repo**.
-2.  **Install dependencies**: `npm install`.
-3.  **Run locally**: `npm run dev`.
-4.  **Set API Key**: Create a `.env` file with `API_KEY=your_gemini_key` to enable the AI Research features.
+1.  **Install dependencies**: `npm install`.
+2.  **Run locally**: `npm run dev`.
+3.  **Set API Key**: Create a `.env` file with `API_KEY=your_gemini_key` to enable the AI Research features.
 
 *Ready for Launch. Built 2025.*
