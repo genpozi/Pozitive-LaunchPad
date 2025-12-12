@@ -4,7 +4,7 @@ import { DesignSystems } from './pages/DesignSystems';
 import { BuildSystems } from './pages/BuildSystems';
 import { LearnApp } from './pages/LearnApp';
 import { Page, ToolCategory, ResearchResult } from './types';
-import { Sparkles, Palette, Code2, Menu, X, ChevronRight, LayoutGrid, Briefcase, Wand2, Box, Rocket, Network, Bookmark, Search } from 'lucide-react';
+import { Sparkles, Palette, Code2, Menu, X, LayoutGrid, Briefcase, Wand2, Box, Rocket, Network, Bookmark, Search } from 'lucide-react';
 import { toolsData } from './data/tools';
 import { designToolsData } from './data/designTools';
 import { buildToolsData } from './data/buildTools';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, X, ArrowRight, Loader, Brain, Terminal, ExternalLink, Zap, Layers, Rocket } from 'lucide-react';
-import { GoogleGenAI, Type, SchemaParams } from "@google/genai";
+import { Search, Sparkles, X, ArrowRight, Loader, Brain } from 'lucide-react';
+import { GoogleGenAI, Type } from "@google/genai";
 import { Tool, ResearchResult } from '../types';
 
 interface SmartSearchProps {
@@ -91,7 +91,7 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
       const toolsContext = tools.map(t => `- ${t.name} (ID: ${t.id}): ${t.description} [Category: ${t.category}, Tags: ${t.tags.join(', ')}]`).join('\n');
 
       let systemInstruction = "";
-      let schema: SchemaParams;
+      let schema: any;
 
       if (context === 'GOOGLE') {
         systemInstruction = `You are a Google Ecosystem Architect. Recommend strategies (ONESHOT, BESPOKE, FULLSTACK) for: "${query}". Available Tools: ${toolsContext}`;
