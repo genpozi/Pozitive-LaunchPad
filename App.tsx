@@ -22,9 +22,6 @@ const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [researchResult, setResearchResult] = useState<ResearchResult | null>(null);
 
-  // Nav Dock State
-  const [activeDockTab, setActiveDockTab] = useState('DREAM');
-
   // Initialize favorites
   const [favorites, setFavorites] = useState<string[]>(() => {
     try {
@@ -91,22 +88,10 @@ const App: React.FC = () => {
       ];
   }, [currentPage]);
 
-  // Reset Dock Tab when page changes
-  useEffect(() => {
-      setActiveDockTab(dockConfig[0].id);
-  }, [currentPage, dockConfig]);
-
-  // Filter tools for the Slide-out Dock content
-  const dockTools = useMemo(() => {
-      if (drawerMode === 'SAVED') {
-          // Global Favorites Filter
-          return allTools.filter(t => favorites.includes(t.id));
-      }
-      // Standard Page-Specific Tabs
-      const tab = dockConfig.find(t => t.id === activeDockTab);
-      if (!tab) return [];
-      return currentTools.filter(t => t.toolbar && tab.categories.includes(t.category));
-  }, [drawerMode, allTools, favorites, dockConfig, activeDockTab, currentTools]);
+  // Saved Tools Calculation
+  const savedTools = useMemo(() => {
+      return allTools.filter(t => favorites.includes(t.id));
+  }, [allTools, favorites]);
 
   const handleNavigate = (page: Page) => {
       setCurrentPage(page);
@@ -118,7 +103,11 @@ const App: React.FC = () => {
 
   const handleSearch = (q: string) => {
       setSearchQuery(q);
-      if(q) setIsNavOpen(false); 
+      // Don't close nav immediately to allow typing/research flow.
+  };
+
+  const handleCloseNav = () => {
+    setIsNavOpen(false);
   };
 
   // If showing Learn App
@@ -152,84 +141,95 @@ const App: React.FC = () => {
              </div>
           </div>
 
-          {/* Top Right Search (Compact) */}
-          <div className="w-64 sm:w-80">
-              <SmartSearch 
-                  tools={currentTools} 
-                  context={searchContext} 
-                  onSearch={handleSearch} 
-                  onResearchResults={setResearchResult}
-                  compact={true}
-              />
-          </div>
+          {/* Search Trigger (Mobile/Desktop consistent) */}
+          <button 
+            onClick={() => setIsNavOpen(true)}
+            className="p-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Search"
+          >
+             <Search size={20} />
+          </button>
         </div>
       </header>
 
       {/* --- Mega Navigation Drawer --- */}
       <div className={`fixed inset-0 z-50 transition-all duration-500 ${isNavOpen ? 'visible' : 'invisible'}`}>
-        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity ${isNavOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsNavOpen(false)} />
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity ${isNavOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleCloseNav} />
         
         {/* Drawer Panel */}
         <div className={`absolute top-0 left-0 h-full w-full sm:w-[550px] bg-[#0a0a0a] border-r border-white/10 shadow-2xl transform transition-transform duration-500 ease-out flex flex-col ${isNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             
-            {/* Drawer Header */}
-            <div className="p-6 flex items-center justify-between border-b border-white/5 shrink-0">
-                {/* Left: Page Navigation Pills */}
-                <div className="flex gap-2">
-                    <button 
-                        onClick={() => handleNavigate('GOOGLE_SYSTEMS')} 
-                        className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'GOOGLE_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
-                    >
-                        Google
-                    </button>
-                    <button 
-                        onClick={() => handleNavigate('DESIGN_SYSTEMS')} 
-                        className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'DESIGN_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
-                    >
-                        Design
-                    </button>
-                    <button 
-                        onClick={() => handleNavigate('BUILD_SYSTEMS')} 
-                        className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'BUILD_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
-                    >
-                        Build
+            {/* Drawer Header Section */}
+            <div className="relative shrink-0 bg-[#0a0a0a] z-20">
+                {/* Decorative Top Gradient */}
+                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-600/10 to-transparent pointer-events-none" />
+
+                {/* Brand & Close Row */}
+                <div className="relative p-6 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-google-blue to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <span className="font-display font-bold text-white text-lg">P</span>
+                        </div>
+                        <div>
+                             <h2 className="font-display font-bold text-white text-lg tracking-tight leading-none">POZITIVE AI</h2>
+                             <span className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">Launchpad</span>
+                        </div>
+                    </div>
+                    <button onClick={handleCloseNav} className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors">
+                        <X size={20} />
                     </button>
                 </div>
 
-                {/* Right: Saved & Close */}
-                <div className="flex items-center gap-4">
-                     <button 
-                        onClick={() => setDrawerMode(drawerMode === 'SAVED' ? 'MENU' : 'SAVED')}
-                        className={`flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${drawerMode === 'SAVED' ? 'text-yellow-400' : 'text-gray-500 hover:text-yellow-400'}`}
-                     >
-                        <Bookmark size={14} fill={drawerMode === 'SAVED' ? "currentColor" : "none"} />
-                        Saved
-                        {favorites.length > 0 && <span className="ml-1 opacity-60">({favorites.length})</span>}
-                     </button>
-                     <div className="h-4 w-px bg-white/10"></div>
-                     <button onClick={() => setIsNavOpen(false)} className="p-1 rounded-full hover:bg-white/10 text-gray-400 hover:text-white">
-                        <X size={18} />
-                     </button>
+                {/* Search Area */}
+                <div className="relative px-6 pb-6 pt-6">
+                     <SmartSearch 
+                         tools={currentTools} 
+                         context={searchContext} 
+                         onSearch={handleSearch} 
+                         onResearchResults={(res) => {
+                             setResearchResult(res);
+                             // If research provides advice, close nav to show it
+                             if(res) handleCloseNav();
+                         }}
+                         compact={false} 
+                     />
                 </div>
-            </div>
 
-            {/* Widget Tabs (Only show if NOT in Saved mode) */}
-            {drawerMode === 'MENU' && (
-                <div className="p-4 border-b border-white/5 overflow-x-auto shrink-0 animate-fade-in">
+                {/* Navigation Tabs & Saved Row */}
+                <div className="relative px-6 pb-4 flex items-center justify-between border-b border-white/5">
                     <div className="flex gap-2">
-                        {dockConfig.map(tab => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveDockTab(tab.id)}
-                                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all border ${activeDockTab === tab.id ? 'bg-white/10 border-white/20 text-white' : 'border-transparent text-gray-500 hover:text-gray-300'}`}
-                            >
-                                <tab.icon size={14} />
-                                {tab.label}
-                            </button>
-                        ))}
+                        <button 
+                            onClick={() => handleNavigate('GOOGLE_SYSTEMS')} 
+                            className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'GOOGLE_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
+                        >
+                            Google
+                        </button>
+                        <button 
+                            onClick={() => handleNavigate('DESIGN_SYSTEMS')} 
+                            className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'DESIGN_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
+                        >
+                            Design
+                        </button>
+                        <button 
+                            onClick={() => handleNavigate('BUILD_SYSTEMS')} 
+                            className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-colors ${currentPage === 'BUILD_SYSTEMS' && drawerMode === 'MENU' ? 'bg-white text-black' : 'text-gray-500 hover:text-white'}`}
+                        >
+                            Build
+                        </button>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                         <button 
+                            onClick={() => setDrawerMode(drawerMode === 'SAVED' ? 'MENU' : 'SAVED')}
+                            className={`flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${drawerMode === 'SAVED' ? 'text-yellow-400' : 'text-gray-500 hover:text-yellow-400'}`}
+                         >
+                            <Bookmark size={14} fill={drawerMode === 'SAVED' ? "currentColor" : "none"} />
+                            Saved
+                            {savedTools.length > 0 && <span className="ml-1 opacity-60">({savedTools.length})</span>}
+                         </button>
                     </div>
                 </div>
-            )}
+            </div>
 
             {/* Saved Mode Header (Only show if in Saved Mode) */}
             {drawerMode === 'SAVED' && (
@@ -241,32 +241,52 @@ const App: React.FC = () => {
                 </div>
             )}
 
-            {/* Widget Content (High Density Grid) */}
-            <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
-                {dockTools.length > 0 ? (
-                    <div className="grid grid-cols-4 sm:grid-cols-8 gap-2 animate-fade-in">
-                        {dockTools.map(tool => (
-                            <div key={tool.id} className="aspect-square">
-                                <DockItem tool={tool} size="mini" />
-                            </div>
-                        ))}
-                    </div>
+            {/* Content Area - Vertically Stacked or Saved Grid */}
+            <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
+                {drawerMode === 'SAVED' ? (
+                    savedTools.length > 0 ? (
+                        <div className="grid grid-cols-4 sm:grid-cols-6 gap-3 animate-fade-in">
+                            {savedTools.map(tool => (
+                                <div key={tool.id} className="aspect-square">
+                                    <DockItem tool={tool} size="mini" />
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                         <div className="h-64 flex flex-col items-center justify-center text-gray-600 text-sm gap-4">
+                            <Bookmark size={32} className="opacity-20" />
+                            <span>No saved tools yet.</span>
+                            <button 
+                                onClick={() => setDrawerMode('MENU')}
+                                className="text-xs text-blue-400 hover:text-blue-300 font-bold uppercase tracking-wider border-b border-blue-400/20 pb-0.5"
+                            >
+                                Browse Tools
+                            </button>
+                         </div>
+                    )
                 ) : (
-                    <div className="h-64 flex flex-col items-center justify-center text-gray-600 text-sm gap-4">
-                        {drawerMode === 'SAVED' ? (
-                            <>
-                                <Bookmark size={32} className="opacity-20" />
-                                <span>No saved tools yet.</span>
-                                <button 
-                                    onClick={() => setDrawerMode('MENU')}
-                                    className="text-xs text-blue-400 hover:text-blue-300 font-bold uppercase tracking-wider border-b border-blue-400/20 pb-0.5"
-                                >
-                                    Browse Tools
-                                </button>
-                            </>
-                        ) : (
-                            <span>No tools found in this section.</span>
-                        )}
+                    /* MENU MODE: Vertically Stacked Sections */
+                    <div className="space-y-8">
+                        {dockConfig.map((section, idx) => {
+                            const sectionTools = currentTools.filter(t => t.toolbar && section.categories.includes(t.category));
+                            if (sectionTools.length === 0) return null;
+
+                            return (
+                                <div key={section.id} className="animate-fade-in" style={{ animationDelay: `${idx * 50}ms` }}>
+                                    <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/5 text-gray-400">
+                                        <section.icon size={14} className="text-google-blue" />
+                                        <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">{section.label}</h3>
+                                    </div>
+                                    <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+                                        {sectionTools.map(tool => (
+                                            <div key={tool.id} className="aspect-square">
+                                                <DockItem tool={tool} size="mini" />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 )}
             </div>
@@ -275,7 +295,7 @@ const App: React.FC = () => {
             <div className="p-6 border-t border-white/5 shrink-0 bg-[#050505]">
                  <div className="p-3 rounded-lg bg-white/5 border border-white/5 flex items-center gap-3">
                     <LayoutGrid size={16} className="text-gray-400" />
-                    <span className="text-xs text-gray-400"><strong>Tip:</strong> {drawerMode === 'SAVED' ? 'Favorites are saved to your browser.' : 'Use the header search for instant research.'}</span>
+                    <span className="text-xs text-gray-400"><strong>Tip:</strong> {drawerMode === 'SAVED' ? 'Favorites are saved to your browser.' : 'Press Enter in search to view results.'}</span>
                  </div>
             </div>
         </div>

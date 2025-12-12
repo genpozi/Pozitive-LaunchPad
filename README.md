@@ -7,26 +7,27 @@ The definitive ecosystem explorer for Google's AI tools, Design Systems, and Bui
 ## 🚀 Mission
 
 POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expanding universe of Artificial Intelligence. It aggregates:
-1.  **Google Systems**: The core ecosystem (Gemini, DeepMind, Vertex AI, Workspace).
-2.  **Design Systems**: Next-gen generative UI, video models, and 3D tools.
-3.  **Build Systems**: The modern AI engineering stack (Agents, LLMOps, Vector DBs).
+1.  **The GoogleSphere**: The core ecosystem (Gemini, DeepMind, Vertex AI, Workspace).
+2.  **Design Systems**: Next-gen generative UI, video models, and 3D tools, anchored by "The Lab" (Open Source).
+3.  **Build Systems**: The modern AI engineering stack (Agents, LLMOps), grounded in "Open Source" foundations.
 
 ## ✨ Key Features
 
-### 🧠 Intelligent Research Engine
+### 🧠 Intelligent Research Engine (Now in Drawer)
+*   **Centralized Intelligence**: The Smart Search bar is now housed in the global navigation drawer, accessible from anywhere via the **Menu** or **Search** buttons.
 *   **Dual-Mode Search**: 
     *   **Quick Find**: Instant, regex-based filtering across all tool titles, tags, and descriptions.
-    *   **AI Advisor**: A "Research" mode powered by Gemini Flash 2.5. It doesn't just list tools; it acts as a consultant, recommending **One-Shot**, **Bespoke**, or **Full-Stack** strategies based on your specific problem.
+    *   **AI Advisor**: A "Research" mode powered by Gemini Flash 2.5. It acts as a consultant, recommending **One-Shot**, **Bespoke**, or **Full-Stack** strategies based on your specific problem.
 *   **Context Aware**: The search engine adapts its persona based on the active page (e.g., acting as a "Creative Technologist" on the Design page vs. a "DevOps Engineer" on the Build page).
 
-### 🔖 Global Collections (New)
+### 🔖 Global Collections
 *   **Unified Favorites**: Save tools from *any* page (Google, Design, Build) into a single, persistent collection.
 *   **Browser Persistence**: Your stack is saved locally, ensuring your toolkit is ready whenever you return.
-*   **Quick Access Drawer**: Access your saved tools instantly from the global navigation header.
+*   **Quick Access Drawer**: Toggle the drawer to "Saved" mode to view your personal tool dock instantly.
 
 ### ⚡ "Zero-Latency" Interface
+*   **Mega-Drawer Navigation**: A smooth, gesture-ready slide-out drawer that houses site navigation, search, and your personalized tool dock in one unified surface.
 *   **Glassmorphic UI**: Built with a highly polished, dark-mode-first aesthetic using Tailwind CSS.
-*   **Mega-Drawer Navigation**: A smooth, gesture-ready slide-out drawer that houses both site navigation and your personalized tool dock.
 *   **Performance**: Optimized rendering with React 18, utilizing memoization for complex tool filtering and searching.
 
 ### 🎓 Deep-Dive Learn Hub
@@ -48,7 +49,7 @@ POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expa
 ```
 /
 ├── index.html            # Entry & Tailwind Config
-├── App.tsx               # Root Layout & Global State (Favorites, Nav)
+├── App.tsx               # Root Layout, Drawer Logic, Global State
 ├── types.ts              # Data Models (Tool, LearningHubData)
 ├── components/
 │   ├── SmartSearch.tsx   # Gemini-powered Search Logic
@@ -61,9 +62,9 @@ POZITIVE AI Launchpad serves as a unified interface to navigate the rapidly expa
 │   ├── buildTools.ts     # Build Ecosystem Data
 │   └── learningResources.ts # Education Content
 └── pages/
-    ├── GoogleSystems.tsx # Dashboard: Google
-    ├── DesignSystems.tsx # Dashboard: Design
-    ├── BuildSystems.tsx  # Dashboard: Engineering
+    ├── GoogleSystems.tsx # Dashboard: GoogleSphere
+    ├── DesignSystems.tsx # Dashboard: Design (The Lab)
+    ├── BuildSystems.tsx  # Dashboard: Build (Open Source)
     └── LearnApp.tsx      # Detail View: Education
 ```
 

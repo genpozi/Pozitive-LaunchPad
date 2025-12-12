@@ -63,7 +63,7 @@ export const GoogleSystems: React.FC<GoogleSystemsProps> = ({
   const categories = Object.values(ToolCategory).filter(
     c => c !== ToolCategory.ALL && 
          c !== ToolCategory.GENERATIVE_UI && 
-         c !== ToolCategory.IMAGE_GENERATION &&
+         c !== ToolCategory.IMAGE_GENERATION && 
          c !== ToolCategory.VIDEO_FX && 
          c !== ToolCategory.VECTOR_3D &&
          c !== ToolCategory.DESIGN_TOOL &&
@@ -129,30 +129,33 @@ export const GoogleSystems: React.FC<GoogleSystemsProps> = ({
             </div>
         )}
 
-        {/* Category Filter Pills (Hidden during Research) */}
+        {/* Header & Category Filter (Hidden during Research) */}
         {!externalResearchResult && !externalSearchQuery && (
-            <div className="flex flex-wrap justify-center gap-2 mb-10 animate-fade-in mt-4">
-            <button onClick={() => setActiveCategory(ToolCategory.ALL)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${activeCategory === ToolCategory.ALL ? 'bg-white text-black border-white shadow-lg scale-105' : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}`}>All</button>
-            {categories.map((cat) => (
-                <button key={cat} onClick={() => setActiveCategory(cat)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${activeCategory === cat ? 'bg-white text-black border-white shadow-lg scale-105' : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}`}>{cat}</button>
-            ))}
+            <div className="animate-fade-in mt-8 mb-10">
+                {/* Section Header */}
+                <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                    <div className="p-2 bg-google-yellow/10 rounded-lg text-google-yellow">
+                        <Zap size={24} fill="currentColor" />
+                    </div>
+                    <div>
+                        <h3 className="text-2xl font-bold text-white uppercase">THE GOOGLESPHERE OF TOOLS</h3>
+                        <p className="text-sm text-gray-500">Bleeding Edge & Hidden Gems</p>
+                    </div>
+                </div>
+
+                {/* Category Pills */}
+                <div className="flex flex-wrap gap-2">
+                    <button onClick={() => setActiveCategory(ToolCategory.ALL)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${activeCategory === ToolCategory.ALL ? 'bg-white text-black border-white shadow-lg scale-105' : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}`}>All</button>
+                    {categories.map((cat) => (
+                        <button key={cat} onClick={() => setActiveCategory(cat)} className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${activeCategory === cat ? 'bg-white text-black border-white shadow-lg scale-105' : 'bg-white/5 text-gray-400 border-white/5 hover:bg-white/10'}`}>{cat}</button>
+                    ))}
+                </div>
             </div>
         )}
 
         {/* Featured Section */}
         {showFeaturedSection && (
           <div className="mb-16 animate-fade-in">
-            {/* New Icon Box Style for Google Page */}
-            <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
-                <div className="p-2 bg-google-yellow/10 rounded-lg text-google-yellow">
-                    <Zap size={24} fill="currentColor" />
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-white uppercase">THE OTHER GOOGLE TOOLS</h3>
-                    <p className="text-sm text-gray-500">Bleeding Edge & Hidden Gems</p>
-                </div>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {featuredTools.map((tool) => (
                 <div key={`featured-${tool.id}`} className="md:col-span-1">

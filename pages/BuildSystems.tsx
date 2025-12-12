@@ -49,14 +49,6 @@ export const BuildSystems: React.FC<BuildSystemsProps> = ({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
-        {!externalSearchQuery && !externalResearchResult && (
-            <div className="text-center pt-12 pb-8 animate-fade-in">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 tracking-tight">
-                Build Systems <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">2025</span>
-                </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-8">The modern AI engineering stack. Agents, Infrastructure, and Ops.</p>
-            </div>
-        )}
 
         {externalResearchResult && (
             <div className="mb-12 animate-fade-in mt-8">
@@ -79,14 +71,17 @@ export const BuildSystems: React.FC<BuildSystemsProps> = ({
         )}
 
         {hasTools && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mt-8">
                 {openSourceTools.length > 0 && (
                     <div className="mb-20">
-                        {/* Open Source - Gradient Header */}
-                        <div className="flex items-center gap-2 mb-8">
-                            <div className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                                <Github size={24} className="text-green-400 inline mr-3 align-middle" />
-                                <h3 className="text-2xl font-bold tracking-wider uppercase inline align-middle">Open Source</h3>
+                        {/* Open Source - Updated Header */}
+                        <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                            <div className="p-2 bg-green-500/10 rounded-lg text-green-500">
+                                <Github size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-green-500 uppercase">OPEN SOURCE</h3>
+                                <p className="text-sm text-gray-500">The Foundation of Modern AI</p>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

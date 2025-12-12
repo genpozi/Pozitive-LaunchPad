@@ -50,15 +50,7 @@ export const DesignSystems: React.FC<DesignSystemsProps> = ({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
-        {!externalSearchQuery && !externalResearchResult && (
-            <div className="text-center pt-12 pb-8 animate-fade-in">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 tracking-tight">
-                AI Design Systems <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">2025</span>
-                </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-8">The curated landscape of generative design.</p>
-            </div>
-        )}
-
+        
         {externalResearchResult && (
             <div className="mb-12 animate-fade-in mt-8">
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-900/40 to-purple-900/40 border border-pink-500/30 flex gap-4 items-start shadow-xl">
@@ -80,14 +72,17 @@ export const DesignSystems: React.FC<DesignSystemsProps> = ({
         )}
 
         {hasTools && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mt-8">
                 {openSourceTools.length > 0 && (
                     <div className="mb-20">
-                        {/* The Lab - Gradient Header */}
-                        <div className="flex items-center gap-2 mb-8">
-                            <div className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
-                                <Github size={24} className="text-green-400 inline mr-3 align-middle" />
-                                <h3 className="text-2xl font-bold tracking-wider uppercase inline align-middle">The Lab</h3>
+                        {/* The Lab - Updated Header */}
+                        <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                            <div className="p-2 bg-green-500/10 rounded-lg text-green-500">
+                                <Github size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-green-500 uppercase">THE LAB</h3>
+                                <p className="text-sm text-gray-500">Open Source & Experimental</p>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
