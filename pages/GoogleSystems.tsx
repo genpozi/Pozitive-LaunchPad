@@ -73,7 +73,7 @@ export const GoogleSystems: React.FC<GoogleSystemsProps> = ({
   const showFeaturedSection = activeCategory === ToolCategory.ALL && !externalSearchQuery && !externalResearchResult;
   const featuredTools = useMemo(() => toolsData.filter(t => t.featured), []);
 
-  const StrategyCard = ({ type, icon: Icon, colorClass, borderClass, bgClass }: any) => {
+  const StrategyCard = ({ type, icon: Icon, borderClass, bgClass }: any) => {
     const option = externalResearchResult?.options?.find(o => o.type === type);
     const isActive = activeStrategy === type;
     if (!option) return null;

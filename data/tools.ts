@@ -1,4 +1,4 @@
-import { Tool, ToolCategory, PricingModel } from '../types';
+import { Tool, ToolCategory } from '../types';
 
 export const toolsData: Tool[] = [
   // --- CREATIVE STUDIO (BLEEDING EDGE) ---

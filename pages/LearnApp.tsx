@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ArrowLeft, BookOpen, GraduationCap, Video, FileText, ExternalLink, PlayCircle, Users, MessageSquare, Newspaper, Zap, Copy, Check } from 'lucide-react';
+import { ArrowLeft, GraduationCap, ExternalLink, PlayCircle, Users, MessageSquare, Newspaper, Zap, Copy, Check } from 'lucide-react';
 import { toolsData } from '../data/tools';
 import { designToolsData } from '../data/designTools';
 import { buildToolsData } from '../data/buildTools';

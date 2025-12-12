@@ -1,9 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { designToolsData } from '../data/designTools';
 import { PricingModel, ResearchResult } from '../types';
 import { ToolCard } from '../components/ToolCard';
-import { DynamicIcon } from '../components/Icons';
-import { Github, Gem, Sparkles, Brain, Search, LayoutGrid } from 'lucide-react';
+import { Github, Gem, Sparkles, Brain, Search } from 'lucide-react';
 
 interface DesignSystemsProps {
     onLearn?: (id: string) => void;
