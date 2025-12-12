@@ -186,6 +186,7 @@ const App: React.FC = () => {
                          tools={currentTools} 
                          context={searchContext} 
                          onSearch={handleSearch} 
+                         onSubmit={handleCloseNav}
                          onResearchResults={(res) => {
                              setResearchResult(res);
                              // If research provides advice, close nav to show it

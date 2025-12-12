@@ -1,6 +1,852 @@
 import { LearningHubData } from '../types';
 
 export const learningResourcesData: Record<string, LearningHubData> = {
+  // --- GEMINI ADVANCED ---
+  'gemini-advanced': {
+    toolId: 'gemini-advanced',
+    tagline: 'Google\'s Most Capable AI',
+    overview: 'Gemini Advanced gives you access to Google\'s most capable AI models, like Ultra 1.0 and 1.5 Pro. It excels at complex tasks such as coding, logical reasoning, following nuanced instructions, and creative collaboration.',
+    useCases: [
+      'Complex Problem Solving & Reasoning',
+      'Advanced Coding & Debugging',
+      'Creative Writing & Brainstorming',
+      'Data Analysis & Visualization'
+    ],
+    tips: [
+      "Upload documents (PDFs, CSVs) directly to Gemini for instant analysis.",
+      "Use 'Pin' to keep important chats easily accessible in the sidebar.",
+      "Gemini can run Python code to solve math problems or generate charts—just ask.",
+      "Ask Gemini to 'Modify response' to make it shorter, longer, or more professional."
+    ],
+    creators: [
+      {
+        name: 'Google',
+        focus: 'Official',
+        description: 'Updates on model capabilities.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/google'
+      }
+    ],
+    videos: [
+      {
+        title: 'Gemini Advanced: What can it do?',
+        channel: 'Google',
+        description: 'Overview of Ultra 1.0 capabilities.',
+        duration: '02:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Gemini Apps Help',
+        source: 'Google Support',
+        description: 'Official guide to features.',
+        url: 'https://support.google.com/gemini'
+      }
+    ],
+    communities: []
+  },
+
+  // --- DOCS ---
+  'docs': {
+    toolId: 'docs',
+    tagline: 'Collaborative Writing Evolved',
+    overview: 'Google Docs is the world\'s leading collaborative writing tool. With "Help me write," it uses generative AI to help you draft, refine, and summarize text instantly, making writer\'s block a thing of the past.',
+    useCases: [
+      'Drafting Blog Posts & Articles',
+      'Summarizing Meeting Notes',
+      'Changing Tone (Formal/Casual)',
+      'Proofreading & Editing'
+    ],
+    tips: [
+      "Type '@' to insert smart chips for people, files, dates, and dropdowns.",
+      "Highlight text and look for the 'Help me write' pencil icon to rewrite or shorten it.",
+      "Use 'Pageless' mode for documents that are meant to be viewed online, not printed.",
+      "Assign action items directly in comments using '@email'."
+    ],
+    creators: [],
+    videos: [
+      {
+        title: 'Help me write in Google Docs',
+        channel: 'Google Workspace',
+        description: 'Demonstration of generative writing features.',
+        duration: '01:30'
+      }
+    ],
+    articles: [],
+    communities: []
+  },
+
+  // --- SLIDES ---
+  'slides': {
+    toolId: 'slides',
+    tagline: 'Presentations in Seconds',
+    overview: 'Google Slides helps you create beautiful presentations together. With "Help me visualize," you can generate original images for your slides from text prompts, ensuring you always have the perfect visual.',
+    useCases: [
+      'Creating Pitch Decks',
+      'Generating Custom Stock Imagery',
+      'Visualizing Concepts',
+      'Collaborative Storyboarding'
+    ],
+    tips: [
+      "Use 'Help me visualize' to create unique backgrounds or subject images for your slides.",
+      "Link charts from Google Sheets to keep data auto-updated in your presentation.",
+      "Use 'Presenter View' to see speaker notes and a timer while presenting.",
+      "Type 'slides.new' in your browser address bar to create a new deck instantly."
+    ],
+    creators: [],
+    videos: [
+      {
+        title: 'Create images in Google Slides',
+        channel: 'Google Workspace',
+        description: 'Generating visuals with AI.',
+        duration: '01:15'
+      }
+    ],
+    articles: [],
+    communities: []
+  },
+
+  // --- GMAIL ---
+  'mail': {
+    toolId: 'mail',
+    tagline: 'Smartest Email',
+    overview: 'Gmail uses AI to help you write faster and stay organized. Features like "Help me write," Smart Compose, and Smart Reply help you draft emails, summarize long threads, and prioritize what matters.',
+    useCases: [
+      'Drafting Professional Replies',
+      'Summarizing Long Email Threads',
+      'Filtering Spam & Promotions',
+      'Scheduling Emails'
+    ],
+    tips: [
+      "Use 'Help me write' to draft a full email from a short prompt (e.g., 'Ask for a refund').",
+      "Use 'Snooze' to clear an email from your inbox until you are ready to deal with it.",
+      "Enable 'Offline mail' to search and read email without an internet connection.",
+      "Use search chips (e.g., 'has:attachment') to find specific emails instantly."
+    ],
+    creators: [],
+    videos: [
+      {
+        title: 'Help me write in Gmail',
+        channel: 'Google Workspace',
+        description: 'Drafting emails with AI assistance.',
+        duration: '01:45'
+      }
+    ],
+    articles: [],
+    communities: []
+  },
+
+  // --- MEET ---
+  'meet': {
+    toolId: 'meet',
+    tagline: 'Premium Video Meetings',
+    overview: 'Google Meet provides secure, high-quality video meetings. It uses AI for noise cancellation, lighting adjustment, and even generating unique backgrounds to help you look and sound your best.',
+    useCases: [
+      'Remote Team Meetings',
+      'Client Presentations',
+      'Webinars & Training',
+      'Screen Recording'
+    ],
+    tips: [
+      "Use 'Generate a background' to create a custom AI environment for your call.",
+      "Turn on 'Noise Cancellation' to filter out typing, dogs barking, and other distractions.",
+      "Use 'Live Captions' (and translation) to follow along in real-time.",
+      "Pin the main speaker or presentation to keep them in focus."
+    ],
+    creators: [],
+    videos: [
+      {
+        title: 'Google Meet: AI Backgrounds',
+        channel: 'Google Workspace',
+        description: 'Creating custom backgrounds.',
+        duration: '01:00'
+      }
+    ],
+    articles: [],
+    communities: []
+  },
+
+  // --- DRIVE ---
+  'drive': {
+    toolId: 'drive',
+    tagline: 'AI-Powered Storage',
+    overview: 'Google Drive is more than just storage; it is an intelligent file organizer. It uses AI to predict which files you need next and provides powerful search capabilities to find content inside images and PDFs.',
+    useCases: [
+      'Cloud File Storage',
+      'Collaborative Sharing',
+      'Document Scanning (Mobile)',
+      'Advanced Search'
+    ],
+    tips: [
+      "Use search chips (Type, People, Modified) to filter results quickly.",
+      "Press 'P' to preview a file without opening it.",
+      "Install 'Drive for Desktop' to access files directly from your OS file manager.",
+      "Use OCR search to find text inside scanned PDFs and images."
+    ],
+    creators: [],
+    videos: [],
+    articles: [],
+    communities: []
+  },
+
+  // --- FORMS ---
+  'forms': {
+    toolId: 'forms',
+    tagline: 'Smart Surveys',
+    overview: 'Google Forms is the easiest way to create surveys and quizzes. New AI features help you generate questions and answers from simple text prompts, speeding up form creation.',
+    useCases: [
+      'Customer Feedback Surveys',
+      'Event Registration',
+      'Quizzes & Assessments',
+      'Data Collection'
+    ],
+    tips: [
+      "Use 'Make it a quiz' settings to assign point values and auto-grading.",
+      "Use 'Go to section based on answer' for conditional logic branching.",
+      "Link responses to a Google Sheet for real-time data analysis.",
+      "Customize the theme to match your brand colors and logo."
+    ],
+    creators: [],
+    videos: [],
+    articles: [],
+    communities: []
+  },
+
+  // --- SITES ---
+  'sites': {
+    toolId: 'sites',
+    tagline: 'Websites for Teams',
+    overview: 'Google Sites allows you to create beautiful internal project hubs, team sites, and public-facing websites without writing a single line of code. It integrates seamlessly with all other Workspace apps.',
+    useCases: [
+      'Internal Team Wikis',
+      'Project Portfolios',
+      'Event Landing Pages',
+      'Classroom Hubs'
+    ],
+    tips: [
+      "Embed Drive folders directly to create a self-updating file repository.",
+      "Double-click anywhere on the canvas to open the quick insert wheel.",
+      "Use 'Collapsible groups' to organize dense content.",
+      "Publish to a specific audience (e.g., internal domain only) for privacy."
+    ],
+    creators: [],
+    videos: [],
+    articles: [],
+    communities: []
+  },
+
+  // --- CALENDAR ---
+  'calendar': {
+    toolId: 'calendar',
+    tagline: 'Intelligent Scheduling',
+    overview: 'Google Calendar helps you spend less time managing your schedule and more time enjoying it. Smart scheduling features suggest the best meeting times and help you block time for focus work.',
+    useCases: [
+      'Meeting Scheduling',
+      'Time Blocking for Focus',
+      'Team Availability Tracking',
+      'Appointment Slots'
+    ],
+    tips: [
+      "Use 'Find a Time' to overlay team calendars and find a slot that works for everyone.",
+      "Enable 'Speedy meetings' to end calls 5 mins early for bio breaks.",
+      "Use 'Appointment Schedules' to let external people book time with you.",
+      "Color code events to analyze where your time goes (Time Insights)."
+    ],
+    creators: [],
+    videos: [],
+    articles: [],
+    communities: []
+  },
+
+  // --- IDEOGRAM ---
+  'ideogram': {
+    toolId: 'ideogram',
+    tagline: 'Typography That Actually Works',
+    overview: 'Ideogram is an image generation model that solved the biggest problem in AI art: text rendering. It allows you to create logos, t-shirt designs, posters, and stickers with perfectly legible typography, integrated seamlessly into the artwork.',
+    useCases: [
+      'Logo and Brand Identity Design',
+      'Print-on-Demand (T-Shirts, Stickers)',
+      'Event Posters and Flyers',
+      'Social Media Graphics with Text'
+    ],
+    tips: [
+      "Put the text you want rendered inside quote marks, e.g., 'A neon sign that says \"OPEN LATE\"'.",
+      "Use style tags like 'Typography', '3D Render', and 'Poster' for the best results.",
+      "Ideogram 2.0 handles long phrases better than short words.",
+      "Use the 'Remix' feature to keep the composition but change the text content."
+    ],
+    creators: [
+      {
+        name: 'Ideogram Team',
+        focus: 'Official Demos',
+        description: 'Showcasing the latest model capabilities.',
+        platform: 'Social',
+        url: 'https://twitter.com/ideogram_ai'
+      }
+    ],
+    videos: [
+      {
+        title: 'Ideogram 2.0 Review: The Midjourney Killer?',
+        channel: 'MattVidPro',
+        description: 'Testing the limits of text rendering and coherence.',
+        duration: '14:20'
+      }
+    ],
+    articles: [],
+    communities: [
+      {
+        title: 'Ideogram Discord',
+        source: 'Discord',
+        description: 'Share prompts and get feedback on typography.',
+        url: 'https://discord.gg/ideogram'
+      }
+    ]
+  },
+
+  // --- RELUME ---
+  'relume': {
+    toolId: 'relume',
+    tagline: 'Websites Built in Minutes',
+    overview: 'Relume is an AI-powered site builder that streamlines the web design process. It allows you to generate sitemaps and wireframes instantly from a text prompt, then export them directly to Figma or Webflow using the Client-First class system.',
+    useCases: [
+      'Rapid Wireframing from Briefs',
+      'Generating Sitemaps for Clients',
+      'Converting Wireframes to Webflow',
+      'Building Marketing Landing Pages'
+    ],
+    tips: [
+      "Write a detailed company description for the best sitemap generation.",
+      "Use the 'Shuffle' button on specific components to try different layouts without changing content.",
+      "Install the 'Relume Library' Figma plugin to sync your wireframes instantly.",
+      "Use 'Client-First' classes in Webflow to match the Relume export structure."
+    ],
+    creators: [
+      {
+        name: 'Relume',
+        focus: 'Official',
+        description: 'Tutorials on the Relume Library and AI features.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@Relume'
+      }
+    ],
+    videos: [
+      {
+        title: 'How to Build a Website in 5 Minutes with Relume',
+        channel: 'Relume',
+        description: 'Full workflow: AI Sitemap -> Wireframe -> Webflow.',
+        duration: '08:45'
+      }
+    ],
+    articles: [
+      {
+        title: 'Relume Library Docs',
+        source: 'Official',
+        description: 'Guide to components and the Client-First system.',
+        url: 'https://library.relume.io/documentation'
+      }
+    ],
+    communities: [
+      {
+        title: 'Relume Community',
+        source: 'Slack',
+        description: 'Connect with other Webflow and Relume developers.',
+        url: 'https://relume.io/community'
+      }
+    ]
+  },
+
+  // --- RIVE ---
+  'rive': {
+    toolId: 'rive',
+    tagline: 'Interactive Animation for Every Platform',
+    overview: 'Rive is a real-time interactive design tool that allows you to create animations that react to user input. Unlike video or Lottie, Rive animations are driven by state machines, meaning they can change behavior based on game logic, mouse position, or app state.',
+    useCases: [
+      'Interactive Game UI/HUDs',
+      'Animated Icons and Buttons',
+      'Character Rigging for Games',
+      'State-Driven Web Animations'
+    ],
+    tips: [
+      "Use 'State Machines' to define logic (e.g., 'Hover', 'Pressed', 'Idle') inside the editor.",
+      "Use 'Bones' and 'Mesh Deformation' for fluid character movement.",
+      "Export as a '.riv' file for the smallest file size and highest performance.",
+      "Connect Rive inputs to React state variables to control the animation from code."
+    ],
+    creators: [
+      {
+        name: 'Rive',
+        focus: 'Official',
+        description: 'Deep dives into rigging and state machines.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@Rive'
+      },
+      {
+        name: 'JcToon',
+        focus: 'Character Animation',
+        description: 'Mastering the art of rigging 2D characters.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@JcToon'
+      }
+    ],
+    videos: [
+      {
+        title: 'Rive Crash Course',
+        channel: 'DesignCourse',
+        description: 'Building an interactive login form character.',
+        duration: '35:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Rive Handbook',
+        source: 'Official',
+        description: 'Documentation for the editor and runtimes.',
+        url: 'https://help.rive.app/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Rive Community',
+        source: 'Discord',
+        description: 'Share your interactive creations.',
+        url: 'https://discord.gg/rive'
+      }
+    ]
+  },
+
+  // --- MAGNIFIC ---
+  'magnific': {
+    toolId: 'magnific',
+    tagline: 'Upscale & Reimage',
+    overview: 'Magnific AI is not just an upscaler; it is a "re-imaginer." It uses hallucination technology to add incredible amounts of detail to low-resolution images. It can turn a blurry sketch into a 4K masterpiece by dreaming up new textures and details.',
+    useCases: [
+      'Upscaling Low-Res Midjourney Generations',
+      'Restoring Old Photographs',
+      'Adding Skin Texture to Portraits',
+      'Enhancing Game Textures'
+    ],
+    tips: [
+      "Use 'Creativity' slider with caution. Low (0-2) keeps fidelity; High (5+) changes the image completely.",
+      "Use 'HDR' slider to fix lighting imbalances in the original image.",
+      "Describe the details you WANT to see in the prompt box (e.g., 'intricate pores, fabric texture').",
+      "Magnific works best on images that already have good composition but lack resolution."
+    ],
+    creators: [
+      {
+        name: 'Magnific AI',
+        focus: 'Official',
+        description: 'Before and after showcases.',
+        platform: 'Social',
+        url: 'https://twitter.com/magnific_ai'
+      }
+    ],
+    videos: [
+      {
+        title: 'Magnific AI: The Magic Upscaler',
+        channel: 'MattVidPro',
+        description: 'Testing the limits of hallucination upscaling.',
+        duration: '10:30'
+      }
+    ],
+    articles: [],
+    communities: []
+  },
+
+  // --- PINECONE ---
+  'pinecone': {
+    toolId: 'pinecone',
+    tagline: 'Long-Term Memory for AI',
+    overview: 'Pinecone is a managed vector database designed for high-performance AI applications. It allows you to store and search through massive amounts of vector embeddings, enabling RAG (Retrieval Augmented Generation) for chatbots and semantic search.',
+    useCases: [
+      'Building RAG Chatbots',
+      'Semantic Search Engines',
+      'Recommendation Systems',
+      'Image Similarity Search'
+    ],
+    tips: [
+      "Use 'Serverless' indexes to scale to zero and save costs during development.",
+      "Namespace your vectors (e.g., by user ID) to ensure data isolation in multi-tenant apps.",
+      "Combine vector search with metadata filtering for more accurate retrieval.",
+      "Use 'hybrid search' (sparse + dense vectors) for better keyword matching."
+    ],
+    creators: [
+      {
+        name: 'Pinecone',
+        focus: 'Official',
+        description: 'Tutorials on RAG and vector search.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@pinecone-io'
+      }
+    ],
+    videos: [
+      {
+        title: 'RAG from Scratch with Pinecone',
+        channel: 'FreeCodeCamp',
+        description: 'Building a chatbot that knows your data.',
+        duration: '45:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Pinecone Learning Center',
+        source: 'Official',
+        description: 'Everything you need to know about vector databases.',
+        url: 'https://www.pinecone.io/learn/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Pinecone Community',
+        source: 'Forum',
+        description: 'Support for vector search implementation.',
+        url: 'https://community.pinecone.io/'
+      }
+    ]
+  },
+
+  // --- NEON ---
+  'neon': {
+    toolId: 'neon',
+    tagline: 'Serverless Postgres',
+    overview: 'Neon is a modern, serverless implementation of PostgreSQL built for the cloud. It separates storage from compute, allowing for features like autoscaling to zero, instant branching (like Git for your database), and bottomless storage.',
+    useCases: [
+      'AI Applications needing scalable storage',
+      'Dev/Test environments via Branching',
+      'SaaS Platforms with variable load',
+      'Edge computing backends'
+    ],
+    tips: [
+      "Use 'Branching' to create instant copies of your production DB for testing without duplicating data.",
+      "Configure 'Autosuspend' to save money when your app is idle.",
+      "Use the 'pooling' connection string for serverless functions (Next.js/Vercel) to manage connections.",
+      "Neon is 100% Postgres compatible, so all your SQL queries just work."
+    ],
+    creators: [
+      {
+        name: 'Neon',
+        focus: 'Official',
+        description: 'Deep dives into Postgres architecture.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@neondatabase'
+      }
+    ],
+    videos: [
+      {
+        title: 'Neon: Serverless Postgres Explained',
+        channel: 'Fireship',
+        description: 'Why separating storage and compute changes everything.',
+        duration: '03:45'
+      }
+    ],
+    articles: [
+      {
+        title: 'Neon Documentation',
+        source: 'Official',
+        description: 'Guides on branching and scaling.',
+        url: 'https://neon.tech/docs/introduction'
+      }
+    ],
+    communities: [
+      {
+        title: 'Neon Discord',
+        source: 'Discord',
+        description: 'Chat with the engineers building the database.',
+        url: 'https://discord.gg/neondb'
+      }
+    ]
+  },
+
+  // --- ZED ---
+  'zed': {
+    toolId: 'zed',
+    tagline: 'High-Performance Multiplayer Code Editor',
+    overview: 'Zed is a next-generation code editor from the creators of Atom. Built in Rust and GPU-accelerated, it is incredibly fast. It features built-in collaboration (like Google Docs for code) and deep AI integration via Zed AI.',
+    useCases: [
+      'Pair Programming',
+      'High-Performance Rust/Go/C++ Dev',
+      'AI-Assisted Coding',
+      'Large Codebase Navigation'
+    ],
+    tips: [
+      "Use 'Cmd+Enter' in the assistant panel to run AI commands on your code.",
+      "Invite a teammate via a link to edit the same file simultaneously with zero latency.",
+      "Configure your keymap to match VS Code if you are switching over.",
+      "Use the built-in terminal which is also GPU accelerated."
+    ],
+    creators: [
+      {
+        name: 'Zed Industries',
+        focus: 'Official',
+        description: 'Updates on the editor development.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@zed-industries'
+      }
+    ],
+    videos: [
+      {
+        title: 'Zed Editor: Is it worth the hype?',
+        channel: 'ThePrimeagen',
+        description: 'A brutally honest review of performance.',
+        duration: '18:20'
+      }
+    ],
+    articles: [
+      {
+        title: 'Zed Docs',
+        source: 'Official',
+        description: 'Configuration and keybindings.',
+        url: 'https://zed.dev/docs'
+      }
+    ],
+    communities: []
+  },
+
+  // --- LANGSMITH ---
+  'langsmith': {
+    toolId: 'langsmith',
+    tagline: 'Debug & Monitor LLM Apps',
+    overview: 'LangSmith is a platform by LangChain for debugging, testing, evaluating, and monitoring LLM applications. It helps you move from prototype to production by providing visibility into exactly what your chains and agents are doing.',
+    useCases: [
+      'Tracing Agent Execution Paths',
+      'Evaluating RAG Retrieval Quality',
+      'Monitoring Token Usage and Cost',
+      'A/B Testing Prompts'
+    ],
+    tips: [
+      "Log all runs to LangSmith to build a dataset of 'good' and 'bad' examples.",
+      "Use 'Annotation Queues' to manually review and correct AI outputs.",
+      "Set up 'Evaluators' to automatically check if the AI response matches the ground truth.",
+      "Filter traces by latency to find bottlenecks in your chain."
+    ],
+    creators: [
+      {
+        name: 'LangChain',
+        focus: 'Official',
+        description: 'Tutorials on using LangSmith effectively.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@LangChain'
+      }
+    ],
+    videos: [
+      {
+        title: 'LangSmith Walkthrough',
+        channel: 'LangChain',
+        description: 'How to trace and debug your LLM apps.',
+        duration: '12:30'
+      }
+    ],
+    articles: [
+      {
+        title: 'LangSmith Docs',
+        source: 'Official',
+        description: 'Getting started and API reference.',
+        url: 'https://docs.smith.langchain.com/'
+      }
+    ],
+    communities: [
+      {
+        title: 'LangChain Discord',
+        source: 'Discord',
+        description: 'Dedicated LangSmith channels.',
+        url: 'https://discord.gg/langchain'
+      }
+    ]
+  },
+
+  // --- CHECKS ---
+  'checks': {
+    toolId: 'checks',
+    tagline: 'AI Compliance Platform',
+    overview: 'Checks is an AI-powered platform by Google that simplifies privacy and compliance for mobile app developers. It analyzes your app\'s code and data practices to identify potential compliance issues with regulations like GDPR and CCPA.',
+    useCases: [
+      'Automated Privacy Policy Generation',
+      'GDPR/CCPA Compliance Audits',
+      'Data Safety Form Assistance (Play Store)',
+      'Identifying SDK Data Leaks'
+    ],
+    tips: [
+      "Connect your Google Play Console account to get automated insights.",
+      "Use Checks to scan your app binary before every major release.",
+      "Leverage the 'Data Safety' report to auto-fill your Play Store declaration.",
+      "Monitor third-party SDKs to ensure they aren't collecting data you didn't authorize."
+    ],
+    creators: [
+      {
+        name: 'Google for Developers',
+        focus: 'Official',
+        description: 'Announcements about Checks.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@GoogleDevelopers'
+      }
+    ],
+    videos: [
+      {
+        title: 'Simplify App Compliance with Checks',
+        channel: 'Google',
+        description: 'Introduction to the platform.',
+        duration: '02:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'Checks Documentation',
+        source: 'Google',
+        description: 'Getting started guide.',
+        url: 'https://checks.google.com/docs'
+      }
+    ],
+    communities: []
+  },
+
+  // --- KREA (Previously populated, ensuring it stays) ---
+  'krea': {
+    toolId: 'krea',
+    tagline: 'Real-Time Creative Intelligence',
+    overview: 'Krea.ai is a generative art tool that specializes in real-time image generation and high-end upscaling. Its "Realtime" canvas allows you to paint with shapes and see the AI render photorealistic results instantly, while its Upscaler adds hallucinatory detail to low-res images.',
+    useCases: [
+      'Instant visualization of rough sketches',
+      'Upscaling low-res MJ/Flux generations to 4K',
+      'Creating logo illusions with Patterns tool',
+      'Real-time webcam to AI generation'
+    ],
+    tips: [
+      "Use the 'Enhance' slider in the Upscaler carefully; too high (0.6+) changes the face identity.",
+      "In Realtime, use simple colored shapes; the AI cares more about composition than detail.",
+      "Connect your iPad as a webcam to draw on your tablet and see Krea render it on desktop.",
+      "Use 'Pattern' mode to hide text or logos inside landscapes (subliminal advertising)."
+    ],
+    creators: [
+      {
+        name: 'Krea Team',
+        focus: 'Demos',
+        description: 'Official showcases of real-time capabilities.',
+        platform: 'Social',
+        url: 'https://twitter.com/krea_ai'
+      }
+    ],
+    videos: [
+      {
+        title: 'Krea AI Realtime Generation Guide',
+        channel: 'MattVidPro',
+        description: 'How to use the instant canvas effectively.',
+        duration: '12:00'
+      }
+    ],
+    articles: [
+      {
+        title: 'Krea Upscaler Guide',
+        source: 'Krea Blog',
+        description: 'Understanding the AI hallucination strength settings.',
+        url: 'https://www.krea.ai/blog'
+      }
+    ],
+    communities: [
+      {
+        title: 'Krea Discord',
+        source: 'Discord',
+        description: 'Share real-time generations and get support.',
+        url: 'https://discord.gg/krea'
+      }
+    ]
+  },
+
+  // --- HAILUO (MINIMAX) ---
+  'hailuo': {
+    toolId: 'hailuo',
+    tagline: 'Video 01 by MiniMax',
+    overview: 'Hailuo AI (Video 01) by MiniMax is a leading video generation model known for its exceptional motion coherence and adherence to physics. It excels at generating realistic human movement and complex interactions that other models often struggle with.',
+    useCases: [
+      'Realistic human action shots',
+      'Complex physics simulations (water, cloth)',
+      'Consistent character movement',
+      'High-fidelity 6-second clips'
+    ],
+    tips: [
+      "Hailuo responds very well to detailed descriptions of lighting (e.g., 'volumetric lighting, cinematic, 4k').",
+      "If the motion is too fast, add 'slow motion' or 'smooth movement' to the prompt.",
+      "Use the 'Image-to-Video' feature for better character consistency than Text-to-Video.",
+      "The model prefers natural language prompts over tag-salad."
+    ],
+    creators: [
+      {
+        name: 'MiniMax',
+        focus: 'Official',
+        description: 'Creators of the Video-01 model.',
+        platform: 'Website',
+        url: 'https://hailuoai.video/'
+      }
+    ],
+    videos: [
+      {
+        title: 'Hailuo AI vs Gen-3 vs Luma',
+        channel: 'The AI Advantage',
+        description: 'Comparison of motion quality and realism.',
+        duration: '15:30'
+      }
+    ],
+    articles: [],
+    communities: [
+      {
+        title: 'MiniMax Community',
+        source: 'Discord',
+        description: 'Discussions on prompting Video-01.',
+        url: 'https://discord.gg/minimax'
+      }
+    ]
+  },
+
+  // --- RECRAFT ---
+  'recraft': {
+    toolId: 'recraft',
+    tagline: 'Infinite Vector Canvas',
+    overview: 'Recraft is the first generative AI design tool that allows you to create and edit vector art, icons, and 3D illustrations in a unified style. It generates SVG files that are infinitely scalable, making it perfect for brand design and web assets.',
+    useCases: [
+      'Generating consistent icon sets',
+      'Creating scalable logo concepts',
+      'Vector illustration for web design',
+      'Style transfer across different assets'
+    ],
+    tips: [
+      "Upload your brand palette to force Recraft to use ONLY your colors.",
+      "Use the 'Lasso' tool to fix specific parts of a vector generation.",
+      "Export as 'Lottie' JSON if you need simple animations.",
+      "Save your favorite generation as a 'Style' to reuse it later."
+    ],
+    creators: [
+      {
+        name: 'Recraft',
+        focus: 'Tutorials',
+        description: 'Official guides on vector generation.',
+        platform: 'YouTube',
+        url: 'https://www.youtube.com/@recraft_ai'
+      }
+    ],
+    videos: [
+      {
+        title: 'Recraft V3: The Flux of Vector Art?',
+        channel: 'Pixel & Bracket',
+        description: 'Review of the new text rendering capabilities.',
+        duration: '10:15'
+      }
+    ],
+    articles: [
+      {
+        title: 'Recraft Help Center',
+        source: 'Official',
+        description: 'Guide to style creation and export formats.',
+        url: 'https://help.recraft.ai/'
+      }
+    ],
+    communities: [
+      {
+        title: 'Recraft Community',
+        source: 'Discord',
+        description: 'Share vector prompts and styles.',
+        url: 'https://discord.gg/recraft'
+      }
+    ]
+  },
+
   // --- LOVABLE ---
   'lovable': {
     toolId: 'lovable',
@@ -1003,6 +1849,507 @@ export const learningResourcesData: Record<string, LearningHubData> = {
     ]
   },
 
+  // --- GALILEO ---
+  'galileo': {
+      toolId: 'galileo',
+      tagline: 'Text-to-UI Interface Design',
+      overview: 'Galileo AI uses large language models to generate high-fidelity UI designs from simple text descriptions. It empowers product teams to explore design directions rapidly by generating multi-screen flows that can be exported directly to Figma.',
+      useCases: ['Prototyping', 'Design Exploration', 'Mobile UI', 'Wireframing'],
+      tips: [
+          "Describe the user flow step-by-step for better multi-screen generation.",
+          "Specify 'Dark Mode' or 'Light Mode' explicitly in your prompt.",
+          "Use the 'Mobile' vs 'Desktop' toggle before generating to set the correct viewport."
+      ],
+      creators: [
+          {
+              name: 'Galileo Team',
+              focus: 'Updates',
+              description: 'Official announcements and feature demos.',
+              platform: 'Social',
+              url: 'https://twitter.com/galileo_ai'
+          }
+      ],
+      videos: [
+          {
+              title: 'Galileo AI Review: The Future of UI Design?',
+              channel: 'DesignCourse',
+              description: 'Testing the capabilities of text-to-UI generation.',
+              duration: '12:45'
+          }
+      ],
+      articles: [], 
+      communities: []
+  },
+
+  // --- MUSHO ---
+  'musho': {
+      toolId: 'musho',
+      tagline: 'AI Assistant for Figma',
+      overview: 'Musho is a Figma plugin that turns prompts into professional, layered designs. It acts as a junior designer, handling layout, asset placement, and copy generation automatically within your Figma canvas.',
+      useCases: ['Social Media Assets', 'Landing Pages', 'Figma Automation', 'Copywriting'],
+      tips: [
+          "Select a frame before prompting to constrain the generation to that specific area.",
+          "Use 'Remix' to iterate on specific sections without regenerating the whole design.",
+          "Ask Musho to 'Write copy for this section' to replace lorem ipsum with relevant text."
+      ],
+      creators: [
+          {
+              name: 'Musho',
+              focus: 'Official',
+              description: 'Tips on using the Figma plugin.',
+              platform: 'Social',
+              url: 'https://twitter.com/musho_ai'
+          }
+      ],
+      videos: [],
+      articles: [], 
+      communities: []
+  },
+
+  // --- SCENARIO ---
+  'scenario': {
+      toolId: 'scenario',
+      tagline: 'GenAI for Game Assets',
+      overview: 'Scenario allows game developers to train custom AI models (LoRAs) on their own art style, ensuring generated assets match the game\'s aesthetic perfectly. It is the engine for consistent, style-aligned game assets.',
+      useCases: ['Game Assets', 'Concept Art', 'Consistent Style', 'Isometric Props'],
+      tips: [
+          "Upload 15-20 high-quality images with a consistent style for the best training results.",
+          "Use the 'Pixel Art' mode for retro game assets; it handles grid alignment well.",
+          "Remove background automatically within the tool before exporting to Unity/Unreal."
+      ],
+      creators: [],
+      videos: [
+          {
+              title: 'Creating Game Assets with Scenario AI',
+              channel: 'GameDevGuide',
+              description: 'Training a model on a specific art style.',
+              duration: '15:20'
+          }
+      ],
+      articles: [
+          {
+              title: 'Scenario Documentation',
+              source: 'Official',
+              description: 'Guide to training, prompting, and API usage.',
+              url: 'https://docs.scenario.com/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Scenario Discord',
+              source: 'Discord',
+              description: 'Community for game developers using GenAI.',
+              url: 'https://discord.gg/scenario'
+          }
+      ]
+  },
+
+  // --- WEBFLOW ---
+  'webflow': {
+      toolId: 'webflow',
+      tagline: 'Visual Web Development',
+      overview: 'Webflow empowers designers to build professional, custom websites in a visual canvas with no code. Its new AI capabilities allow for instant localization, automated styling classes, and conversational page building.',
+      useCases: ['Web Design', 'CMS', 'Hosting', 'Localization'],
+      tips: [
+          "Use 'Cmd+E' (Quick Find) to add elements faster than dragging from the panel.",
+          "Structure your classes using the 'Client-First' system for cleaner, scalable code.",
+          "Use the 'Localization' feature to translate your site into multiple languages instantly."
+      ],
+      creators: [
+          {
+              name: 'Webflow',
+              focus: 'University',
+              description: 'The gold standard for web design education.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/webflow'
+          },
+          {
+              name: 'Timothy Ricks',
+              focus: 'Advanced',
+              description: 'Mastering interactions and Client-First system.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@TimothyRicks'
+          }
+      ],
+      videos: [
+          {
+              title: 'Webflow 101 Crash Course',
+              channel: 'Webflow',
+              description: 'The basics of the box model and layout.',
+              duration: '2 hours'
+          }
+      ],
+      articles: [
+          {
+              title: 'Webflow University',
+              source: 'Official',
+              description: 'Comprehensive courses on every aspect of the platform.',
+              url: 'https://university.webflow.com/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Webflow Forum',
+              source: 'Website',
+              description: 'Help with custom code and layout bugs.',
+              url: 'https://forum.webflow.com/'
+          }
+      ]
+  },
+
+  // --- PROCREATE ---
+  'procreate': {
+      toolId: 'procreate',
+      tagline: 'Sketch, Paint, Create',
+      overview: 'The complete art studio on iPad. Procreate is the industry standard for digital illustration, offering an intuitive interface, a powerful brush engine, and seamless performance on Apple Silicon.',
+      useCases: ['Illustration', 'Sketching', 'Animation', 'Lettering'],
+      tips: [
+          "Two-finger tap to Undo; Three-finger tap to Redo.",
+          "Drag a color from the top right onto an area to fill it (ColorDrop).",
+          "Use 'Clipping Masks' to paint non-destructively on top of a shape.",
+          "Hold the pencil at the end of a stroke to snap it to a perfect shape (QuickShape)."
+      ],
+      creators: [
+          {
+              name: 'Procreate',
+              focus: 'Official',
+              description: 'Short, effective tutorials on features.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@Procreate'
+          },
+          {
+              name: 'Art with Flo',
+              focus: 'Tutorials',
+              description: 'Beginner friendly step-by-step drawing guides.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@ArtwithFlo'
+          }
+      ],
+      videos: [
+          {
+              title: 'Procreate for Beginners',
+              channel: 'Brad Colbow',
+              description: 'Complete walkthrough of the interface and gestures.',
+              duration: '20:45'
+          }
+      ],
+      articles: [
+          {
+              title: 'Procreate Handbook',
+              source: 'Official',
+              description: 'The manual for every tool and gesture.',
+              url: 'https://procreate.com/handbook'
+          }
+      ],
+      communities: [
+          {
+              title: 'r/ProCreate',
+              source: 'Reddit',
+              description: 'Sharing artwork and custom brushes.',
+              url: 'https://www.reddit.com/r/ProCreate/'
+          }
+      ]
+  },
+
+  // --- LINEARITY ---
+  'linearity': {
+      toolId: 'linearity',
+      tagline: 'Vector Design Evolved',
+      overview: 'Formerly Vectornator, Linearity Curve is a powerful vector design tool reimagined with AI. Key features include Auto Trace (converting images to vectors), background removal, and a modern interface for marketing design.',
+      useCases: ['Vector Art', 'Marketing Assets', 'Logos', 'Social Media'],
+      tips: [
+          "Use 'Auto Trace' to convert sketches or photos into editable vector paths instantly.",
+          "Use 'Gesture Controls' to switch tools without looking at the menu.",
+          "Export as SVG for web use or PDF for print quality.",
+          "Use the 'Background Removal' tool to isolate subjects in one tap."
+      ],
+      creators: [
+          {
+              name: 'Linearity',
+              focus: 'Academy',
+              description: 'Official tutorials on vector design workflows.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@LinearityCurve'
+          }
+      ],
+      videos: [
+          {
+              title: 'Linearity Curve for Beginners',
+              channel: 'Satori Graphics',
+              description: 'Introduction to vector tools on iPad and Mac.',
+              duration: '14:30'
+          }
+      ],
+      articles: [
+          {
+              title: 'Linearity Academy',
+              source: 'Official',
+              description: 'Learn graphic design principles and tool mastery.',
+              url: 'https://www.linearity.io/academy/'
+          }
+      ],
+      communities: []
+  },
+
+  // --- REPLIT ---
+  'replit': {
+      toolId: 'replit',
+      tagline: 'The AI-Powered Software Platform',
+      overview: 'Replit is a collaborative, cloud-based IDE that allows you to code in the browser without setup. Its new "Replit Agent" can plan, write, and deploy complex full-stack applications from a single natural language prompt.',
+      useCases: ['Rapid Prototyping', 'Agentic Coding', 'Education', 'Hosting'],
+      tips: [
+          "Use 'Replit Agent' to scaffold entire projects, including database schema and frontend UI.",
+          "Enable 'Autoscale' deployments to handle traffic spikes without managing servers.",
+          "Import any GitHub repository to instantly get a cloud dev environment.",
+          "Use 'Ghostwriter' for context-aware code completion and explanation."
+      ],
+      creators: [
+          {
+              name: 'Replit',
+              focus: 'Official',
+              description: 'Demos of Replit Agent and core features.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@replit'
+          }
+      ],
+      videos: [
+          {
+              title: 'Replit Agent: Zero to App',
+              channel: 'Replit',
+              description: 'Building a complex application in minutes with AI.',
+              duration: '08:45'
+          }
+      ],
+      articles: [
+          {
+              title: 'Replit Documentation',
+              source: 'Official',
+              description: 'Guides on deployments, databases, and teams.',
+              url: 'https://docs.replit.com/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Replit Community',
+              source: 'Website',
+              description: 'Share your repls and get help from other builders.',
+              url: 'https://replit.com/community'
+          }
+      ]
+  },
+
+  // --- WARP ---
+  'warp': {
+      toolId: 'warp',
+      tagline: 'The Terminal for the 21st Century',
+      overview: 'Warp is a Rust-based terminal reimagined for modern workflows. It features an IDE-like input area, collaborative shared commands ("Warp Drive"), and deep AI integration that can explain errors or suggest commands.',
+      useCases: ['DevOps', 'CLI Efficiency', 'Team Collaboration', 'Debugging'],
+      tips: [
+          "Press 'Ctrl-R' to search your command history with AI-powered fuzzy matching.",
+          "Use 'Warp Drive' to save and share parameterized workflows with your team.",
+          "Right-click any error output and select 'Ask Warp' to get an AI fix explanation.",
+          "Use 'Blocks' to navigate through previous command outputs like a document."
+      ],
+      creators: [
+          {
+              name: 'Warp',
+              focus: 'Official',
+              description: 'Tips and tricks for power users.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@warpdotdev'
+          }
+      ],
+      videos: [
+          {
+              title: 'Warp Terminal: 10x Your Workflow',
+              channel: 'NetworkChuck',
+              description: 'Why you should switch from your default terminal.',
+              duration: '12:20'
+          }
+      ],
+      articles: [
+          {
+              title: 'Warp Documentation',
+              source: 'Official',
+              description: 'Keyboard shortcuts and configuration guide.',
+              url: 'https://docs.warp.dev/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Warp Discord',
+              source: 'Discord',
+              description: 'Feature requests and support.',
+              url: 'https://discord.gg/warpdotdev'
+          }
+      ]
+  },
+
+  // --- LANGFLOW ---
+  'langflow': {
+      toolId: 'langflow',
+      tagline: 'Visual Builder for AI Apps',
+      overview: 'Langflow is a visual UI for LangChain, allowing you to build, test, and deploy complex LLM applications using a drag-and-drop interface. It abstracts away the boilerplate code, making it easy to experiment with different models, vector stores, and prompt chains.',
+      useCases: ['RAG Pipelines', 'Chatbot Prototyping', 'No-Code AI', 'Educational'],
+      tips: [
+          "Drag and drop components to connect OpenAI to a Pinecone vector store instantly.",
+          "Use the 'Playground' tab to test your flow in real-time without deploying.",
+          "Export your flow as a JSON file or Python code to integrate into production apps.",
+          "Combine multiple LLMs in a single chain to leverage different model strengths."
+      ],
+      creators: [],
+      videos: [
+          {
+              title: 'Building RAG with Langflow',
+              channel: 'Langflow',
+              description: 'Zero-code setup for chatting with your documents.',
+              duration: '10:15'
+          }
+      ],
+      articles: [
+          {
+              title: 'Langflow Docs',
+              source: 'Official',
+              description: 'Component reference and deployment guides.',
+              url: 'https://docs.langflow.org/'
+          }
+      ],
+      communities: [
+          {
+              title: 'LangChain Discord',
+              source: 'Discord',
+              description: 'Discuss Langflow in the dedicated channels.',
+              url: 'https://discord.gg/langchain'
+          }
+      ]
+  },
+
+  // --- V0 ---
+  'v0': {
+      toolId: 'v0',
+      tagline: 'Generative UI by Vercel',
+      overview: 'v0 uses AI to generate copy-paste friendly React components based on Shadcn UI and Tailwind CSS. It streamlines the frontend development process by turning text descriptions into accessible, production-ready code.',
+      useCases: ['React Components', 'Tailwind', 'Rapid Prototyping', 'Design Systems'],
+      tips: [
+          "Iterate on your design by selecting specific parts of the preview and prompting changes.",
+          "Copy the code directly into your Next.js project; it handles imports automatically.",
+          "Use 'v0 blocks' to discover community-generated components.",
+          "Be specific about layout requirements (e.g., 'mobile-first responsive grid')."
+      ],
+      creators: [
+          {
+              name: 'Vercel',
+              focus: 'Official',
+              description: 'Announcements and integration demos.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@VercelHQ'
+          }
+      ],
+      videos: [
+          {
+              title: 'Building a Dashboard with v0',
+              channel: 'Vercel',
+              description: 'From prompt to deployed dashboard in minutes.',
+              duration: '06:30'
+          }
+      ],
+      articles: [
+          {
+              title: 'v0 Documentation',
+              source: 'Vercel',
+              description: 'Best practices for prompting UI generation.',
+              url: 'https://v0.dev/docs'
+          }
+      ],
+      communities: []
+  },
+
+  // --- CONTINUE ---
+  'continue': {
+      toolId: 'continue',
+      tagline: 'Open Source AI Assistant',
+      overview: 'Continue is the leading open-source autopilot for VS Code and JetBrains. It allows you to use any LLM (local or cloud) for code completion and chat, giving you full control over your data privacy and model choices.',
+      useCases: ['Code Completion', 'Privacy-Focused Dev', 'Local Models', 'Refactoring'],
+      tips: [
+          "Connect to 'Ollama' to run models like Llama 3 or DeepSeek Coder locally.",
+          "Use 'Cmd+I' to edit code in place without leaving your file.",
+          "Add custom documentation to the context by using '@docs' in chat.",
+          "Configure 'config.json' to switch between different model providers instantly."
+      ],
+      creators: [],
+      videos: [
+          {
+              title: 'Continue vs Copilot',
+              channel: 'Tech With Tim',
+              description: 'Why open source matters for coding assistants.',
+              duration: '14:20'
+          }
+      ],
+      articles: [
+          {
+              title: 'Continue Docs',
+              source: 'Official',
+              description: 'Setup guides for Ollama, LM Studio, and API providers.',
+              url: 'https://docs.continue.dev/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Continue Discord',
+              source: 'Discord',
+              description: 'Get help configuring local models.',
+              url: 'https://discord.gg/continue'
+          }
+      ]
+  },
+
+  // --- POSTMAN ---
+  'postman': {
+      toolId: 'postman',
+      tagline: 'AI-Powered API Platform',
+      overview: 'Postman is the world\'s leading API platform. With the new "Postbot" AI assistant, you can auto-generate tests, visualize responses, and write documentation instantly, speeding up the API development lifecycle significantly.',
+      useCases: ['API Testing', 'Documentation', 'Development', 'Debugging'],
+      tips: [
+          "Ask Postbot to 'Write a test that checks for 200 OK and valid JSON'.",
+          "Use the 'Visualize' tab to turn JSON responses into charts or tables with AI.",
+          "Generate documentation for your collection automatically based on request data.",
+          "Use 'Mock Servers' to simulate API endpoints before the backend is built."
+      ],
+      creators: [
+          {
+              name: 'Postman',
+              focus: 'Official',
+              description: 'Tutorials on Postbot and new features.',
+              platform: 'YouTube',
+              url: 'https://www.youtube.com/@Postman'
+          }
+      ],
+      videos: [
+          {
+              title: 'Postbot: Your AI Assistant for APIs',
+              channel: 'Postman',
+              description: 'Overview of AI capabilities in Postman.',
+              duration: '04:15'
+          }
+      ],
+      articles: [
+          {
+              title: 'Postman Learning Center',
+              source: 'Official',
+              description: 'Comprehensive guides for API testing and automation.',
+              url: 'https://learning.postman.com/'
+          }
+      ],
+      communities: [
+          {
+              title: 'Postman Community',
+              source: 'Forum',
+              description: 'Q&A for API developers.',
+              url: 'https://community.postman.com/'
+          }
+      ]
+  },
+
   // --- LUMA ---
   'luma': {
       toolId: 'luma',
@@ -1535,6 +2882,357 @@ export const learningResourcesData: Record<string, LearningHubData> = {
       ]
   },
 
+  // --- TEXTFX ---
+  'textfx': {
+      toolId: 'textfx',
+      tagline: 'AI for Wordsmiths',
+      overview: 'TextFX is an experiment by Google and Lupe Fiasco. It provides a suite of tools designed to help rappers, writers, and poets break out of creative blocks by exploring language in new ways.',
+      useCases: ['Lyrics', 'Creative Writing', 'Wordplay', 'Ideation'],
+      tips: [
+          "Use 'Explode' to break a word down into phrases that sound similar.",
+          "Use 'Chain' to build a sequence of semantically related words.",
+          "Try 'Unfold' to find words that contain the letters of your input word.",
+          "Combine tools: Explode a word, then Chain the result."
+      ],
+      creators: [],
+      videos: [
+          {
+              title: 'Lupe Fiasco demonstrates TextFX',
+              channel: 'Google',
+              description: 'The rapper explains how he uses AI to assist his writing process.',
+              duration: '03:45'
+          }
+      ],
+      articles: [],
+      communities: []
+  },
+
+  // --- VIDEOFX ---
+  'videofx': {
+      toolId: 'videofx',
+      tagline: 'Veo Lab',
+      overview: 'VideoFX is Google\'s experimental playground for generative video, powered by the Veo model. It allows creators to turn text prompts into high-definition 1080p video clips with cinematic quality.',
+      useCases: ['Video Gen', 'Storyboarding', 'Social Media', 'Concept Art'],
+      tips: [
+          "Describe camera movement explicitly: 'drone shot', 'pan left', 'zoom in'.",
+          "Keep prompts under 200 characters for better coherence.",
+          "Use 'Story mode' (if available) to generate sequential clips.",
+          "Specify lighting conditions like 'golden hour' or 'neon noir' for mood."
+      ],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- MUSICFX ---
+  'musicfx': {
+      toolId: 'musicfx',
+      tagline: 'Infinite Music Loop',
+      overview: 'MusicFX allows you to generate original, high-quality musical loops and tracks using Google\'s MusicLM model. It\'s a tool for producers, DJs, and creators looking for unique samples.',
+      useCases: ['Background Music', 'Sampling', 'Idea Generation', 'Loop Creation'],
+      tips: [
+          "Combine genres in your prompt: 'Jazz mixed with 8-bit chiptune'.",
+          "Specify the 'vibe' clearly: 'upbeat', 'melancholic', 'driving'.",
+          "Set the duration to 'Loop' mode to create seamless background audio.",
+          "Download generated tracks as MP3s to import into your DAW."
+      ],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- GENIE ---
+  'genie': {
+      toolId: 'genie',
+      tagline: 'Generative Interactive Environments',
+      overview: 'Genie is a foundation world model trained on internet videos that can generate an endless variety of playable (action-controllable) worlds from image prompts.',
+      useCases: ['Game Research', 'World Building', 'Simulation'],
+      creators: [],
+      videos: [],
+      articles: [
+          {
+              title: 'Genie Research Paper',
+              source: 'Google DeepMind',
+              description: '11B parameter foundation world model.',
+              url: 'https://deepmind.google/technologies/genie/'
+          }
+      ],
+      communities: []
+  },
+
+  // --- ANTIGRAVITY ---
+  'antigravity': {
+      toolId: 'antigravity',
+      tagline: 'Built for Agents',
+      overview: 'Google Antigravity is a platform designed for building and deploying autonomous AI agents. It provides the infrastructure for agents to plan, execute, and verify tasks in the real world.',
+      useCases: ['Automation', 'Enterprise', 'Complex Workflows'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- GOOGLE VIDS ---
+  'google-vids': {
+      toolId: 'google-vids',
+      tagline: 'Video for Work',
+      overview: 'Google Vids is an AI-powered video creation app for Workspace. It sits alongside Docs, Sheets, and Slides, helping teams create videos for training, updates, and pitches as easily as making a slide deck.',
+      useCases: ['Internal Comms', 'Training', 'Project Updates', 'Sales Pitches'],
+      tips: [
+          "Start with a Google Doc script to get the best structure automatically.",
+          "Use 'Help me create' to generate a full storyboard from a single prompt.",
+          "Choose a preset 'Style' to ensure consistent branding across the video.",
+          "Use the AI voiceover feature if you don't want to record your own audio."
+      ],
+      creators: [],
+      videos: [
+          {
+              title: 'Introducing Google Vids',
+              channel: 'Google Workspace',
+              description: 'The new AI-powered video creation app for work.',
+              duration: '01:50'
+          }
+      ],
+      articles: [],
+      communities: []
+  },
+
+  // --- PROJECT ASTRA ---
+  'project-astra': {
+      toolId: 'project-astra',
+      tagline: 'The Universal Assistant',
+      overview: 'Project Astra is Google\'s vision for the future of AI assistants. It is a multimodal, real-time agent that can see, hear, and understand the world through your phone\'s camera or smart glasses, responding with near-instant latency.',
+      useCases: ['Assistance', 'Multimodal Interaction', 'Accessibility'],
+      creators: [],
+      videos: [
+          {
+              title: 'Project Astra Demo',
+              channel: 'Google DeepMind',
+              description: 'Real-time multimodal AI assistant prototype.',
+              duration: '02:30'
+          }
+      ],
+      articles: [],
+      communities: []
+  },
+
+  // --- VEO ---
+  'veo': {
+      toolId: 'veo',
+      tagline: 'Generative Video Model',
+      overview: 'Veo is Google\'s most capable generative video model to date. It creates high-quality, 1080p video clips that can go beyond a minute, understanding cinematic terms like "timelapse" or "aerial shot".',
+      useCases: ['Filmmaking', 'Advertising', 'Social Content'],
+      creators: [],
+      videos: [],
+      articles: [
+          {
+              title: 'Veo Technology Overview',
+              source: 'Google DeepMind',
+              description: 'Details on the latent diffusion transformer architecture.',
+              url: 'https://deepmind.google/technologies/veo/'
+          }
+      ],
+      communities: []
+  },
+
+  // --- PROJECT JULES ---
+  'project-jules': {
+      toolId: 'project-jules',
+      tagline: 'Experimental Code Agent',
+      overview: 'Project Jules is an experimental AI code agent designed to help developers write, debug, and understand code more effectively. It integrates deeply with version control systems to provide context-aware assistance.',
+      useCases: ['Coding', 'Refactoring', 'Documentation'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- MIXBOARD ---
+  'mixboard': {
+      toolId: 'mixboard',
+      tagline: 'AI Music Whiteboard',
+      overview: 'Mixboard is an AI-powered music interface that allows users to mix and mash up tracks on a 2D canvas. It helps users understand song structure and create seamless transitions automatically.',
+      useCases: ['DJing', 'Remixing', 'Music Education'],
+      creators: [],
+      videos: [],
+      articles: [
+          {
+              title: 'Mixboard Blog Post',
+              source: 'Google Research',
+              description: 'Helping robots and humans mix music.',
+              url: 'https://research.google/blog/mixboard-helping-robots-and-humans-mix-music/'
+          }
+      ],
+      communities: []
+  },
+
+  // --- MUSIC SANDBOX ---
+  'music-sandbox': {
+      toolId: 'music-sandbox',
+      tagline: 'Lyria Model Playground',
+      overview: 'The Music AI Sandbox is a suite of experimental tools designed in collaboration with musicians. It features the Lyria model, allowing users to generate, transform, and accompany musical ideas.',
+      useCases: ['Composition', 'Sound Design', 'Collaboration'],
+      creators: [],
+      videos: [
+          {
+              title: 'Music AI Sandbox Demo with Wyclef Jean',
+              channel: 'Google',
+              description: 'Artists testing the new Lyria model tools.',
+              duration: '02:15'
+          }
+      ],
+      articles: [],
+      communities: []
+  },
+
+  // --- GEMINI GEMS ---
+  'gemini-gems': {
+      toolId: 'gemini-gems',
+      tagline: 'Custom AI Experts',
+      overview: 'Gems allow you to create custom versions of Gemini that are experts in specific topics or tailored to your unique goals. You can give them instructions, a persona, and specific knowledge files.',
+      useCases: ['Personalization', 'Coaching', 'Coding Assistant', 'Creative Writing'],
+      tips: [
+          "Give your Gem a specific persona (e.g., 'Grumpy Editor' or 'Patient Tutor').",
+          "Upload knowledge files (PDFs, Docs) to ground the Gem in your specific data.",
+          "Share your Gems with your team to standardize workflows.",
+          "Use Gems for repetitive tasks like 'Weekly Report Formatter'."
+      ],
+      creators: [],
+      videos: [],
+      articles: [
+          {
+              title: 'Introducing Gemini Gems',
+              source: 'Google Blog',
+              description: 'Customize Gemini to fit your needs.',
+              url: 'https://blog.google/products/gemini/gemini-gems/'
+          }
+      ],
+      communities: []
+  },
+
+  // --- GOOGLE EARTH ---
+  'google-earth': {
+      toolId: 'google-earth',
+      tagline: 'The World\'s Most Detailed Globe',
+      overview: 'Google Earth is the world\'s most detailed digital globe. With new creation tools and Studio integration, it allows creators to build immersive stories, flyovers, and visualizations using satellite imagery.',
+      useCases: ['Visualization', 'Storytelling', 'Education', 'Location Scouting'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- CODEWIKI ---
+  'codewiki': {
+      toolId: 'codewiki',
+      tagline: 'Engineering Knowledge Base',
+      overview: 'Code Wiki is the definitive internal knowledge base for engineering patterns and AI coding standards within the Google ecosystem. (Note: This is a representative entry for internal tool documentation patterns).',
+      useCases: ['Documentation', 'Standards', 'Onboarding'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- STITCH ---
+  'stitch': {
+      toolId: 'stitch',
+      tagline: 'AI UI Designer',
+      overview: 'Stitch is an AI-powered prototyping tool that helps designers convert sketches and text descriptions into editable high-fidelity UI designs, often exporting directly to Figma or code.',
+      useCases: ['Prototyping', 'Design Conversion', 'Wireframing'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- KEEP ---
+  'keep': {
+      toolId: 'keep',
+      tagline: 'Capture Ideas Instantly',
+      overview: 'Google Keep is a note-taking service that uses AI to help you capture, organize, and find your ideas. New generative features can help you create lists, brainstorm, and pin important context.',
+      useCases: ['Organization', 'Brainstorming', 'Quick Capture'],
+      tips: [
+          "Use 'Help me create' to generate a grocery list from a recipe description.",
+          "Pin important notes to the top for easy access on mobile.",
+          "Color code your notes to visually categorize projects.",
+          "Set location-based reminders to get alerted when you arrive at a place."
+      ],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- OPAL ---
+  'opal': {
+      toolId: 'opal',
+      tagline: 'No-Code AI Builder',
+      overview: 'Opal is a visual tool for building AI-powered applications without writing code. It allows users to chain together prompts, models, and tools into powerful workflows.',
+      useCases: ['App Building', 'Automation', 'Workflow Design'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- MESOP ---
+  'mesop': {
+      toolId: 'mesop',
+      tagline: 'Build UI in Python',
+      overview: 'Mesop is a Python UI framework that allows you to build beautiful, responsive web applications in pure Python. It is designed for rapidly prototyping internal AI tools and demos.',
+      useCases: ['Internal Tools', 'Demos', 'Chat UIs', 'Dashboards'],
+      tips: [
+          "Use `mesop.text_to_text` component for instant chat interfaces.",
+          "Deploy directly to Google Cloud Run for scalability.",
+          "Hot reload is enabled by default for fast iteration.",
+          "State management is handled automatically via data classes."
+      ],
+      creators: [],
+      videos: [],
+      articles: [
+          {
+              title: 'Mesop GitHub Repo',
+              source: 'GitHub',
+              description: 'Official repository and examples.',
+              url: 'https://github.com/google/mesop'
+          }
+      ],
+      communities: []
+  },
+
+  // --- ILLUMINATE ---
+  'illuminate': {
+      toolId: 'illuminate',
+      tagline: 'Learn from Papers',
+      overview: 'Illuminate uses AI to transform dense academic papers into engaging audio conversations. It features AI hosts that discuss the content, making complex research more accessible.',
+      useCases: ['Learning', 'Research', 'Accessibility'],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
+  // --- KAGGLE ---
+  'kaggle': {
+      toolId: 'kaggle',
+      tagline: 'Your Home for Data Science',
+      overview: 'Kaggle is the world\'s largest data science community. It offers free access to datasets, a powerful notebook environment with free GPUs/TPUs, and competitions to test your modeling skills.',
+      useCases: ['Data Science', 'Model Training', 'Datasets', 'Education'],
+      tips: [
+          "Use the 'Models' tab to find pre-trained weights for Gemma, Llama 3, etc.",
+          "Turn on the 'TPU VM v3-8' accelerator for faster training of large models.",
+          "Fork existing high-scoring notebooks to learn winning techniques.",
+          "Join 'Getting Started' competitions if you are new to ML."
+      ],
+      creators: [],
+      videos: [],
+      articles: [],
+      communities: []
+  },
+
   // --- Default Fallback ---
   'default': {
     toolId: 'default',
@@ -1545,146 +3243,6 @@ export const learningResourcesData: Record<string, LearningHubData> = {
     videos: [],
     articles: [],
     communities: []
-  },
-
-  // --- Remaining Minor Placeholders (Still maintained for type safety) ---
-  'textfx': {
-      toolId: 'textfx',
-      tagline: 'AI for Writers',
-      overview: 'Tools for rappers and writers. Break out of creative blocks.',
-      useCases: ['Lyrics', 'Creative Writing', 'Wordplay'],
-      tips: ["Use 'Explode' to find words that sound similar but mean different things.", "Use 'Chain' to build semantic bridges between unrelated concepts."],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'videofx': {
-      toolId: 'videofx',
-      tagline: 'Veo Lab',
-      overview: 'Generate video from text. Google\'s premier video model sandbox.',
-      useCases: ['Video Gen', 'Storyboarding'],
-      tips: ["Describe the camera movement (e.g., 'drone shot', 'pan left') explicitly.", "Keep prompts under 200 characters for better coherence."],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'genie': {
-      toolId: 'genie',
-      tagline: 'World Models',
-      overview: 'Playable worlds from images. Research preview.',
-      useCases: ['Research', 'Game Dev'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'antigravity': {
-      toolId: 'antigravity',
-      tagline: 'Agent Platform',
-      overview: 'Build autonomous agents. Google\'s agent-first ecosystem.',
-      useCases: ['Automation', 'Enterprise'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'google-vids': {
-      toolId: 'google-vids',
-      tagline: 'Video for Work',
-      overview: 'AI video creation for workspace. Turn docs into videos.',
-      useCases: ['Internal comms', 'Training'],
-      tips: ["Start with a Google Doc script to get the best structure.", "Use 'Help me create' to generate a storyboard from a single prompt."],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'project-astra': {
-      toolId: 'project-astra',
-      tagline: 'Universal Assistant',
-      overview: 'Multimodal realtime agent. The future of interaction.',
-      useCases: ['Assistance', 'Multimodal'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'veo': {
-      toolId: 'veo',
-      tagline: 'Generative Video',
-      overview: 'High def video model. Cinematic quality.',
-      useCases: ['Video', 'Cinema'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'project-jules': {
-      toolId: 'project-jules',
-      tagline: 'Code Agent',
-      overview: 'Experimental coding agent. Deep GitHub integration.',
-      useCases: ['Coding', 'Maintenance'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'mixboard': {
-      toolId: 'mixboard',
-      tagline: 'Music Whiteboard',
-      overview: 'AI music mixing. Visual tracks.',
-      useCases: ['DJing', 'Remixing'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'music-sandbox': {
-      toolId: 'music-sandbox',
-      tagline: 'Music AI Tools',
-      overview: 'Suite of music tools. Lyria model access.',
-      useCases: ['Music', 'Audio'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'gemini-gems': {
-      toolId: 'gemini-gems',
-      tagline: 'Custom Gems',
-      overview: 'Personalized AI experts. Custom instructions.',
-      useCases: ['Personalization', 'Coaching'],
-      tips: ["Give your Gem a specific persona (e.g., 'Grumpy Editor').", "Upload knowledge files to ground the Gem in your specific data."],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'google-earth': {
-      toolId: 'google-earth',
-      tagline: 'The Globe',
-      overview: 'Detailed 3D globe. Visualization tools.',
-      useCases: ['Visualization', 'Storytelling'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'codewiki': {
-      toolId: 'codewiki',
-      tagline: 'Code Knowledge',
-      overview: 'Engineering standards. Internal docs.',
-      useCases: ['Docs', 'Standards'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'stitch': {
-      toolId: 'stitch',
-      tagline: 'UI Designer',
-      overview: 'AI UI generation. Figma integration.',
-      useCases: ['Prototyping', 'Design'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'keep': {
-      toolId: 'keep',
-      tagline: 'Notes & Lists',
-      overview: 'AI powered notes. Quick capture.',
-      useCases: ['Organization', 'Brainstorming'],
-      tips: ["Use 'Help me create' to generate a grocery list from a recipe.", "Pin important notes to the top for easy access."],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'opal': {
-      toolId: 'opal',
-      tagline: 'No Code AI',
-      overview: 'Build apps without code. Visual builder.',
-      useCases: ['App Building', 'Automation'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'mesop': {
-      toolId: 'mesop',
-      tagline: 'Python UI',
-      overview: 'UI framework for Python. Internal tools.',
-      useCases: ['Internal Tools', 'Demos'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'illuminate': {
-      toolId: 'illuminate',
-      tagline: 'Paper to Audio',
-      overview: 'Listen to papers. AI hosts.',
-      useCases: ['Learning', 'Research'],
-      creators: [], videos: [], articles: [], communities: []
-  },
-  'kaggle': {
-      toolId: 'kaggle',
-      tagline: 'Data Community',
-      overview: 'Datasets and competitions. Models.',
-      useCases: ['Data Science', 'Models'],
-      creators: [], videos: [], articles: [], communities: []
   }
 };
 

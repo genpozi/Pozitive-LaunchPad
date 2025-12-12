@@ -8,6 +8,7 @@ interface SmartSearchProps {
   context: 'GOOGLE' | 'DESIGN' | 'BUILD';
   onSearch: (query: string) => void;
   onResearchResults: (results: ResearchResult | null) => void;
+  onSubmit?: () => void;
   className?: string;
   compact?: boolean;
 }
@@ -17,6 +18,7 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
   context, 
   onSearch, 
   onResearchResults,
+  onSubmit,
   className = "",
   compact = false
 }) => {
@@ -38,7 +40,7 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
   const handleKeyDown = async (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       if (mode === 'SEARCH') {
-        // Standard Search handled by onChange mostly, but ensures focus
+        onSubmit?.();
       } else {
         // AI Research
         await performResearch();

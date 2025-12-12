@@ -69,6 +69,46 @@ export const designToolsData: Tool[] = [
 
   // --- FREEMIUM (THE HYBRIDS) ---
   {
+    id: 'galileo',
+    name: 'Galileo AI',
+    description: 'Text-to-UI generation. Generates high-fidelity, editable UI designs from simple text descriptions instantly.',
+    url: 'https://www.usegalileo.ai/',
+    category: ToolCategory.GENERATIVE_UI,
+    tags: ['UI', 'GenAI', 'Speed'],
+    icon: 'GalileoLogo',
+    isNew: true,
+    toolbar: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'galileo',
+    color: '#FFD700'
+  },
+  {
+    id: 'musho',
+    name: 'Musho',
+    description: 'Your AI design assistant in Figma. Generate landing pages, social media posts, and more directly in your canvas.',
+    url: 'https://musho.ai/',
+    category: ToolCategory.DESIGN_TOOL,
+    tags: ['Figma', 'Plugin', 'Assistant'],
+    icon: 'MushoLogo',
+    isNew: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'musho',
+    color: '#4B39EF'
+  },
+  {
+    id: 'scenario',
+    name: 'Scenario',
+    description: 'AI-generated game assets. Train custom models on your own art style to generate consistent game assets.',
+    url: 'https://www.scenario.com/',
+    category: ToolCategory.IMAGE_GENERATION,
+    tags: ['Gaming', 'Assets', 'Training'],
+    icon: 'ScenarioLogo',
+    isNew: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'scenario',
+    color: '#FF4757'
+  },
+  {
     id: 'napkin-ai',
     name: 'Napkin.ai',
     description: 'Transform boring documentation into engaging visual storytelling instantly using generative diagrams.',
@@ -80,6 +120,7 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'napkin-ai',
     color: '#0052FF'
   },
   {
@@ -94,6 +135,7 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'ideogram',
     color: '#F85A2A'
   },
   {
@@ -132,7 +174,8 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
-    color: '#FFFFFF' // Changed from black for visibility
+    learnAppId: 'relume',
+    color: '#FFFFFF'
   },
   {
     id: 'recraft',
@@ -146,6 +189,7 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'recraft',
     color: '#FF6B6B'
   },
   {
@@ -159,6 +203,7 @@ export const designToolsData: Tool[] = [
     featured: true,
     toolbar: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'krea',
     color: '#e056fd'
   },
   {
@@ -229,10 +274,50 @@ export const designToolsData: Tool[] = [
     tags: ['Animation', 'Interactive', 'Runtime'],
     icon: 'RiveLogo',
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'rive',
     color: '#D04068'
   },
 
   // --- PAID (PRO SUITE) ---
+  {
+    id: 'webflow',
+    name: 'Webflow',
+    description: 'The visual development platform for the web. Now with advanced AI localization and site building capabilities.',
+    url: 'https://webflow.com/',
+    category: ToolCategory.DESIGN_TOOL,
+    tags: ['Web', 'No-Code', 'Professional'],
+    icon: 'WebflowLogo',
+    toolbar: true,
+    pricing: PricingModel.PAID,
+    learnAppId: 'webflow',
+    color: '#4353FF'
+  },
+  {
+    id: 'procreate',
+    name: 'Procreate',
+    description: 'The industry standard for digital painting on iPad. Powerful, intuitive, and loved by creative professionals.',
+    url: 'https://procreate.com/',
+    category: ToolCategory.DESIGN_TOOL,
+    tags: ['Illustration', 'iPad', 'Art'],
+    icon: 'ProcreateLogo',
+    toolbar: true,
+    pricing: PricingModel.PAID,
+    learnAppId: 'procreate',
+    color: '#000000'
+  },
+  {
+    id: 'linearity',
+    name: 'Linearity',
+    description: 'Revolutionary vector design software. Formerly Vectornator. AI-powered features for marketing and design.',
+    url: 'https://www.linearity.io/',
+    category: ToolCategory.VECTOR_3D,
+    tags: ['Vector', 'Design', 'Marketing'],
+    icon: 'LinearityLogo',
+    isNew: true,
+    pricing: PricingModel.PAID,
+    learnAppId: 'linearity',
+    color: '#FF6B6B'
+  },
   {
     id: 'midjourney',
     name: 'Midjourney',
@@ -245,7 +330,7 @@ export const designToolsData: Tool[] = [
     toolbar: true,
     pricing: PricingModel.PAID,
     learnAppId: 'midjourney',
-    color: '#FFFFFF' // White for visibility on dark
+    color: '#FFFFFF'
   },
   {
     id: 'hailuo',
@@ -259,6 +344,7 @@ export const designToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.PAID,
+    learnAppId: 'hailuo',
     color: '#4285F4'
   },
   {
@@ -273,7 +359,7 @@ export const designToolsData: Tool[] = [
     toolbar: true,
     pricing: PricingModel.PAID,
     learnAppId: 'runway',
-    color: '#CCFF00' // Acid Green for visibility
+    color: '#CCFF00'
   },
   {
     id: 'luma',
@@ -322,6 +408,7 @@ export const designToolsData: Tool[] = [
     tags: ['Upscale', 'Detail', 'Photography'],
     icon: 'Search',
     pricing: PricingModel.PAID,
+    learnAppId: 'magnific',
     color: '#fdcb6e'
   }
 ];

@@ -64,7 +64,9 @@ import {
   Disc,
   Gamepad2,
   Infinity,
-  Bookmark
+  Bookmark,
+  FastForward,
+  Wind
 } from 'lucide-react';
 import { IconMap } from '../types';
 
@@ -103,6 +105,18 @@ const GoogleFormsLogo = ({ size = 24, className = "" }) => (
 const GoogleSitesLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H7v-4h4v4zm0-6H7V7h4v4zm6 6h-4v-4h4v4zm0-6h-4V7h4v4z" />
+    </svg>
+);
+
+const GoogleGmailLogo = ({ size = 24, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+);
+
+const GoogleCalendarLogo = ({ size = 24, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/>
     </svg>
 );
 
@@ -288,7 +302,7 @@ const MidjourneyLogo = ({ size = 24, className = "" }) => (
 
 const OllamaLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M18.8 9.8c-.8-.8-1.7-.8-2.5-.2-.8-.8-2.1-1.3-3.5-1.3s-2.7.5-3.5 1.3c-.8-.6-1.7-.6-2.5.2-1.9 1.9-1.9 5 0 6.9 1.9 1.9 5 1.9 6.9 0 1.9 1.9 5 1.9 6.9 0 1.9-1.9 1.9-5.1.2-6.9zm-9.3 5.4c-1.1 1.1-2.9 1.1-4 0-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4zm9 0c-1.1 1.1-2.9 1.1-4 0-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/>
+        <path d="M18.8 9.8c-.8-.8-1.7-.8-2.5-.2-.8-.8-2.1-1.3-3.5-1.3s-2.7.5-3.5 1.3c-.8-.6-1.7-.6-2.5.2-1.9 1.9-1.9 5 0 6.9 1.9 1.9 5 1.9 6.9 0 1.9-1.9 1.9-5.1.2-6.9zm-9.3 5.4c-1.1 1.1-2.9 1.1-4 0-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4zm9 0c-1.1 1.1-2.9 1.1-4 0-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/>
         <path d="M7.5 12.2c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9zM16.5 12.2c.5 0 .9-.4.9-.9s-.4-.9-.9-.9-.9.4-.9.9.4.9.9.9z"/>
     </svg>
 );
@@ -339,168 +353,124 @@ const SplineLogo = ({ size = 24, className = "" }) => (
 
 const RiveLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 2h6c3.3 0 6 2.7 6 6 0 2.3-1.3 4.3-3.2 5.3L18 22h-4.4l-4.6-8H4v8H0V2h4zm4 8h2c1.1 0 2-.9 2-2s-.9-2-2-2H4v4h4z"/>
+         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14h-4v-4h4v4zm0-6h-4V6h4v4z"/>
     </svg>
 );
 
 const BoltLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 2L4 14h6l-2 8 10-12h-6l2-8z"/>
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
     </svg>
 );
 
 const OpenRouterLogo = ({ size = 24, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <circle cx="6" cy="6" r="3" />
-        <circle cx="18" cy="6" r="3" />
-        <circle cx="12" cy="18" r="3" />
-        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" />
+     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l-10 5 10 5 10-5-10-5z" opacity="0.5"/>
+        <path d="M12 12l-10 5 10 5 10-5-10-5z"/>
     </svg>
 );
 
 const PineconeLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.5l5.5 3.4-2.3 1.4-3.2-2V7.3zm-5.5 3.4L12 4.5v2.8l-3.2 2-2.3-1.4zM12 20.5l-6-3.8v-7.6l2.3 1.4 3.7 2.3 3.7-2.3 2.3-1.4v7.6l-6 3.8z"/>
+        <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l-10 5 10 5 10-5-10-5z"/>
+        <path d="M12 12l-10 5 10 5 10-5-10-5z"/>
     </svg>
 );
 
 const NeonLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 4h4v16H4V4zm12 0h4v16h-4V4zM4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="2"/>
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+        <path d="M8 12h8m-4-4v8"/>
     </svg>
 );
 
 const LangChainLogo = ({ size = 24, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-         <path d="M10 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-         <path d="M14 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-         <path d="M8 8l8 8" stroke="currentColor" strokeWidth="2" />
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
     </svg>
 );
 
+const WebflowLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 4c-1.9 0-3.5 1.6-3.5 3.5v7.2L5.8 19l2.8-5.6 2.8 5.6 2.8-5.6 2.8 5.6 2.8-5.6v-5.9c0-1.9-1.6-3.5-3.5-3.5h-9.8z"/>
+  </svg>
+);
 
-export const Icons: IconMap = {
-  Sparkles,
-  Brain,
-  Code2,
-  FileText,
-  ImageIcon,
-  Music,
-  Video,
-  Database,
-  Cloud,
-  Terminal,
-  BookOpen,
-  LayoutGrid,
-  Calendar,
-  Mail,
-  HardDrive,
-  Search,
-  MessageSquare,
-  Cpu,
-  PenTool,
-  FlaskConical,
-  Youtube,
-  Globe,
-  Briefcase,
-  Layers,
-  Shield,
-  Box,
-  Palette,
-  Workflow,
-  GraduationCap,
-  Map,
-  Zap,
-  Github,
-  CreditCard,
-  Gem,
-  MonitorPlay,
-  Component,
-  Wand2,
-  MousePointer2,
-  Lock,
-  Download,
-  Dna,
-  Move3d,
-  Smartphone,
-  Glasses,
-  Film,
-  Server,
-  Network,
-  Bot,
-  Container,
-  Rocket,
-  Type,
-  Presentation,
-  Hammer,
-  ArrowUpRight,
-  Lightbulb,
-  VideoIcon,
-  Mic,
-  Twitter,
-  Linkedin,
-  PlayCircle,
-  Sliders,
-  Disc,
-  Gamepad2,
-  Infinity,
-  Bookmark,
-  // Brand Icons Mapped
-  GoogleG,
-  GoogleGemini,
-  GoogleDrive,
-  GoogleDocs,
-  GoogleSheets,
-  GoogleSlidesLogo,
-  GoogleFormsLogo,
-  GoogleSitesLogo,
-  GooglePhotos,
-  GoogleMaps,
-  GoogleMeet,
-  VertexAILogo,
-  FirebaseLogo,
-  AndroidLogo,
-  FlutterLogo,
-  FigmaLogo,
-  BlenderLogo,
-  SupabaseLogo,
-  VercelLogo,
-  PythonLogo,
-  CursorLogo,
-  AdobeLogo,
-  MidjourneyLogo,
-  OllamaLogo,
-  GroqLogo,
-  DockerLogo,
-  LumaLogo,
-  RunwayLogo,
-  HuggingFaceLogo,
-  TensorFlowLogo,
-  KaggleLogo,
-  JaxLogo,
-  GemmaLogo,
-  ColabLogo,
-  NotebookLMLogo,
-  IlluminateLogo,
-  GoogleEarthLogo,
-  DeepMindLogo,
-  RecraftLogo,
-  SplineLogo,
-  RiveLogo,
-  BoltLogo,
-  OpenRouterLogo,
-  PineconeLogo,
-  NeonLogo,
-  LangChainLogo
-};
+const ReplitLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 5h8v6H2zM2 13h8v6H2zM14 5h8v6h-8z"/>
+  </svg>
+);
 
-interface IconProps {
-  name: string;
-  className?: string;
-  size?: number;
-}
+const PostmanLogo = ({ size = 24, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+         <path d="M15 9l-6 6M9 9l6 6" />
+    </svg>
+);
 
-export const DynamicIcon: React.FC<IconProps> = ({ name, className, size = 24 }) => {
-  const IconComponent = Icons[name] || Sparkles;
-  return <IconComponent className={className} size={size} />;
+const WarpLogo = ({ size = 24, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 4l10 4-10 4V4zm4 8l10 4-10 4v-8z"/>
+    </svg>
+);
+
+const ProcreateLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 14c-2 1.5-5 0-5.5-2.5 0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5c0 1.5.5 2 1 2s.5-.5.5-1.5c0-3-2.5-4.5-5.5-4.5-3.5 0-6 2.5-6 6s2.5 6 6 6 5.5-1.5 5.5-4.5c0-1-1-1-1-1z"/>
+  </svg>
+);
+
+const LinearityLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+  </svg>
+);
+
+const GalileoLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L2 12l10 10 10-10L12 2zm0 4.2L18.4 12 12 18.4 5.6 12 12 6.2z"/>
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+const MushoLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+    <path d="M8 8h8v8H8z" opacity="0.5"/>
+  </svg>
+);
+
+const ScenarioLogo = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M7 7h2v2H7zm8 8h2v2h-2zm-8 8h2v2H7zM15 7h2v2h-2z" />
+  </svg>
+);
+
+
+export const DynamicIcon = ({ name, size = 24, className = "" }: { name: string; size?: number; className?: string }) => {
+  const iconMap: IconMap = {
+    // Lucide Icons
+    Sparkles, Brain, Code2, FileText, ImageIcon, Music, Video, Database, Cloud, Terminal, BookOpen, 
+    LayoutGrid, Calendar, Mail, HardDrive, Search, MessageSquare, Cpu, PenTool, FlaskConical, Youtube, 
+    Globe, Briefcase, Layers, Shield, Box, Palette, Workflow, GraduationCap, Map, Zap, Github, CreditCard, 
+    Gem, MonitorPlay, Component, Wand2, MousePointer2, Lock, Download, Dna, Move3d, Smartphone, Glasses, 
+    Film, Server, Network, Bot, Container, Rocket, Type, Presentation, Hammer, ArrowUpRight, Lightbulb, 
+    VideoIcon, Mic, Twitter, Linkedin, PlayCircle, Sliders, Disc, Gamepad2, Infinity, Bookmark, FastForward, Wind,
+    // Custom Brand Icons
+    GoogleG, GoogleGemini, VertexAILogo, GoogleSlidesLogo, GoogleFormsLogo, GoogleSitesLogo, GoogleGmailLogo, GoogleCalendarLogo, DeepMindLogo, 
+    TensorFlowLogo, GemmaLogo, KaggleLogo, ColabLogo, JaxLogo, GoogleDrive, GoogleDocs, GoogleSheets, 
+    GooglePhotos, GoogleMaps, GoogleEarthLogo, GoogleMeet, NotebookLMLogo, IlluminateLogo, FirebaseLogo, 
+    AndroidLogo, FlutterLogo, FigmaLogo, BlenderLogo, SupabaseLogo, VercelLogo, PythonLogo, CursorLogo, 
+    AdobeLogo, MidjourneyLogo, OllamaLogo, GroqLogo, DockerLogo, LumaLogo, RunwayLogo, HuggingFaceLogo, 
+    RecraftLogo, SplineLogo, RiveLogo, BoltLogo, OpenRouterLogo, PineconeLogo, NeonLogo, LangChainLogo,
+    // New Additions
+    WebflowLogo, ReplitLogo, PostmanLogo, WarpLogo, ProcreateLogo, LinearityLogo, GalileoLogo, MushoLogo, ScenarioLogo
+  };
+
+  const IconComponent = iconMap[name] || Sparkles;
+  return <IconComponent size={size} className={className} />;
 };

@@ -3,8 +3,10 @@
 This guide covers how to deploy the Launchpad to popular hosting providers and local environments.
 
 ## 🔑 Prerequisite: Google Gemini API Key
-This application uses the Gemini API for its "Smart Search" research capabilities.
+This application uses the **Gemini 2.5 Flash** model for its "Smart Search" research capabilities.
 You must obtain an API Key from [Google AI Studio](https://aistudio.google.com/).
+
+**Without this key, the "Research" mode in the search bar will fallback to opening a new tab to Gemini, but the in-app experience will be limited.**
 
 In all deployment methods below, you must set the environment variable:
 `API_KEY=your_gemini_api_key_here`
@@ -19,7 +21,7 @@ In all deployment methods below, you must set the environment variable:
 4.  Vercel will automatically detect `Vite` as the framework.
 5.  **Important**: In the "Environment Variables" section, add:
     *   Key: `API_KEY`
-    *   Value: `your_actual_api_key`
+    *   Value: `your_actual_api_key_starting_with_AIza...`
 6.  Click **Deploy**.
 
 ## ☁️ Option 2: Netlify
@@ -32,7 +34,7 @@ In all deployment methods below, you must set the environment variable:
     *   Publish directory: `dist`
 5.  Click **"Show advanced"** -> **"New Variable"**:
     *   Key: `API_KEY`
-    *   Value: `your_actual_api_key`
+    *   Value: `your_actual_api_key_starting_with_AIza...`
 6.  Click **Deploy site**.
 
 ## 🐳 Option 3: Docker
@@ -46,9 +48,10 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-# Note: In a real build, we might bake the env var in, 
-# or use a runtime config script. For simplicity, we assume
-# the API key is passed as a build arg or handled via client-side injection.
+# Note: The API key is baked into the build for Vite apps unless you use a runtime config solution.
+# For production security, consider using a backend proxy or server-side rendering.
+ARG API_KEY
+ENV API_KEY=$API_KEY
 RUN npm run build
 
 # Stage 2: Serve
@@ -61,7 +64,7 @@ CMD ["nginx", "-g", "daemon off;"]
 Build and run:
 
 ```bash
-docker build -t pozitive-launchpad .
+docker build --build-arg API_KEY=your_key -t pozitive-launchpad .
 docker run -p 8080:80 pozitive-launchpad
 ```
 
@@ -71,9 +74,9 @@ docker run -p 8080:80 pozitive-launchpad
     ```bash
     npm install
     ```
-2.  Create a `.env` file in the root:
+2.  Create a `.env` file in the root directory:
     ```
-    API_KEY=your_actual_api_key
+    API_KEY=your_actual_api_key_starting_with_AIza...
     ```
 3.  Start the dev server:
     ```bash

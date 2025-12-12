@@ -3,6 +3,61 @@ import { Tool, ToolCategory, PricingModel } from '../types';
 export const buildToolsData: Tool[] = [
   // --- IDE & AGENTS (CODE) ---
   {
+    id: 'replit',
+    name: 'Replit',
+    description: 'The collaborative AI-powered cloud IDE. Build, test, and deploy software from any device with Replit Agent.',
+    url: 'https://replit.com/',
+    category: ToolCategory.IDE_AGENT,
+    tags: ['IDE', 'Cloud', 'Agent'],
+    icon: 'ReplitLogo',
+    featured: true,
+    toolbar: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'replit',
+    color: '#F26207'
+  },
+  {
+    id: 'warp',
+    name: 'Warp',
+    description: 'The AI-powered terminal for the 21st century. Integrated AI assistance, collaborative workflows, and a modern UI.',
+    url: 'https://www.warp.dev/',
+    category: ToolCategory.IDE_AGENT,
+    tags: ['Terminal', 'CLI', 'Productivity'],
+    icon: 'WarpLogo',
+    isNew: true,
+    toolbar: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'warp',
+    color: '#00D1C1'
+  },
+  {
+    id: 'v0',
+    name: 'v0.dev',
+    description: 'Generative UI by Vercel. Generate copy-paste friendly React components with Shadcn UI and Tailwind CSS.',
+    url: 'https://v0.dev/',
+    category: ToolCategory.IDE_AGENT,
+    tags: ['UI', 'Generator', 'React'],
+    icon: 'Code2',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'v0',
+    color: '#000000'
+  },
+  {
+    id: 'continue',
+    name: 'Continue',
+    description: 'The open-source AI code assistant for VS Code and JetBrains. Bring your own model and keep your data private.',
+    url: 'https://continue.dev/',
+    category: ToolCategory.IDE_AGENT,
+    tags: ['Open Source', 'Copilot', 'Private'],
+    icon: 'FastForward',
+    pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'continue',
+    color: '#FFFFFF'
+  },
+  {
     id: 'lovable',
     name: 'Lovable',
     description: 'GPT Engineer. Build, debug, and deploy full-stack web apps just by chatting. The fastest route from idea to live URL.',
@@ -24,7 +79,7 @@ export const buildToolsData: Tool[] = [
     url: 'https://codeium.com/windsurf',
     category: ToolCategory.IDE_AGENT,
     tags: ['IDE', 'Agent', 'Context'],
-    icon: 'Code2', // Using generic Code2 as placeholder for specific brand
+    icon: 'Code2',
     featured: true,
     isNew: true,
     toolbar: true,
@@ -57,6 +112,7 @@ export const buildToolsData: Tool[] = [
     isNew: true,
     toolbar: true,
     pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'zed',
     color: '#d4aa71'
   },
   {
@@ -100,6 +156,21 @@ export const buildToolsData: Tool[] = [
   },
 
   // --- LLM OPS & ROUTING (CONNECT) ---
+  {
+    id: 'langflow',
+    name: 'Langflow',
+    description: 'A visual way to build, test, and deploy AI apps. Drag-and-drop components to create complex LLM chains.',
+    url: 'https://www.langflow.org/',
+    category: ToolCategory.LLM_OPS,
+    tags: ['Visual', 'Chains', 'Builder'],
+    icon: 'Workflow',
+    featured: true,
+    isNew: true,
+    toolbar: true,
+    pricing: PricingModel.OPEN_SOURCE,
+    learnAppId: 'langflow',
+    color: '#FF4757'
+  },
   {
     id: 'openrouter',
     name: 'OpenRouter',
@@ -150,10 +221,24 @@ export const buildToolsData: Tool[] = [
     tags: ['Observability', 'Testing', 'Debug'],
     icon: 'LangChainLogo',
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'langsmith',
     color: '#34d399'
   },
 
   // --- BACKEND & INFRA (SHIP) ---
+  {
+    id: 'postman',
+    name: 'Postman',
+    description: 'The API platform. Design, build, test, and document your APIs. Now with Postbot for AI-assisted testing.',
+    url: 'https://www.postman.com/',
+    category: ToolCategory.BACKEND_INFRA,
+    tags: ['API', 'Testing', 'DevTools'],
+    icon: 'PostmanLogo',
+    toolbar: true,
+    pricing: PricingModel.FREEMIUM,
+    learnAppId: 'postman',
+    color: '#FF6C37'
+  },
   {
     id: 'supabase',
     name: 'Supabase',
@@ -191,6 +276,7 @@ export const buildToolsData: Tool[] = [
     tags: ['Vector DB', 'Search', 'RAG'],
     icon: 'PineconeLogo',
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'pinecone',
     color: '#3B82F6'
   },
   {
@@ -203,6 +289,7 @@ export const buildToolsData: Tool[] = [
     icon: 'NeonLogo',
     isNew: true,
     pricing: PricingModel.FREEMIUM,
+    learnAppId: 'neon',
     color: '#00E599'
   },
   {

@@ -274,6 +274,7 @@ export const toolsData: Tool[] = [
     icon: 'Shield',
     isNew: true,
     toolbar: true,
+    learnAppId: 'checks',
     color: '#34A853'
   },
 
@@ -454,6 +455,7 @@ export const toolsData: Tool[] = [
     icon: 'GoogleGemini',
     featured: true,
     toolbar: true,
+    learnAppId: 'gemini-advanced',
     color: '#4285F4'
   },
   {
@@ -504,6 +506,7 @@ export const toolsData: Tool[] = [
     tags: ['Storage'],
     icon: 'GoogleDrive',
     toolbar: true,
+    learnAppId: 'drive',
     color: '#1FA463'
   },
   {
@@ -515,6 +518,7 @@ export const toolsData: Tool[] = [
     tags: ['Writing'],
     icon: 'GoogleDocs',
     toolbar: true,
+    learnAppId: 'docs',
     color: '#4285F4'
   },
   {
@@ -538,6 +542,7 @@ export const toolsData: Tool[] = [
     tags: ['Presentation'],
     icon: 'GoogleSlidesLogo',
     toolbar: true,
+    learnAppId: 'slides',
     color: '#F4B400'
   },
   {
@@ -549,6 +554,7 @@ export const toolsData: Tool[] = [
     tags: ['Data'],
     icon: 'GoogleFormsLogo',
     toolbar: true,
+    learnAppId: 'forms',
     color: '#7248B9'
   },
   {
@@ -560,6 +566,7 @@ export const toolsData: Tool[] = [
     tags: ['Web'],
     icon: 'GoogleSitesLogo',
     toolbar: true,
+    learnAppId: 'sites',
     color: '#4285F4'
   },
   {
@@ -569,8 +576,9 @@ export const toolsData: Tool[] = [
     url: 'https://calendar.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Time'],
-    icon: 'Calendar',
+    icon: 'GoogleCalendarLogo',
     toolbar: true,
+    learnAppId: 'calendar',
     color: '#4285F4'
   },
   {
@@ -582,6 +590,7 @@ export const toolsData: Tool[] = [
     tags: ['Calls'],
     icon: 'GoogleMeet',
     toolbar: true,
+    learnAppId: 'meet',
     color: '#00AC47'
   },
   {
@@ -591,8 +600,9 @@ export const toolsData: Tool[] = [
     url: 'https://mail.google.com/',
     category: ToolCategory.WORKSPACE,
     tags: ['Comm'],
-    icon: 'Mail',
+    icon: 'GoogleGmailLogo',
     toolbar: true,
+    learnAppId: 'mail',
     color: '#EA4335'
   },
   {
