@@ -25,7 +25,6 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
   const [mode, setMode] = useState<'SEARCH' | 'RESEARCH'>('SEARCH');
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [feedbackMsg, setFeedbackMsg] = useState<{ text: string, type: 'error' | 'info' } | null>(null);
 
   // Clear query and results when switching modes
   const toggleMode = (newMode: 'SEARCH' | 'RESEARCH') => {
@@ -34,7 +33,6 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
     setQuery('');
     onSearch('');
     onResearchResults(null);
-    setFeedbackMsg(null);
   };
 
   const handleKeyDown = async (e: React.KeyboardEvent) => {
@@ -59,19 +57,14 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
     if (!query.trim()) return;
     
     setIsLoading(true);
-    setFeedbackMsg(null);
     onResearchResults(null);
 
     const launchExternalGemini = () => {
         const win = window.open('https://gemini.google.com/app', '_blank');
-        navigator.clipboard.writeText(query).then(() => {
-            setFeedbackMsg({ text: "Query copied! Opening Gemini...", type: 'info' });
-        }).catch(() => {
-            setFeedbackMsg({ text: "Opening Gemini...", type: 'info' });
-        });
+        navigator.clipboard.writeText(query).catch(console.error);
         setIsLoading(false);
         if (!win) {
-             setFeedbackMsg({ text: "Popup blocked.", type: 'error' });
+             alert("Popup blocked. Please allow popups to launch Gemini.");
         }
     };
 
@@ -212,12 +205,6 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
             </div>
         </div>
 
-        {/* Feedback Message Overlay */}
-        {feedbackMsg && (
-            <div className={`absolute top-full mt-2 left-0 right-0 z-30 text-xs text-center p-2 rounded-lg backdrop-blur-md border animate-fade-in ${feedbackMsg.type === 'error' ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-blue-500/10 border-blue-500/20 text-blue-400'}`}>
-                {feedbackMsg.text}
-            </div>
-        )}
       </div>
     </div>
   );
