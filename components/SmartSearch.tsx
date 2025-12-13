@@ -211,6 +211,13 @@ export const SmartSearch: React.FC<SmartSearchProps> = ({
                 )}
             </div>
         </div>
+
+        {/* Feedback Message Overlay */}
+        {feedbackMsg && (
+            <div className={`absolute top-full mt-2 left-0 right-0 z-30 text-xs text-center p-2 rounded-lg backdrop-blur-md border animate-fade-in ${feedbackMsg.type === 'error' ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-blue-500/10 border-blue-500/20 text-blue-400'}`}>
+                {feedbackMsg.text}
+            </div>
+        )}
       </div>
     </div>
   );
